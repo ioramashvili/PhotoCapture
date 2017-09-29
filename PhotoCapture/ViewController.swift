@@ -11,6 +11,9 @@ class ViewController: UIViewController {
     var photoOutput = AVCapturePhotoOutput()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
+    var backCamera: AVCaptureDevice?
+    var frontCamera: AVCaptureDevice?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +40,10 @@ class ViewController: UIViewController {
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
+    @IBAction func swapCameras(_ sender: UIButton) {
+        swapCamera()
+    }
+    
     fileprivate func setupSession() {
         session.sessionPreset = AVCaptureSession.Preset.photo
     }
@@ -55,11 +62,62 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupCameraAndStartSession() {
-        let backCamera = AVCaptureDevice.default(for: .video)!
+        let devices = AVCaptureDevice.DiscoverySession(
+            deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera],
+            mediaType: .video,
+            position: .unspecified).devices
+        
+        devices.forEach {
+            switch $0.position {
+            case .back:
+                backCamera = $0
+            case .front:
+                frontCamera = $0
+            default: break
+            }
+        }
+        
+        setupAVCaptureDeviceInput(for: backCamera)
+    }
+    
+    fileprivate func swapCamera() {
+        guard let input = session.inputs[0] as? AVCaptureDeviceInput else { return }
+        
+        session.beginConfiguration()
+        defer { session.commitConfiguration() }
+        
+        guard let newDevice = input.device.position == .back ? frontCamera : backCamera else {
+            return
+        }
+        
+        var deviceInput: AVCaptureDeviceInput!
+        do {
+            deviceInput = try AVCaptureDeviceInput(device: newDevice)
+        } catch {
+            print(error.localizedDescription)
+            return
+        }
+        
+        session.removeInput(input)
+        session.addInput(deviceInput)
+    }
+    
+    fileprivate var currentCaptureDevicePosistion: AVCaptureDevice.Position {
+        guard let input = session.inputs.first as? AVCaptureDeviceInput else {
+            return .unspecified
+        }
+        
+        return input.device.position
+    }
+    
+    fileprivate func setupAVCaptureDeviceInput(for device: AVCaptureDevice?) {
+        guard let device = device else {
+            return
+        }
         
         var input: AVCaptureDeviceInput?
         do {
-            input = try AVCaptureDeviceInput(device: backCamera)
+            input = try AVCaptureDeviceInput(device: device)
         } catch {
             print(error.localizedDescription)
         }
@@ -98,14 +156,20 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
     
-    fileprivate func previewCapturedImage(data: Data?) {
+    fileprivate func previewCapturedImage(data: Data?, position: AVCaptureDevice.Position) {
         guard
             let imageData = data,
-            let image = UIImage(data: imageData) else {
+            let image = UIImage(data: imageData),
+            let cgImage = image.cgImage else {
             return
         }
         
-        let imageView = UIImageView(image: image)
+        var flippedImage = image
+        if position == .front {
+            flippedImage = UIImage(cgImage: cgImage, scale: image.scale, orientation: .leftMirrored)
+        }
+        
+        let imageView = UIImageView(image: flippedImage)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.frame = CGRect(origin: CGPoint(x: -200, y: 50), size: CGSize(width: 100, height: 150))
@@ -124,9 +188,9 @@ class ViewController: UIViewController {
         }, completion: { _ in
             imageView.removeFromSuperview()
         })
-        
+
 //        share(image: image)
-    }
+        }
     
     fileprivate func share(image: UIImage) {
         let imageToShare = [ image ]
@@ -158,9 +222,8 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             let sampleBuffer = photoSampleBuffer,
             let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) {
             
-            previewCapturedImage(data: dataImage)
+            previewCapturedImage(data: dataImage, position: currentCaptureDevicePosistion)
         }
-        
     }
     
     @available(iOS 11.0, *)
@@ -171,7 +234,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
         
         animateFlashView()
         
-        previewCapturedImage(data: photo.fileDataRepresentation())
+        previewCapturedImage(data: photo.fileDataRepresentation(), position: currentCaptureDevicePosistion)
         //        AudioServicesPlayAlertSound(1108)
     }
 }

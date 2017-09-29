@@ -33,15 +33,28 @@
                                     <action selector="captureImageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cT-1S-QVE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-mT-tEb">
+                                <rect key="frame" x="280" y="683" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2Ma-Fv-num"/>
+                                    <constraint firstAttribute="width" constant="60" id="EUd-Zt-T50"/>
+                                </constraints>
+                                <state key="normal" title="Swap"/>
+                                <connections>
+                                    <action selector="swapCameras:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eI9-3I-6SW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0pe-Hn-g3O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R1K-nc-imy" secondAttribute="bottom" constant="35" id="9tD-Gw-6uC"/>
                             <constraint firstAttribute="bottom" secondItem="jse-Z5-8co" secondAttribute="bottom" id="Eww-Yt-z6y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oG9-mT-tEb" secondAttribute="bottom" constant="35" id="IJ2-gm-GSs"/>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEK-Pz-vRh"/>
                             <constraint firstAttribute="trailing" secondItem="jse-Z5-8co" secondAttribute="trailing" id="mZZ-oe-CTF"/>
                             <constraint firstItem="R1K-nc-imy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vDc-F0-Vg5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oG9-mT-tEb" secondAttribute="trailing" constant="35" id="yKY-5M-ZbA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
