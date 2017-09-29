@@ -37,6 +37,8 @@ class ViewController: UIViewController {
         captureButton.isEnabled = false
         
         let settings = AVCapturePhotoSettings()
+        settings.flashMode = .auto
+        
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
@@ -215,7 +217,6 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
         defer {
             captureButton.isEnabled = true
         }
-        
         animateFlashView()
         
         if
