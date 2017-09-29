@@ -99,29 +99,41 @@ class ViewController: UIViewController {
     }
     
     fileprivate func previewCapturedImage(data: Data?) {
-        if let imageData = data {
-            let image = UIImage(data: imageData)
-            
-            let imageView = UIImageView(image: image)
-            imageView.contentMode = .scaleAspectFill
-            imageView.clipsToBounds = true
-            imageView.frame = CGRect(origin: CGPoint(x: -200, y: 50), size: CGSize(width: 100, height: 150))
-            imageView.alpha = 0
-            
-            view.addSubview(imageView)
-            
-            UIView.animate(withDuration: 0.4, animations: {
-                imageView.frame.origin = CGPoint(x: 20, y: 50)
-                imageView.alpha = 1
-            })
-            
-            UIView.animate(withDuration: 0.6, delay: 3, options: .curveEaseInOut, animations: {
-                imageView.frame.origin.x -= 200
-                imageView.alpha = 0
-            }, completion: { _ in
-                imageView.removeFromSuperview()
-            })
+        guard
+            let imageData = data,
+            let image = UIImage(data: imageData) else {
+            return
         }
+        
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.frame = CGRect(origin: CGPoint(x: -200, y: 50), size: CGSize(width: 100, height: 150))
+        imageView.alpha = 0
+        
+        view.addSubview(imageView)
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            imageView.frame.origin = CGPoint(x: 20, y: 50)
+            imageView.alpha = 1
+        })
+        
+        UIView.animate(withDuration: 0.6, delay: 3, options: .curveEaseInOut, animations: {
+            imageView.frame.origin.x -= 200
+            imageView.alpha = 0
+        }, completion: { _ in
+            imageView.removeFromSuperview()
+        })
+        
+//        share(image: image)
+    }
+    
+    fileprivate func share(image: UIImage) {
+        let imageToShare = [ image ]
+        let activity = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activity.excludedActivityTypes = [.postToVimeo, .addToReadingList]
+        
+        present(activity, animated: true, completion: nil)
     }
 }
 
