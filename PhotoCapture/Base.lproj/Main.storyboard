@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,46 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jse-Z5-8co">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy">
+                                <rect key="frame" x="157" y="683" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="JsG-BH-Fas"/>
+                                    <constraint firstAttribute="height" constant="60" id="M8R-Zn-Nsq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="captureImageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cT-1S-QVE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jse-Z5-8co" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0pe-Hn-g3O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R1K-nc-imy" secondAttribute="bottom" constant="35" id="9tD-Gw-6uC"/>
+                            <constraint firstAttribute="bottom" secondItem="jse-Z5-8co" secondAttribute="bottom" id="Eww-Yt-z6y"/>
+                            <constraint firstItem="jse-Z5-8co" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEK-Pz-vRh"/>
+                            <constraint firstAttribute="trailing" secondItem="jse-Z5-8co" secondAttribute="trailing" id="mZZ-oe-CTF"/>
+                            <constraint firstItem="R1K-nc-imy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vDc-F0-Vg5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="captureButton" destination="R1K-nc-imy" id="2US-0m-lab"/>
+                        <outlet property="previewView" destination="jse-Z5-8co" id="mHZ-MU-dxw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="132.26600985221674"/>
         </scene>
     </scenes>
 </document>

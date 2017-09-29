@@ -12,6 +12,8 @@
 		43A516D01F7E248100DCECFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516CE1F7E248100DCECFF /* Main.storyboard */; };
 		43A516D21F7E248100DCECFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A516D11F7E248100DCECFF /* Assets.xcassets */; };
 		43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */; };
+		43A516DE1F7E24DB00DCECFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */; };
+		43A516E01F7E342600DCECFF /* PhotoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		43A516D11F7E248100DCECFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A516D41F7E248100DCECFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A516D61F7E248100DCECFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A516DE1F7E24DB00DCECFF /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,7 @@
 			children = (
 				43A516C91F7E248100DCECFF /* PhotoCapture */,
 				43A516C81F7E248100DCECFF /* Products */,
+				43A516DC1F7E24DB00DCECFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +66,17 @@
 				43A516D11F7E248100DCECFF /* Assets.xcassets */,
 				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
 				43A516D61F7E248100DCECFF /* Info.plist */,
+				43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */,
 			);
 			path = PhotoCapture;
+			sourceTree = "<group>";
+		};
+		43A516DC1F7E24DB00DCECFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +153,7 @@
 			files = (
 				43A516CD1F7E248100DCECFF /* ViewController.swift in Sources */,
 				43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */,
+				43A516E01F7E342600DCECFF /* PhotoCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +291,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P56L8EXYGW;
 				INFOPLIST_FILE = PhotoCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.self.PhotoCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,7 +307,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P56L8EXYGW;
 				INFOPLIST_FILE = PhotoCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.self.PhotoCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
