@@ -67,5 +67,28 @@
             </objects>
             <point key="canvasLocation" x="140" y="132.26600985221674"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Q2c-df-cRD">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rbo-kc-jpy" customClass="PageViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ge-51-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="143"/>
+        </scene>
+        <!--Poster View Controller-->
+        <scene sceneID="zFJ-yq-Net">
+            <objects>
+                <viewController storyboardIdentifier="PosterViewController" id="yTz-t5-xq9" customClass="PosterViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDp-6R-6DX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KRd-pJ-pv9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-Ko-0bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784" y="143"/>
+        </scene>
     </scenes>
 </document>
