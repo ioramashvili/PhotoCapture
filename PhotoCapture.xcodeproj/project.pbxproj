@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CA1F7E248100DCECFF /* AppDelegate.swift */; };
 		43A516CD1F7E248100DCECFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CC1F7E248100DCECFF /* ViewController.swift */; };
 		43A516D01F7E248100DCECFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516CE1F7E248100DCECFF /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		43A516C71F7E248100DCECFF /* PhotoCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A516CA1F7E248100DCECFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A516CC1F7E248100DCECFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
 				43A516D61F7E248100DCECFF /* Info.plist */,
 				43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */,
+				4378D3B71F8265060010E565 /* UIView+Extension.swift */,
 			);
 			path = PhotoCapture;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			files = (
 				43A516CD1F7E248100DCECFF /* ViewController.swift in Sources */,
 				43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */,
+				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				43A516E01F7E342600DCECFF /* PhotoCaptureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
