@@ -46,6 +46,10 @@ class ViewController: UIViewController {
         swapCamera()
     }
     
+    @IBAction func chooseImage(_ sender: UIButton) {
+        tryOpenImagePicker()
+    }
+    
     fileprivate func setupSession() {
         session.sessionPreset = AVCaptureSession.Preset.photo
     }
@@ -240,6 +244,23 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
     }
 }
 
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var selectedImageFromImagePicker: UIImage?
+        
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            selectedImageFromImagePicker = editedImage
+        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selectedImageFromImagePicker = originalImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 
 

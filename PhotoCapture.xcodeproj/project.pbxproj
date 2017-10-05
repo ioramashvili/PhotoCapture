@@ -17,6 +17,7 @@
 		43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */; };
 		43A516DE1F7E24DB00DCECFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */; };
 		43A516E01F7E342600DCECFF /* PhotoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */; };
+		43F0F7571F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		43A516D61F7E248100DCECFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureViewController.swift; sourceTree = "<group>"; };
+		43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIImagePickerControllerDelegate+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4378D3B71F8265060010E565 /* UIView+Extension.swift */,
 				4378D3B91F8266100010E565 /* PageViewController.swift */,
 				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
+				43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */,
 			);
 			path = PhotoCapture;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				43A516CD1F7E248100DCECFF /* ViewController.swift in Sources */,
 				43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */,
+				43F0F7571F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift in Sources */,
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */,
 				43A516E01F7E342600DCECFF /* PhotoCaptureViewController.swift in Sources */,

@@ -22,6 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-wG-7md">
+                                <rect key="frame" x="35" y="713" width="53" height="30"/>
+                                <state key="normal" title="Choose"/>
+                                <connections>
+                                    <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHs-5C-s8a"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy">
                                 <rect key="frame" x="157" y="683" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,11 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-mT-tEb">
-                                <rect key="frame" x="280" y="683" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2Ma-Fv-num"/>
-                                    <constraint firstAttribute="width" constant="60" id="EUd-Zt-T50"/>
-                                </constraints>
+                                <rect key="frame" x="302" y="713" width="38" height="30"/>
                                 <state key="normal" title="Swap"/>
                                 <connections>
                                     <action selector="swapCameras:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eI9-3I-6SW"/>
@@ -49,9 +52,11 @@
                         <constraints>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0pe-Hn-g3O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R1K-nc-imy" secondAttribute="bottom" constant="35" id="9tD-Gw-6uC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9qd-wG-7md" secondAttribute="bottom" constant="35" id="EAv-sR-nGs"/>
                             <constraint firstAttribute="bottom" secondItem="jse-Z5-8co" secondAttribute="bottom" id="Eww-Yt-z6y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oG9-mT-tEb" secondAttribute="bottom" constant="35" id="IJ2-gm-GSs"/>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEK-Pz-vRh"/>
+                            <constraint firstItem="9qd-wG-7md" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="ciN-Br-QZE"/>
                             <constraint firstAttribute="trailing" secondItem="jse-Z5-8co" secondAttribute="trailing" id="mZZ-oe-CTF"/>
                             <constraint firstItem="R1K-nc-imy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vDc-F0-Vg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oG9-mT-tEb" secondAttribute="trailing" constant="35" id="yKY-5M-ZbA"/>
