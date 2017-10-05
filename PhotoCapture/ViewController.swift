@@ -5,6 +5,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet var bluerView: UIVisualEffectView!
     let flashView = UIView()
     
     var session = AVCaptureSession()
@@ -13,6 +14,24 @@ class ViewController: UIViewController {
     
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
+    
+    lazy var fillLayer: CAShapeLayer = {
+        let fillLayer = CAShapeLayer()
+        fillLayer.fillRule = kCAFillRuleEvenOdd
+        fillLayer.fillColor = UIColor.green.cgColor
+        
+        return fillLayer
+    }()
+    
+    lazy var maskView: UIView = {
+        let maskView = UIView(frame: UIScreen.main.bounds)
+        maskView.clipsToBounds = true
+        maskView.backgroundColor = .clear
+        
+        maskView.layer.addSublayer(fillLayer)
+        
+        return maskView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +50,12 @@ class ViewController: UIViewController {
         captureButton.layer.borderColor = UIColor.red.cgColor
         captureButton.layer.cornerRadius = captureButton.bounds.width / 2
         captureButton.clipsToBounds = true
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        updateBlurViewHole()
     }
     
     @IBAction func captureImageTapped(_ sender: UIButton) {
@@ -259,6 +284,22 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ViewController {
+    func updateBlurViewHole() {
+        let outerbezierPath = UIBezierPath(roundedRect: bluerView.bounds, cornerRadius: 0)
+        
+        let y = (UIScreen.main.bounds.height - UIScreen.main.bounds.width) / 2
+        let rect = CGRect(x: 0, y: y, width: view.bounds.width, height: view.bounds.width)
+        let innerCirclepath = UIBezierPath(roundedRect: rect, cornerRadius: 0)
+        outerbezierPath.append(innerCirclepath)
+        outerbezierPath.usesEvenOddFillRule = true
+
+        fillLayer.path = outerbezierPath.cgPath
+        
+        bluerView.mask = maskView
     }
 }
 
