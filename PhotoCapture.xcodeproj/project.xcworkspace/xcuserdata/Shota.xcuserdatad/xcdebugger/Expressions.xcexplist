@@ -13,5 +13,25 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "i.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "aawda.size">
+            </PersistentString>
+            <PersistentString
+               value = "image.size">
+            </PersistentString>
+            <PersistentString
+               value = "nomalizedImage.imageOrientation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

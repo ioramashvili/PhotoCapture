@@ -188,22 +188,33 @@ class ViewController: UIViewController {
     }
     
     fileprivate func previewCapturedImage(data: Data?, position: AVCaptureDevice.Position) {
+        
         guard
             let imageData = data,
-            let image = UIImage(data: imageData),
-            let cgImage = image.cgImage else {
+            let originamImage = UIImage(data: imageData),
+            var nomalizedImage = cropToPreviewLayer(originalImage: originamImage) else {
             return
         }
         
-        var flippedImage = image
         if position == .front {
-            flippedImage = UIImage(cgImage: cgImage, scale: image.scale, orientation: .leftMirrored)
+            nomalizedImage = UIImage(cgImage: nomalizedImage.cgImage!, scale: nomalizedImage.scale, orientation: .leftMirrored)
         }
         
-        let imageView = UIImageView(image: flippedImage)
-        imageView.contentMode = .scaleAspectFill
+        print("NormalizedCGImage", nomalizedImage.size, nomalizedImage.imageOrientation)
+        
+        nomalizedImage = nomalizedImage.fixOrientation()
+        
+        guard let image = cropToCenterSquare(originalImage: nomalizedImage) else {
+            return
+        }
+    
+        print("Cropped", image.size.height)
+        
+        let imageView = UIImageView(image: image)
+        imageView.backgroundColor = .red
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.frame = CGRect(origin: CGPoint(x: -200, y: 50), size: CGSize(width: 100, height: 150))
+        imageView.frame = CGRect(origin: CGPoint(x: -200, y: 50), size: CGSize(width: 200, height: 200))
         imageView.alpha = 0
         
         view.addSubview(imageView)
@@ -214,7 +225,7 @@ class ViewController: UIViewController {
         })
         
         UIView.animate(withDuration: 0.6, delay: 3, options: .curveEaseInOut, animations: {
-            imageView.frame.origin.x -= 200
+            imageView.frame.origin.x -= 400
             imageView.alpha = 0
         }, completion: { _ in
             imageView.removeFromSuperview()
@@ -246,6 +257,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
         defer {
             captureButton.isEnabled = true
         }
+        
         animateFlashView()
         
         if
@@ -300,6 +312,61 @@ extension ViewController {
         fillLayer.path = outerbezierPath.cgPath
         
         bluerView.mask = maskView
+    }
+}
+
+extension UIImage {
+    func fixOrientation() -> UIImage {
+        if imageOrientation == .up {
+            return self
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(origin: .zero, size: size))
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return normalizedImage
+    }
+}
+
+extension ViewController {
+    fileprivate func cropToPreviewLayer(originalImage: UIImage) -> UIImage? {
+        let outputRect = videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: videoPreviewLayer.bounds)
+        
+        guard let cgImage = originalImage.cgImage else { return nil }
+        
+        let width = CGFloat(cgImage.width)
+        let height = CGFloat(cgImage.height)
+        
+        let cropRect = CGRect(
+            x: outputRect.origin.x * width,
+            y: outputRect.origin.y * height,
+            width: outputRect.size.width * width,
+            height: outputRect.size.height * height)
+        
+        guard let newCGImage = cgImage.cropping(to: cropRect) else { return nil }
+        
+        let croppedUIImage = UIImage(
+            cgImage: newCGImage,
+            scale: originalImage.scale,
+            orientation: originalImage.imageOrientation)
+        
+        return croppedUIImage
+    }
+    
+    fileprivate func cropToCenterSquare(originalImage: UIImage) -> UIImage? {
+        let croppingY = (originalImage.size.height - originalImage.size.width) / 2
+        let croppingWidth = originalImage.size.width
+        let croppingHeight = originalImage.size.width
+        
+        let croppingRect = CGRect(x: 0, y: croppingY, width: croppingHeight, height: croppingWidth)
+        
+        guard let cgImage = originalImage.cgImage?.cropping(to: croppingRect) else {
+            return nil
+        }
+        
+        return UIImage(cgImage: cgImage)
     }
 }
 
