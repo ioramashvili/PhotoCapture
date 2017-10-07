@@ -15,6 +15,14 @@ class ViewController: UIViewController {
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
     
+    lazy var openGLContext: EAGLContext = {
+        return EAGLContext(api: .openGLES3)!
+    }()
+    
+    lazy var context: CIContext = {
+        return CIContext(eaglContext: openGLContext)
+    }()
+    
     lazy var fillLayer: CAShapeLayer = {
         let fillLayer = CAShapeLayer()
         fillLayer.fillRule = kCAFillRuleEvenOdd
@@ -31,6 +39,20 @@ class ViewController: UIViewController {
         maskView.layer.addSublayer(fillLayer)
         
         return maskView
+    }()
+    
+    lazy var previewImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        self.view.insertSubview(imageView, aboveSubview: bluerView)
+        
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        
+        return imageView
     }()
     
     override func viewDidLoad() {
@@ -153,15 +175,36 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
         
+        let videoOutput = AVCaptureVideoDataOutput()
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer delegate"))
+        
+        
         if let input = input, session.canAddInput(input) {
             session.addInput(input)
             
+            if session.canAddOutput(videoOutput) {
+                session.addOutput(videoOutput)
+                
+                session.startRunning()
+                videoOutput.connections.first?.videoOrientation = .portrait
+            }
+            
             if session.canAddOutput(photoOutput) {
                 session.addOutput(photoOutput)
-                
+
                 session.startRunning()
             }
         }
+        
+//        if let input = input, session.canAddInput(input) {
+//            session.addInput(input)
+//
+//            if session.canAddOutput(photoOutput) {
+//                session.addOutput(photoOutput)
+//
+//                session.startRunning()
+//            }
+//        }
     }
     
     fileprivate func setupFlashView() {
@@ -210,6 +253,12 @@ class ViewController: UIViewController {
     
         print("Cropped", image.size.height)
         
+        showCaptured(image)
+
+//        share(image: image)
+    }
+    
+    fileprivate func showCaptured(_ image: UIImage) {
         let imageView = UIImageView(image: image)
         imageView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFit
@@ -230,9 +279,7 @@ class ViewController: UIViewController {
         }, completion: { _ in
             imageView.removeFromSuperview()
         })
-
-//        share(image: image)
-        }
+    }
     
     fileprivate func share(image: UIImage) {
         let imageToShare = [ image ]
@@ -315,21 +362,6 @@ extension ViewController {
     }
 }
 
-extension UIImage {
-    func fixOrientation() -> UIImage {
-        if imageOrientation == .up {
-            return self
-        }
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        draw(in: CGRect(origin: .zero, size: size))
-        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        
-        return normalizedImage
-    }
-}
-
 extension ViewController {
     fileprivate func cropToPreviewLayer(originalImage: UIImage) -> UIImage? {
         let outputRect = videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: videoPreviewLayer.bounds)
@@ -370,6 +402,28 @@ extension ViewController {
     }
 }
 
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        let coreImage = CIImage(cvImageBuffer: pixelBuffer)
+        
+        guard let filter = CIFilter(name: "CIPhotoEffectMono") else { return }
+        filter.setValue(coreImage, forKey: kCIInputImageKey)
+        
+        guard
+            let exposureOutput = filter.outputImage,
+            let output = context.createCGImage(exposureOutput, from: exposureOutput.extent) else {
+                return
+        }
+        
+        let result = UIImage(cgImage: output)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.previewImageView.image = result
+        }
+    }
+}
 
 
 

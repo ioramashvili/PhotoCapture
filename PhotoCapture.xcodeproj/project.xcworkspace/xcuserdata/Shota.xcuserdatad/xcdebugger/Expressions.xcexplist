@@ -14,10 +14,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ViewController.setupAVCaptureDeviceInput(for:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoOutput.connections">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "image.imageOrientation">
+               value = "nomalizedImage.imageOrientation">
             </PersistentString>
             <PersistentString
                value = "i.imageOrientation">
@@ -26,10 +34,10 @@
                value = "aawda.size">
             </PersistentString>
             <PersistentString
-               value = "image.size">
+               value = "image.imageOrientation">
             </PersistentString>
             <PersistentString
-               value = "nomalizedImage.imageOrientation">
+               value = "image.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
