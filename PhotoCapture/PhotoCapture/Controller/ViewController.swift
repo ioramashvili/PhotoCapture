@@ -6,24 +6,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet var bluerView: UIVisualEffectView!
-    let flashView = UIView()
+    fileprivate let flashView = UIView()
     
-    var session = AVCaptureSession()
-    var photoOutput = AVCapturePhotoOutput()
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    fileprivate var session = AVCaptureSession()
+    fileprivate var photoOutput = AVCapturePhotoOutput()
+    fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
-    var backCamera: AVCaptureDevice?
-    var frontCamera: AVCaptureDevice?
+    fileprivate var backCamera: AVCaptureDevice?
+    fileprivate var frontCamera: AVCaptureDevice?
     
-    lazy var openGLContext: EAGLContext = {
+    fileprivate lazy var openGLContext: EAGLContext = {
         return EAGLContext(api: .openGLES3)!
     }()
     
-    lazy var context: CIContext = {
+    fileprivate lazy var context: CIContext = {
         return CIContext(eaglContext: openGLContext)
     }()
     
-    lazy var fillLayer: CAShapeLayer = {
+    fileprivate lazy var fillLayer: CAShapeLayer = {
         let fillLayer = CAShapeLayer()
         fillLayer.fillRule = kCAFillRuleEvenOdd
         fillLayer.fillColor = UIColor.green.cgColor
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         return fillLayer
     }()
     
-    lazy var maskView: UIView = {
+    fileprivate lazy var maskView: UIView = {
         let maskView = UIView(frame: UIScreen.main.bounds)
         maskView.clipsToBounds = true
         maskView.backgroundColor = .clear
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         return maskView
     }()
     
-    lazy var previewImageView: UIImageView = {
+    fileprivate lazy var previewImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill

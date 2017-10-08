@@ -50,6 +50,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43A35A961F8A2142004037F1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				43A35A971F8A2151004037F1 /* AppDelegate */,
+				43A35A9C1F8A21D9004037F1 /* View */,
+				43A35A981F8A216B004037F1 /* Extension */,
+				43A35A991F8A218D004037F1 /* Plist */,
+				43A516D11F7E248100DCECFF /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		43A35A971F8A2151004037F1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				43A516CA1F7E248100DCECFF /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		43A35A981F8A216B004037F1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */,
+				4378D3B71F8265060010E565 /* UIView+Extension.swift */,
+				43AFE2801F8901C50065B496 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		43A35A991F8A218D004037F1 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				43A516D61F7E248100DCECFF /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		43A35A9A1F8A21AF004037F1 /* PhotoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				43A35A9B1F8A21C0004037F1 /* Controller */,
+				43A35A9D1F8A21F9004037F1 /* View */,
+				4378D3B91F8266100010E565 /* PageViewController.swift */,
+				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
+			);
+			path = PhotoCapture;
+			sourceTree = "<group>";
+		};
+		43A35A9B1F8A21C0004037F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */,
+				43A516CC1F7E248100DCECFF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		43A35A9C1F8A21D9004037F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		43A35A9D1F8A21F9004037F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43A516CE1F7E248100DCECFF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		43A516BE1F7E248100DCECFF = {
 			isa = PBXGroup;
 			children = (
@@ -70,18 +144,8 @@
 		43A516C91F7E248100DCECFF /* PhotoCapture */ = {
 			isa = PBXGroup;
 			children = (
-				43A516CA1F7E248100DCECFF /* AppDelegate.swift */,
-				43A516CC1F7E248100DCECFF /* ViewController.swift */,
-				43A516CE1F7E248100DCECFF /* Main.storyboard */,
-				43A516D11F7E248100DCECFF /* Assets.xcassets */,
-				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
-				43A516D61F7E248100DCECFF /* Info.plist */,
-				43A516DF1F7E342600DCECFF /* PhotoCaptureViewController.swift */,
-				4378D3B71F8265060010E565 /* UIView+Extension.swift */,
-				4378D3B91F8266100010E565 /* PageViewController.swift */,
-				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
-				43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */,
-				43AFE2801F8901C50065B496 /* UIImage+Extension.swift */,
+				43A35A961F8A2142004037F1 /* App */,
+				43A35A9A1F8A21AF004037F1 /* PhotoCapture */,
 			);
 			path = PhotoCapture;
 			sourceTree = "<group>";
