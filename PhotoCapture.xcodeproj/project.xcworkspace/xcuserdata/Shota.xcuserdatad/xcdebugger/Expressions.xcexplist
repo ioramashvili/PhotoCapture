@@ -3,13 +3,63 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ViewController.photoOutput(_:didFinishProcessingPhoto:error:):ViewController.swift">
+         contextName = "PhotoCaptureViewController.cropToCenterSquare(originalImage:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "imageView.frame">
+               value = "UIImage(cgImage: cgImage).size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image.size">
             </PersistentString>
             <PersistentString
-               value = "UIImage(data: imageData)">
+               value = "i.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "aawda.size">
+            </PersistentString>
+            <PersistentString
+               value = "image.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "nomalizedImage.imageOrientation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoOutput.connections.first?.videoOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "videoOutput.connections">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.previewCapturedImage(data:position:):PhotoCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "image.ciImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.captureOutput(_:didOutput:from:):PhotoCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .leftMirrored)">
+            </PersistentString>
+            <PersistentString
+               value = "result.orientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -22,22 +72,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
+         contextName = "ViewController.photoOutput(_:didFinishProcessingPhoto:error:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "nomalizedImage.imageOrientation">
+               value = "imageView.frame">
             </PersistentString>
             <PersistentString
-               value = "i.imageOrientation">
-            </PersistentString>
-            <PersistentString
-               value = "aawda.size">
-            </PersistentString>
-            <PersistentString
-               value = "image.imageOrientation">
-            </PersistentString>
-            <PersistentString
-               value = "image.size">
+               value = "UIImage(data: imageData)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
