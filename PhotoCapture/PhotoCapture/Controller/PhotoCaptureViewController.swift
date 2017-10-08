@@ -46,10 +46,14 @@ class PhotoCaptureViewController: UIViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         self.view.insertSubview(imageView, aboveSubview: bluerView)
         
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+//        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+//        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        
         imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
         
@@ -236,27 +240,22 @@ class PhotoCaptureViewController: UIViewController {
     
     fileprivate func previewCapturedImage(data: Data?, position: AVCaptureDevice.Position) {
         
-        guard
-            let imageData = data,
-            let originamImage = UIImage(data: imageData),
-            var nomalizedImage = cropToPreviewLayer(originalImage: originamImage) else {
-            return
-        }
+        guard let imageData = data else { return }
+        guard let originalImage = UIImage(data: imageData) else { return }
+        guard var nomalizedImage = cropToPreviewLayer(originalImage: originalImage) else { return }
         
+        guard let nomalizedImageCGImage = nomalizedImage.cgImage else { return }
         if position == .front {
-            nomalizedImage = UIImage(cgImage: nomalizedImage.cgImage!, scale: nomalizedImage.scale, orientation: .leftMirrored)
+            nomalizedImage = UIImage(cgImage: nomalizedImageCGImage, scale: nomalizedImage.scale, orientation: .leftMirrored)
         }
-        
-        print("NormalizedCGImage", nomalizedImage.size, nomalizedImage.imageOrientation)
         
         nomalizedImage = nomalizedImage.fixOrientation()
         
-        guard
-            let image = cropToCenterSquare(originalImage: nomalizedImage),
-            let cgImage = image.cgImage,
-            let filteredImage = CIImage(cgImage: cgImage).addFilter(with: context) else {
-            return
-        }
+        print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
+
+        guard let image = cropToCenterSquare(originalImage: nomalizedImage) else { return }
+        guard let cgImage = image.cgImage else { return }
+        guard let filteredImage = CIImage(cgImage: cgImage).addFilter(with: context) else { return }
     
         print("Cropped", image.size)
         

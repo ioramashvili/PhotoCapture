@@ -47,19 +47,42 @@
             <PersistentString
                value = "image.ciImage">
             </PersistentString>
+            <PersistentString
+               value = "nomalizedImage.ciImage">
+            </PersistentString>
+            <PersistentString
+               value = "CIImage(cgImage: originamImage.cgImage!).addFilter(with: context)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CIImage.addFilter(with:):CIImage+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CGPoint(x: extent.midX, y: extent.midY)">
+            </PersistentString>
+            <PersistentString
+               value = "CIVector(cgPoint: CGPoint(x: extent.midX, y: extent.midY))">
+            </PersistentString>
+            <PersistentString
+               value = "extent">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "PhotoCaptureViewController.captureOutput(_:didOutput:from:):PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "result.imageOrientation">
-            </PersistentString>
-            <PersistentString
                value = "UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .leftMirrored)">
             </PersistentString>
             <PersistentString
                value = "result.orientation">
+            </PersistentString>
+            <PersistentString
+               value = "image.cgImage!">
+            </PersistentString>
+            <PersistentString
+               value = "result.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
