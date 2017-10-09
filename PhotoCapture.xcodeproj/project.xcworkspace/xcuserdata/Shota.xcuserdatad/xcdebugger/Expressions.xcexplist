@@ -14,7 +14,7 @@
          contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "image.size">
+               value = "nomalizedImage.imageOrientation">
             </PersistentString>
             <PersistentString
                value = "i.imageOrientation">
@@ -23,10 +23,10 @@
                value = "aawda.size">
             </PersistentString>
             <PersistentString
-               value = "image.imageOrientation">
+               value = "image.size">
             </PersistentString>
             <PersistentString
-               value = "nomalizedImage.imageOrientation">
+               value = "image.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -34,10 +34,10 @@
          contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "videoOutput.connections.first?.videoOrientation">
+               value = "videoOutput.connections">
             </PersistentString>
             <PersistentString
-               value = "videoOutput.connections">
+               value = "videoOutput.connections.first?.videoOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -66,6 +66,20 @@
             </PersistentString>
             <PersistentString
                value = "extent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.cropToPreviewLayer(originalImage:):PhotoCaptureViewController+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIScreen.main.bounds">
+            </PersistentString>
+            <PersistentString
+               value = "originalImage.scale">
+            </PersistentString>
+            <PersistentString
+               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

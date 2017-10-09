@@ -47,15 +47,16 @@ class PhotoCaptureViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        self.view.insertSubview(imageView, aboveSubview: bluerView)
+        imageView.alpha = 0.6
+        self.view.insertSubview(imageView, belowSubview: bluerView)
         
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-//        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-//        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         
-        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
+//        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+//        imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
         
         return imageView
     }()
@@ -65,6 +66,7 @@ class PhotoCaptureViewController: UIViewController {
         
         setupFlashView()
         
+        setupVideoOutput()
         setupSession()
         setupVideoPreviewLayer()
         setupPhotoOutput()
@@ -103,7 +105,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func setupSession() {
-        session.sessionPreset = AVCaptureSession.Preset.photo
+        session.sessionPreset = AVCaptureSession.Preset.hd1920x1080
     }
     
     fileprivate func setupPhotoOutput() {
@@ -117,6 +119,7 @@ class PhotoCaptureViewController: UIViewController {
         videoPreviewLayer.frame = UIScreen.main.bounds
         
         previewView.layer.insertSublayer(videoPreviewLayer, at: 0)
+        previewView.isHidden = true
     }
     
     fileprivate func setupCameraAndStartSession() {
@@ -173,6 +176,10 @@ class PhotoCaptureViewController: UIViewController {
         return input.device.position
     }
     
+    fileprivate func setupVideoOutput() {
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer delegate"))
+    }
+    
     fileprivate func setupAVCaptureDeviceInput(for device: AVCaptureDevice?) {
         guard let device = device else {
             return
@@ -184,8 +191,6 @@ class PhotoCaptureViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
-        
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer delegate"))
         
         if let input = input, session.canAddInput(input) {
             session.addInput(input)
@@ -238,30 +243,31 @@ class PhotoCaptureViewController: UIViewController {
         }, completion: nil)
     }
     
-    fileprivate func previewCapturedImage(data: Data?, position: AVCaptureDevice.Position) {
+    fileprivate func normalizedCapturedImage(data: Data?, position: AVCaptureDevice.Position, complition: @escaping (_ image: UIImage) -> Void) {
         
-        guard let imageData = data else { return }
-        guard let originalImage = UIImage(data: imageData) else { return }
-        guard var nomalizedImage = cropToPreviewLayer(originalImage: originalImage) else { return }
-        
-        guard let nomalizedImageCGImage = nomalizedImage.cgImage else { return }
-        if position == .front {
-            nomalizedImage = UIImage(cgImage: nomalizedImageCGImage, scale: nomalizedImage.scale, orientation: .leftMirrored)
+        DispatchQueue.global(qos: .userInteractive).async {
+            guard let imageData = data else { return }
+            guard let originalImage = UIImage(data: imageData) else { return }
+            guard var nomalizedImage = self.cropToPreviewLayer(originalImage: originalImage) else { return }
+            
+            guard let nomalizedImageCGImage = nomalizedImage.cgImage else { return }
+            if position == .front {
+                nomalizedImage = UIImage(cgImage: nomalizedImageCGImage, scale: nomalizedImage.scale, orientation: .leftMirrored)
+            }
+            
+            nomalizedImage = nomalizedImage.fixOrientation()
+            
+            print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
+            
+            guard let image = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
+            guard let cgImage = image.cgImage else { return }
+            guard let filteredImage = CIImage(cgImage: cgImage).addFilter(with: self.context) else { return }
+            
+            DispatchQueue.main.async {
+                print("Cropped", filteredImage.size)
+                complition(filteredImage)
+            }
         }
-        
-        nomalizedImage = nomalizedImage.fixOrientation()
-        
-        print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
-
-        guard let image = cropToCenterSquare(originalImage: nomalizedImage) else { return }
-        guard let cgImage = image.cgImage else { return }
-        guard let filteredImage = CIImage(cgImage: cgImage).addFilter(with: context) else { return }
-    
-        print("Cropped", image.size)
-        
-        showCaptured(filteredImage)
-
-//        share(image: image)
     }
     
     fileprivate func showCaptured(_ image: UIImage) {
@@ -317,7 +323,9 @@ extension PhotoCaptureViewController: AVCapturePhotoCaptureDelegate {
             let sampleBuffer = photoSampleBuffer,
             let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) {
             
-            previewCapturedImage(data: dataImage, position: currentCaptureDevicePosistion)
+            normalizedCapturedImage(data: dataImage, position: currentCaptureDevicePosistion) { image in
+                self.showCaptured(image)
+            }
         }
     }
     
@@ -329,7 +337,9 @@ extension PhotoCaptureViewController: AVCapturePhotoCaptureDelegate {
         
         animateFlashView()
         
-        previewCapturedImage(data: photo.fileDataRepresentation(), position: currentCaptureDevicePosistion)
+        normalizedCapturedImage(data: photo.fileDataRepresentation(), position: currentCaptureDevicePosistion) { image in
+            self.showCaptured(image)
+        }
         //        AudioServicesPlayAlertSound(1108)
     }
 }
@@ -345,7 +355,9 @@ extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelega
         if currentCaptureDevicePosistion == .front {
             result = UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .upMirrored)
         }
-
+        
+        print(result.size)
+        
         DispatchQueue.main.async { [weak self] in
             self?.previewImageView.image = result
         }

@@ -31,7 +31,7 @@ class DemoCaptureViewController: UIViewController {
     }
     
     func setupCaptureSession() {
-        captureSession.sessionPreset = AVCaptureSession.Preset.photo
+        captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
     }
     
     func setupDevice() {
