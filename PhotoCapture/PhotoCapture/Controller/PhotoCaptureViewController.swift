@@ -47,7 +47,7 @@ class PhotoCaptureViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.alpha = 0.6
+        
         self.view.insertSubview(imageView, belowSubview: bluerView)
         
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
@@ -168,7 +168,7 @@ class PhotoCaptureViewController: UIViewController {
         videoOutput.connections.forEach { $0.videoOrientation = .portrait }
     }
     
-    fileprivate var currentCaptureDevicePosistion: AVCaptureDevice.Position {
+    var currentCaptureDevicePosistion: AVCaptureDevice.Position {
         guard let input = session.inputs.first as? AVCaptureDeviceInput else {
             return .unspecified
         }
@@ -233,7 +233,7 @@ class PhotoCaptureViewController: UIViewController {
         flashView.rightAnchor.constraint(equalTo: previewView.rightAnchor).isActive = true
     }
     
-    fileprivate func animateFlashView() {
+    func animateFlashView() {
         UIView.animate(withDuration: 0.1) {
             self.flashView.alpha = 1
         }
@@ -243,7 +243,7 @@ class PhotoCaptureViewController: UIViewController {
         }, completion: nil)
     }
     
-    fileprivate func normalizedCapturedImage(data: Data?, position: AVCaptureDevice.Position, complition: @escaping (_ image: UIImage) -> Void) {
+    func normalizedCapturedImage(data: Data?, position: AVCaptureDevice.Position, complition: @escaping (_ image: UIImage) -> Void) {
         
         DispatchQueue.global(qos: .userInteractive).async {
             guard let imageData = data else { return }
@@ -270,7 +270,7 @@ class PhotoCaptureViewController: UIViewController {
         }
     }
     
-    fileprivate func showCaptured(_ image: UIImage) {
+    func showCaptured(_ image: UIImage) {
         let imageView = UIImageView(image: image)
         imageView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFit
@@ -301,72 +301,4 @@ class PhotoCaptureViewController: UIViewController {
         present(activity, animated: true, completion: nil)
     }
 }
-
-extension PhotoCaptureViewController: AVCapturePhotoCaptureDelegate {
-    func photoOutput(_ output: AVCapturePhotoOutput, willBeginCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        
-    }
-    
-    func photoOutput(_ output: AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
-        
-    }
-    
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-        
-        defer {
-            captureButton.isEnabled = true
-        }
-        
-        animateFlashView()
-        
-        if
-            let sampleBuffer = photoSampleBuffer,
-            let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) {
-            
-            normalizedCapturedImage(data: dataImage, position: currentCaptureDevicePosistion) { image in
-                self.showCaptured(image)
-            }
-        }
-    }
-    
-    @available(iOS 11.0, *)
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        defer {
-            captureButton.isEnabled = true
-        }
-        
-        animateFlashView()
-        
-        normalizedCapturedImage(data: photo.fileDataRepresentation(), position: currentCaptureDevicePosistion) { image in
-            self.showCaptured(image)
-        }
-        //        AudioServicesPlayAlertSound(1108)
-    }
-}
-
-extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let ciImage = CIImage(cvImageBuffer: pixelBuffer)
-        
-        guard var result = ciImage.addFilter(with: context) else { return }
-        
-        if currentCaptureDevicePosistion == .front {
-            result = UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .upMirrored)
-        }
-        
-        print(result.size)
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.previewImageView.image = result
-        }
-    }
-}
-
-
-
-
-
-
 
