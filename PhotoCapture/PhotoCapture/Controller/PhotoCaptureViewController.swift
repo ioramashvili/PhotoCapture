@@ -24,24 +24,6 @@ class PhotoCaptureViewController: UIViewController {
         return CIContext(eaglContext: openGLContext)
     }()
     
-    lazy var fillLayer: CAShapeLayer = {
-        let fillLayer = CAShapeLayer()
-        fillLayer.fillRule = kCAFillRuleEvenOdd
-        fillLayer.fillColor = UIColor.green.cgColor
-        
-        return fillLayer
-    }()
-    
-    lazy var maskView: UIView = {
-        let maskView = UIView(frame: UIScreen.main.bounds)
-        maskView.clipsToBounds = true
-        maskView.backgroundColor = .clear
-        
-        maskView.layer.addSublayer(fillLayer)
-        
-        return maskView
-    }()
-    
     lazy var previewImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +53,8 @@ class PhotoCaptureViewController: UIViewController {
         setupVideoPreviewLayer()
         setupPhotoOutput()
         setupCameraAndStartSession()
+        
+        updateBlurViewHole()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,8 +67,6 @@ class PhotoCaptureViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        updateBlurViewHole()
     }
     
     @IBAction func captureImageTapped(_ sender: UIButton) {

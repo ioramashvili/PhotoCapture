@@ -20,18 +20,34 @@ extension PhotoCaptureViewController: UIImagePickerControllerDelegate, UINavigat
 
 extension PhotoCaptureViewController {
     func updateBlurViewHole() {
-        let outerbezierPath = UIBezierPath(roundedRect: bluerView.bounds, cornerRadius: 0)
+        let rect = UIScreen.main.bounds
         
-        let y = (UIScreen.main.bounds.height - UIScreen.main.bounds.width) / 2
-        let rect = CGRect(x: 0, y: y, width: view.bounds.width, height: view.bounds.width)
-        let innerCirclepath = UIBezierPath(roundedRect: rect, cornerRadius: 0)
+        let outerbezierPath = UIBezierPath(rect: rect)
+
+        let y = (rect.height - rect.width) / 2
+        let squareRect = CGRect(x: 0, y: y, width: rect.width, height: rect.width)
+        
+        let innerCirclepath = UIBezierPath(roundedRect: squareRect, cornerRadius: 0)
         outerbezierPath.append(innerCirclepath)
         outerbezierPath.usesEvenOddFillRule = true
-        
+
+        let fillLayer = CAShapeLayer()
         fillLayer.path = outerbezierPath.cgPath
+        fillLayer.fillRule = kCAFillRuleEvenOdd
+        fillLayer.fillColor = UIColor.green.cgColor
+        
+        let maskView = UIView(frame: rect)
+        
+        if #available(iOS 11, *) {
+            maskView.backgroundColor = .clear
+            maskView.layer.addSublayer(fillLayer)
+        } else {
+            maskView.backgroundColor = .black
+            maskView.layer.mask = fillLayer
+        }
         
         bluerView.mask = maskView
-    }
+    }    
 }
 
 extension PhotoCaptureViewController {
