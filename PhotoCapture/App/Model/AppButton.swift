@@ -4,6 +4,13 @@ import UIKit
 class AppButton: UIButton {
     
     @IBInspectable
+    var hasSquareBorderRadius: Bool = false {
+        didSet {
+            updateShadowPath()
+        }
+    }
+    
+    @IBInspectable
     var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
@@ -17,13 +24,6 @@ class AppButton: UIButton {
         }
     }
     
-    fileprivate lazy var shadowLayer: CAShapeLayer = {
-        let shadowLayer = CAShapeLayer()
-        
-        layer.insertSublayer(shadowLayer, at: 0)
-        return shadowLayer
-    }()
-    
     @IBInspectable
     var shadowRadius: CGFloat = 0 {
         didSet {
@@ -34,37 +34,40 @@ class AppButton: UIButton {
     @IBInspectable
     var shadowOpacity: Float = 0 {
         didSet {
-            shadowLayer.shadowOpacity = shadowOpacity
+            layer.shadowOpacity = shadowOpacity
         }
     }
     
     @IBInspectable
     var shadowOffset: CGSize = .zero {
         didSet {
-            shadowLayer.shadowOffset = shadowOffset
+            layer.shadowOffset = shadowOffset
         }
     }
     
     @IBInspectable
     var shadowColor: UIColor = .clear {
         didSet {
-            shadowLayer.shadowColor = shadowColor.cgColor
+            layer.shadowColor = shadowColor.cgColor
         }
     }
     
-    override var backgroundColor: UIColor? {
+    @IBInspectable
+    var appButtonBackgroundColor: UIColor = .white {
         didSet {
-            shadowLayer.fillColor = backgroundColor?.cgColor
+            backgroundColor = nil
+            layer.backgroundColor = appButtonBackgroundColor.cgColor
         }
     }
     
     fileprivate func updateShadowPath() {
-        layer.cornerRadius = shadowRadius
+        let cornerRadius = hasSquareBorderRadius ? bounds.height / 2 : shadowRadius
         
-        shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: shadowRadius).cgPath
-        shadowLayer.shadowPath = shadowLayer.path
-        shadowLayer.shouldRasterize = true
-        shadowLayer.rasterizationScale = UIScreen.main.scale
+        layer.cornerRadius = cornerRadius
+        
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
     }
     
     override func layoutSubviews() {

@@ -59,10 +59,6 @@ class PhotoCaptureViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        captureButton.layer.borderColor = UIColor.red.cgColor
-        captureButton.layer.cornerRadius = captureButton.bounds.width / 2
-        captureButton.clipsToBounds = true
     }
     
     override func viewDidLayoutSubviews() {
