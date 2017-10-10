@@ -73,13 +73,17 @@ class PhotoCaptureViewController: UIViewController {
         captureButton.isEnabled = false
         
         let settings = AVCapturePhotoSettings()
-        settings.flashMode = .auto
+        settings.flashMode = .off
+        
+        if (session.inputs.first as? AVCaptureDeviceInput)?.device.isFlashAvailable ?? false {
+            settings.flashMode = .auto
+        }
         
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
     
     @IBAction func swapCameras(_ sender: UIButton) {
-        swapCamera()
+        trySwapCameras()
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {
@@ -87,7 +91,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func setupSession() {
-        session.sessionPreset = AVCaptureSession.Preset.hd1920x1080
+        session.sessionPreset = AVCaptureSession.Preset.photo
     }
     
     fileprivate func setupPhotoOutput() {
@@ -123,11 +127,27 @@ class PhotoCaptureViewController: UIViewController {
         setupAVCaptureDeviceInput(for: backCamera)
     }
     
-    fileprivate func swapCamera() {
+    fileprivate func trySwapCameras() {
+        videoOutput.setSampleBufferDelegate(nil, queue: nil)
+        
+        DispatchQueue
+            .global(qos: .userInteractive)
+            .asyncAfter(deadline: .now() + .milliseconds(300)) { [weak self] in
+            self?.swapCameras()
+        }
+    }
+    
+    fileprivate func swapCameras() {
         guard let input = session.inputs[0] as? AVCaptureDeviceInput else { return }
         
         session.beginConfiguration()
-        defer { session.commitConfiguration() }
+        defer {
+            DispatchQueue.main.async {
+                self.videoOutputOrientationToPortrait()
+                self.session.commitConfiguration()
+                self.setupVideoOutput()
+            }
+        }
         
         guard let newDevice = input.device.position == .back ? frontCamera : backCamera else {
             return
@@ -137,13 +157,11 @@ class PhotoCaptureViewController: UIViewController {
         do {
             deviceInput = try AVCaptureDeviceInput(device: newDevice)
         } catch {
-            print(error.localizedDescription)
             return
         }
         
         session.removeInput(input)
         session.addInput(deviceInput)
-        videoOutputOrientationToPortrait()
     }
     
     fileprivate func videoOutputOrientationToPortrait() {
