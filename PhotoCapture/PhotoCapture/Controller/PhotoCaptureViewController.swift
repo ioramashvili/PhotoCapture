@@ -91,7 +91,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func setupSession() {
-        session.sessionPreset = AVCaptureSession.Preset.photo
+        session.sessionPreset = AVCaptureSession.Preset.medium
     }
     
     fileprivate func setupPhotoOutput() {
