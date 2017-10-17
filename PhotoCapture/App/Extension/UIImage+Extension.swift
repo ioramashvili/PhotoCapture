@@ -21,16 +21,25 @@ extension UIImage {
         return backgroundCIImage
     }
     
-    func addCIColorMonochrome(with context: CIContext) -> UIImage? {
-        return tryCreateCIImage()?.addCIColorMonochrome(with: context)
+    func addCIColorMonochrome(with context: CIContext, intensity: NSNumber = 1) -> UIImage? {
+        return tryCreateCIImage()?.addCIColorMonochrome(with: context, intensity: intensity)
     }
     
     func addCILanczosScaleTransform(with context: CIContext, scale: NSNumber) -> UIImage? {
         return tryCreateCIImage()?.addCILanczosScaleTransform(with: context, scale: scale)
     }
     
-    func addCISoftLightBlendMode(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
-        return tryCreateCIImage()?.addCISoftLightBlendMode(with: context, backgroundImage: backgroundImage)
+    func addCISourceOverCompositing(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
+        return tryCreateCIImage()?.addCISourceOverCompositing(with: context, backgroundImage: backgroundImage)
+    }
+    
+    func normalizedCISourceOverCompositing(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
+        
+        let scale = NSNumber(value: Double(backgroundImage.size.width / size.width))
+        
+        guard let scaledForegroundImage = addCILanczosScaleTransform(with: context, scale: scale) else { return nil }
+        
+        return scaledForegroundImage.addCISourceOverCompositing(with: context, backgroundImage: backgroundImage)
     }
 }
 

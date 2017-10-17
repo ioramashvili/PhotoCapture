@@ -257,10 +257,11 @@ class PhotoCaptureViewController: UIViewController {
             
             guard let image = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
             guard let filteredImage = image.addCIColorMonochrome(with: self.context) else { return }
+            guard let composition = #imageLiteral(resourceName: "s3").normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             
             DispatchQueue.main.async {
-                print("Cropped", filteredImage.size)
-                complition(filteredImage)
+                print("Cropped", composition.size)
+                complition(composition)
             }
         }
     }

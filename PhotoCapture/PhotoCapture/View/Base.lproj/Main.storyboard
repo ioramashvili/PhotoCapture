@@ -48,14 +48,30 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5w-8a-dsw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="203"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-FD-xEy">
+                                <rect key="frame" x="0.0" y="218" width="375" height="375"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s3" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-EP-j48">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kzd-EP-j48" secondAttribute="bottom" id="9uw-LH-Tri"/>
+                                    <constraint firstAttribute="trailing" secondItem="kzd-EP-j48" secondAttribute="trailing" id="VOz-cT-IbG"/>
+                                    <constraint firstAttribute="width" secondItem="Nyc-FD-xEy" secondAttribute="height" multiplier="1:1" id="bal-Nu-TpG"/>
+                                    <constraint firstItem="kzd-EP-j48" firstAttribute="leading" secondItem="Nyc-FD-xEy" secondAttribute="leading" id="cqY-Yg-tQG"/>
+                                    <constraint firstItem="kzd-EP-j48" firstAttribute="top" secondItem="Nyc-FD-xEy" secondAttribute="top" id="joT-Hb-aSI"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioQ-nT-mKV">
-                                <rect key="frame" x="0.0" y="609" width="375" height="203"/>
+                                <rect key="frame" x="0.0" y="593" width="375" height="219"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UoU-tY-XpB">
-                                        <rect key="frame" x="0.0" y="61.333333333333371" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="69.333333333333371" width="375" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dif-Oo-N5a">
                                                 <rect key="frame" x="0.0" y="40" width="0.0" height="0.0"/>
@@ -115,7 +131,7 @@
                                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
-                                                        <color key="value" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -168,7 +184,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="UoU-tY-XpB" secondAttribute="trailing" id="Srj-Dl-YJn"/>
                                     <constraint firstItem="UoU-tY-XpB" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" id="oY3-mt-dQk"/>
@@ -181,18 +197,21 @@
                             <constraint firstItem="jse-Z5-8co" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0pe-Hn-g3O"/>
                             <constraint firstAttribute="bottom" secondItem="ioQ-nT-mKV" secondAttribute="bottom" id="3Aw-jD-k9f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B5w-8a-dsw" secondAttribute="trailing" id="9De-DC-Y47"/>
+                            <constraint firstItem="Nyc-FD-xEy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CAP-7f-e3c"/>
                             <constraint firstAttribute="bottom" secondItem="jse-Z5-8co" secondAttribute="bottom" id="Eww-Yt-z6y"/>
+                            <constraint firstItem="Nyc-FD-xEy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="I98-CS-LK1"/>
                             <constraint firstItem="B5w-8a-dsw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="INJ-lo-e0G"/>
                             <constraint firstItem="B5w-8a-dsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JKx-IC-mW4"/>
-                            <constraint firstItem="ioQ-nT-mKV" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="LVy-N3-Vgq"/>
                             <constraint firstAttribute="trailing" secondItem="krg-fe-Ej0" secondAttribute="trailing" id="ST9-ee-sdX"/>
-                            <constraint firstItem="B5w-8a-dsw" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="Vio-PA-6gK"/>
                             <constraint firstAttribute="bottom" secondItem="krg-fe-Ej0" secondAttribute="bottom" id="VqW-uF-eAR"/>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEK-Pz-vRh"/>
                             <constraint firstItem="ioQ-nT-mKV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gRt-Mm-3Nn"/>
+                            <constraint firstItem="ioQ-nT-mKV" firstAttribute="top" secondItem="Nyc-FD-xEy" secondAttribute="bottom" id="hjc-PI-fha"/>
+                            <constraint firstItem="Nyc-FD-xEy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i2t-GS-u7k"/>
                             <constraint firstAttribute="trailing" secondItem="jse-Z5-8co" secondAttribute="trailing" id="mZZ-oe-CTF"/>
                             <constraint firstItem="krg-fe-Ej0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oYY-jO-nvI"/>
                             <constraint firstItem="krg-fe-Ej0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p1F-Bo-i9z"/>
+                            <constraint firstItem="Nyc-FD-xEy" firstAttribute="top" secondItem="B5w-8a-dsw" secondAttribute="bottom" id="uLX-2C-pKv"/>
                             <constraint firstItem="ioQ-nT-mKV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ubS-hw-3EX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -246,4 +265,7 @@
             <point key="canvasLocation" x="1784" y="143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="s3" width="1280" height="1280"/>
+    </resources>
 </document>
