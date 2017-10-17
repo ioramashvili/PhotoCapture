@@ -13,7 +13,6 @@
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
 		4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC751F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift */; };
 		4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */; };
-		4383BC7A1F8B881200A10E30 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC791F8B881200A10E30 /* Test.swift */; };
 		4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC7C1F8CB99700A10E30 /* AppButton.swift */; };
 		43A35A9F1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */; };
 		43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CA1F7E248100DCECFF /* AppDelegate.swift */; };
@@ -35,7 +34,6 @@
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
 		4383BC751F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift"; sourceTree = "<group>"; };
 		4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift"; sourceTree = "<group>"; };
-		4383BC791F8B881200A10E30 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		4383BC7C1F8CB99700A10E30 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+Extension.swift"; sourceTree = "<group>"; };
 		43A516C71F7E248100DCECFF /* PhotoCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,9 +116,6 @@
 				43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */,
 				43A35A9B1F8A21C0004037F1 /* Controller */,
 				43A35A9D1F8A21F9004037F1 /* View */,
-				4378D3B91F8266100010E565 /* PageViewController.swift */,
-				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
-				4383BC791F8B881200A10E30 /* Test.swift */,
 			);
 			path = PhotoCapture;
 			sourceTree = "<group>";
@@ -132,6 +127,8 @@
 				43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */,
 				4383BC751F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift */,
 				4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */,
+				4378D3B91F8266100010E565 /* PageViewController.swift */,
+				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,7 +263,6 @@
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */,
-				4383BC7A1F8B881200A10E30 /* Test.swift in Sources */,
 				4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */,
 				43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */,
 				4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */,

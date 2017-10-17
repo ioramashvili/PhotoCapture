@@ -36,7 +36,7 @@ class PageViewController: UIPageViewController {
         dataSource = self
         
         initialize()
-        changePage(at: 0)
+        changePage(at: activePageIndex)
     }
     
     fileprivate func initialize() {
@@ -70,14 +70,9 @@ extension PageViewController: UIPageViewControllerDataSource {
         }
         
         let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = orderedViewControllers.count
         
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
+        if nextIndex == orderedViewControllers.count {
+            return orderedViewControllers.first
         }
         
         return orderedViewControllers[nextIndex]
@@ -90,12 +85,8 @@ extension PageViewController: UIPageViewControllerDataSource {
         
         let previousIndex = viewControllerIndex - 1
         
-        guard previousIndex >= 0 else {
-            return nil
-        }
-        
-        guard orderedViewControllers.count > previousIndex else {
-            return nil
+        if previousIndex < 0 {
+            return orderedViewControllers.last
         }
         
         return orderedViewControllers[previousIndex]
