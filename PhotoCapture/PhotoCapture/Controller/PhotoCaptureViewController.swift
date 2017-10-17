@@ -256,8 +256,7 @@ class PhotoCaptureViewController: UIViewController {
             print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
             
             guard let image = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
-            guard let cgImage = image.cgImage else { return }
-            guard let filteredImage = CIImage(cgImage: cgImage).addFilter(with: self.context) else { return }
+            guard let filteredImage = image.addCIColorMonochrome(with: self.context) else { return }
             
             DispatchQueue.main.async {
                 print("Cropped", filteredImage.size)

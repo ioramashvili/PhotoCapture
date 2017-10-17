@@ -14,47 +14,23 @@ extension UIImage {
         return normalizedImage
     }
     
-    func tryFilter() -> UIImage? {
-        guard let cgimg = cgImage else {
-            print("imageView doesn't have an image!")
-            return nil
-        }
+    func tryCreateCIImage() -> CIImage? {
+        guard let backgroundCGImage = cgImage else { return nil }
+        let backgroundCIImage = CIImage(cgImage: backgroundCGImage)
         
-        let openGLContext = EAGLContext(api: .openGLES3)
-        let context = CIContext(eaglContext: openGLContext!)
-        
-        let coreImage = CIImage(cgImage: cgimg)
-//
-//        let filter = CIFilter(name: "CIColorMonochrome")!
-//        filter.setValue(coreImage, forKey: kCIInputImageKey)
-//        filter.setValue(2, forKey: kCIInputIntensityKey)
-//        filter.setValue(CIColor(red: 0.7, green: 1, blue: 1), forKey: kCIInputColorKey)
-        
-        
-        let filter = CIFilter(name: "CICrystallize")!
-        filter.setValue(coreImage, forKey: kCIInputImageKey)
-        
-        guard
-            let exposureOutput = filter.outputImage,
-            let output = context.createCGImage(exposureOutput, from: exposureOutput.extent) else {
-            return nil
-        }
-        
-        let result = UIImage(cgImage: output)
-        
-        return result
-        
-//        if let sepiaOutput = sepiaFilter.value(forKey: kCIOutputImageKey) as? CIImage {
-//            let exposureFilter = CIFilter(name: "CIExposureAdjust")!
-//            exposureFilter.setValue(sepiaOutput, forKey: kCIInputImageKey)
-//            exposureFilter.setValue(1, forKey: kCIInputEVKey)
-//
-//            if let exposureOutput = exposureFilter.value(forKey: kCIOutputImageKey) as? CIImage {
-//                let output = context.createCGImage(exposureOutput, from: exposureOutput.extent)
-//                let result = UIImage(cgImage: output!)
-//                return result
-//            }
-//        }
+        return backgroundCIImage
+    }
+    
+    func addCIColorMonochrome(with context: CIContext) -> UIImage? {
+        return tryCreateCIImage()?.addCIColorMonochrome(with: context)
+    }
+    
+    func addCILanczosScaleTransform(with context: CIContext, scale: NSNumber) -> UIImage? {
+        return tryCreateCIImage()?.addCILanczosScaleTransform(with: context, scale: scale)
+    }
+    
+    func addCISoftLightBlendMode(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
+        return tryCreateCIImage()?.addCISoftLightBlendMode(with: context, backgroundImage: backgroundImage)
     }
 }
 

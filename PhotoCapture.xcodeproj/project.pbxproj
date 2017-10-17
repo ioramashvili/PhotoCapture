@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4343307D1F95E9AA00632C65 /* CIFilter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */; };
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PageViewController.swift */; };
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIFilter+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B91F8266100010E565 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				4378D3B71F8265060010E565 /* UIView+Extension.swift */,
 				43AFE2801F8901C50065B496 /* UIImage+Extension.swift */,
 				43E530851F8A537000D074E5 /* CIImage+Extension.swift */,
+				4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */,
 				43E530861F8A537000D074E5 /* CIImage+Extension.swift in Sources */,
 				43A35A9F1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift in Sources */,
+				4343307D1F95E9AA00632C65 /* CIFilter+Extension.swift in Sources */,
 				4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

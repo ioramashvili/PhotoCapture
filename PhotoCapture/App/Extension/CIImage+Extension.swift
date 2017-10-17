@@ -1,20 +1,34 @@
 import UIKit
 
 extension CIImage {
-    func addFilter(with context: CIContext) -> UIImage? {
-        guard let filter = CIFilter(name: "CIColorInvert") else { return nil }
+    func addCIColorMonochrome(with context: CIContext) -> UIImage? {
+        guard let filter = CIFilter(name: "CIColorMonochrome") else { return nil }
+        
         filter.setValue(self, forKey: kCIInputImageKey)
-//        filter.setValue(CIColor(color: .red), forKey: kCIInputColorKey)
+        filter.setValue(CIColor(color: .red), forKey: kCIInputColorKey)
+        filter.setValue(0.5, forKey: kCIInputIntensityKey)
         
-//        filter.setValue(CIVector(cgPoint: CGPoint(x: extent.midX, y: extent.midY)), forKey: kCIInputCenterKey)
-//        filter.setValue(extent.width / 4, forKey: kCIInputRadiusKey)
+        return filter.filteredOutputImage(with: context)
+    }
+    
+    func addCILanczosScaleTransform(with context: CIContext, scale: NSNumber) -> UIImage? {
+        guard let filter = CIFilter(name: "CILanczosScaleTransform") else { return nil }
         
-        guard
-            let exposureOutput = filter.outputImage,
-            let output = context.createCGImage(exposureOutput, from: exposureOutput.extent) else {
-                return nil
-        }
+        filter.setValue(self, forKey: kCIInputImageKey)
+        filter.setValue(scale, forKey: kCIInputScaleKey)
         
-        return UIImage(cgImage: output)
+        return filter.filteredOutputImage(with: context)
+    }
+    
+    func addCISoftLightBlendMode(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
+        guard let backgroundCGImage = backgroundImage.cgImage else { return nil }
+        let backgroundCIImage = CIImage(cgImage: backgroundCGImage)
+        
+        guard let filter = CIFilter(name: "CISoftLightBlendMode") else { return nil }
+        
+        filter.setValue(self, forKey: kCIInputImageKey)
+        filter.setValue(backgroundCIImage, forKey: kCIInputBackgroundImageKey)
+        
+        return filter.filteredOutputImage(with: context)
     }
 }
