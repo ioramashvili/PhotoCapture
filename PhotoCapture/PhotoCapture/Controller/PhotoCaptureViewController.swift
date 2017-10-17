@@ -3,6 +3,8 @@ import AVFoundation
 
 class PhotoCaptureViewController: UIViewController {
 
+    fileprivate var pageViewController: PageViewController!
+    
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet var bluerView: UIVisualEffectView!
@@ -37,9 +39,6 @@ class PhotoCaptureViewController: UIViewController {
         imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         
-//        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-//        imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        
         return imageView
     }()
     
@@ -63,6 +62,13 @@ class PhotoCaptureViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPageViewController" {
+            pageViewController = segue.destination as! PageViewController
+            pageViewController.dataProvider = [#imageLiteral(resourceName: "s1"), #imageLiteral(resourceName: "s2"), #imageLiteral(resourceName: "s3")]
+        }
     }
     
     @IBAction func captureImageTapped(_ sender: UIButton) {
@@ -247,19 +253,20 @@ class PhotoCaptureViewController: UIViewController {
             guard var nomalizedImage = self.cropToPreviewLayer(originalImage: originalImage) else { return }
             
             guard let nomalizedImageCGImage = nomalizedImage.cgImage else { return }
+            
             if position == .front {
                 nomalizedImage = UIImage(cgImage: nomalizedImageCGImage, scale: nomalizedImage.scale, orientation: .leftMirrored)
             }
             
             nomalizedImage = nomalizedImage.fixOrientation()
             
-            print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
-            
             guard let image = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
             guard let filteredImage = image.addCIColorMonochrome(with: self.context) else { return }
-            guard let composition = #imageLiteral(resourceName: "s3").normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
+            guard let activePoster = self.pageViewController.activePoster else { return }
+            guard let composition = activePoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             
             DispatchQueue.main.async {
+                print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
                 print("Cropped", composition.size)
                 complition(composition)
             }

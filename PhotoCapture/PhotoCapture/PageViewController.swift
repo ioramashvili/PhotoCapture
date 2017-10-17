@@ -2,38 +2,47 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
-    var orderedViewControllers: [PosterViewController] = []
+    fileprivate lazy var orderedViewControllers: [PosterViewController] = {
+        return [self.newPosterVC(), self.newPosterVC(), self.newPosterVC()]
+    }()
     
-    private static func newColoredViewController(color: UIColor) -> PosterViewController {
-        let controller =  UIStoryboard(name: "Main", bundle: nil)
+    private func newPosterVC() -> PosterViewController {
+        let controller = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "PosterViewController") as! PosterViewController
-        controller.view.backgroundColor = color
-        
+        controller.view.backgroundColor = .clear
         return controller
     }
     
-//    var dataProvider: SeminarPagerViewDataProvider? {
-//        didSet {
-//            orderedViewControllers.enumerated().forEach { (index, page) in
-//                page.dataProvider = dataProvider?.pages[index]
-//            }
-//        }
-//    }
+    fileprivate(set) var activePageIndex: Int = 0 {
+        didSet {
+            print(activePageIndex)
+        }
+    }
+    
+    var activePoster: UIImage? {
+        return dataProvider[activePageIndex]
+    }
+    
+    var dataProvider: [UIImage] = [] {
+        didSet {
+            initialize()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeViewController()
+        delegate = self
         dataSource = self
         
+        initialize()
         changePage(at: 0)
-//        disableScolling()
     }
     
-    fileprivate func initializeViewController() {
-        orderedViewControllers = [PageViewController.newColoredViewController(color: .red),
-                                  PageViewController.newColoredViewController(color: .blue),
-                                  PageViewController.newColoredViewController(color: .yellow)]
+    fileprivate func initialize() {
+        orderedViewControllers.enumerated().forEach { (index, page) in
+            page.posterImageView.image = dataProvider[index]
+        }
     }
     
     fileprivate func disableScolling() {
@@ -49,7 +58,7 @@ class PageViewController: UIPageViewController {
         
         let page = orderedViewControllers[index]
         setViewControllers([page], direction: .forward, animated: false) { _ in
-//            page.scrollToTop()
+
         }
     }
 }
@@ -92,6 +101,25 @@ extension PageViewController: UIPageViewControllerDataSource {
         return orderedViewControllers[previousIndex]
     }
 }
+
+extension PageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            guard
+                let viewController = pageViewController.viewControllers?.first as? PosterViewController,
+                let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
+                return
+            }
+            
+            activePageIndex = viewControllerIndex
+        }
+    }
+}
+
+
 
 
 

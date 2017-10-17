@@ -54,16 +54,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-FD-xEy">
                                 <rect key="frame" x="0.0" y="218" width="375" height="375"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s3" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-EP-j48">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-EP-j48">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     </imageView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7R-BJ-UZy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <connections>
+                                            <segue destination="Rbo-kc-jpy" kind="embed" identifier="goToPageViewController" id="5b6-BJ-P44"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="kzd-EP-j48" secondAttribute="bottom" id="9uw-LH-Tri"/>
+                                    <constraint firstItem="G7R-BJ-UZy" firstAttribute="leading" secondItem="Nyc-FD-xEy" secondAttribute="leading" id="QEV-ET-zWN"/>
                                     <constraint firstAttribute="trailing" secondItem="kzd-EP-j48" secondAttribute="trailing" id="VOz-cT-IbG"/>
+                                    <constraint firstAttribute="trailing" secondItem="G7R-BJ-UZy" secondAttribute="trailing" id="ZDz-1b-TTe"/>
                                     <constraint firstAttribute="width" secondItem="Nyc-FD-xEy" secondAttribute="height" multiplier="1:1" id="bal-Nu-TpG"/>
                                     <constraint firstItem="kzd-EP-j48" firstAttribute="leading" secondItem="Nyc-FD-xEy" secondAttribute="leading" id="cqY-Yg-tQG"/>
+                                    <constraint firstAttribute="bottom" secondItem="G7R-BJ-UZy" secondAttribute="bottom" id="dN8-7K-ryw"/>
+                                    <constraint firstItem="G7R-BJ-UZy" firstAttribute="top" secondItem="Nyc-FD-xEy" secondAttribute="top" id="ec5-do-De8"/>
                                     <constraint firstItem="kzd-EP-j48" firstAttribute="top" secondItem="Nyc-FD-xEy" secondAttribute="top" id="joT-Hb-aSI"/>
                                 </constraints>
                             </view>
@@ -256,16 +266,27 @@
                     <view key="view" contentMode="scaleToFill" id="dDp-6R-6DX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-RB-fAe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BR6-RB-fAe" firstAttribute="top" secondItem="dDp-6R-6DX" secondAttribute="top" id="Dbg-B8-Msu"/>
+                            <constraint firstAttribute="bottom" secondItem="BR6-RB-fAe" secondAttribute="bottom" id="UR8-sv-SNR"/>
+                            <constraint firstItem="BR6-RB-fAe" firstAttribute="leading" secondItem="dDp-6R-6DX" secondAttribute="leading" id="cHJ-oD-H5Q"/>
+                            <constraint firstAttribute="trailing" secondItem="BR6-RB-fAe" secondAttribute="trailing" id="yTG-Nw-CNh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KRd-pJ-pv9"/>
                     </view>
+                    <connections>
+                        <outlet property="posterImageView" destination="BR6-RB-fAe" id="JM1-RY-WZY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-Ko-0bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="143"/>
+            <point key="canvasLocation" x="1783.2" y="142.61083743842366"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="s3" width="1280" height="1280"/>
-    </resources>
 </document>
