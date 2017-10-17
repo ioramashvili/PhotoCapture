@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,24 +17,24 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PhotoCaptureViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jse-Z5-8co">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krg-fe-Ej0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="v4f-5m-fPH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wkC-N6-8rM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="ssH-M3-kof">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,17 +48,17 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5w-8a-dsw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="161"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-FD-xEy">
-                                <rect key="frame" x="0.0" y="218" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="161" width="414" height="414"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-EP-j48">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7R-BJ-UZy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                         <connections>
                                             <segue destination="Rbo-kc-jpy" kind="embed" identifier="goToPageViewController" id="5b6-BJ-P44"/>
                                         </connections>
@@ -78,13 +78,18 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioQ-nT-mKV">
-                                <rect key="frame" x="0.0" y="593" width="375" height="219"/>
+                                <rect key="frame" x="0.0" y="575" width="414" height="161"/>
                                 <subviews>
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xra-dY-fKq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.98823529409999999" green="0.18039215689999999" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pageControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UoU-tY-XpB">
-                                        <rect key="frame" x="0.0" y="69.333333333333371" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="54.333333333333371" width="414" height="80.333333333333258"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dif-Oo-N5a">
-                                                <rect key="frame" x="0.0" y="40" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="40.333333333333258" width="0.0" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="AWM-D9-rfv"/>
@@ -92,7 +97,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-wG-7md" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
-                                                <rect key="frame" x="53.666666666666671" y="20" width="40.000000000000014" height="40"/>
+                                                <rect key="frame" x="63.666666666666671" y="20.333333333333258" width="40.000000000000014" height="39.666666666666742"/>
                                                 <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9qd-wG-7md" secondAttribute="height" multiplier="1:1" id="JN1-1y-s8c"/>
@@ -126,11 +131,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
-                                                <rect key="frame" x="147.66666666666666" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="167" y="0.0" width="80" height="80.333333333333258"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="JsG-BH-Fas"/>
-                                                    <constraint firstAttribute="height" constant="80" id="M8R-Zn-Nsq"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="WT1-q5-UmL"/>
+                                                    <constraint firstAttribute="width" secondItem="R1K-nc-imy" secondAttribute="height" multiplier="1:1" id="xc4-JH-bgj"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
@@ -149,7 +154,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-mT-tEb" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
-                                                <rect key="frame" x="281.33333333333331" y="20" width="40" height="40"/>
+                                                <rect key="frame" x="310.66666666666669" y="20.333333333333258" width="40" height="39.666666666666742"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oG9-mT-tEb" secondAttribute="height" multiplier="1:1" id="bQL-zE-gvI"/>
                                                 </constraints>
@@ -179,7 +184,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-7C-soH">
-                                                <rect key="frame" x="375" y="40" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="414" y="40.333333333333258" width="0.0" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="LIJ-a0-UDg"/>
@@ -196,9 +201,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="xra-dY-fKq" firstAttribute="top" secondItem="ioQ-nT-mKV" secondAttribute="top" id="3MC-pq-Sk5"/>
+                                    <constraint firstItem="R1K-nc-imy" firstAttribute="height" secondItem="ioQ-nT-mKV" secondAttribute="height" multiplier="0.5" priority="999" id="5fO-iZ-Ci1"/>
                                     <constraint firstAttribute="trailing" secondItem="UoU-tY-XpB" secondAttribute="trailing" id="Srj-Dl-YJn"/>
-                                    <constraint firstItem="UoU-tY-XpB" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" id="oY3-mt-dQk"/>
+                                    <constraint firstAttribute="trailing" secondItem="xra-dY-fKq" secondAttribute="trailing" id="SvH-IE-DFS"/>
+                                    <constraint firstItem="UoU-tY-XpB" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" constant="14" id="oY3-mt-dQk"/>
                                     <constraint firstItem="UoU-tY-XpB" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="uOb-U5-LvL"/>
+                                    <constraint firstItem="xra-dY-fKq" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="ylN-ls-Afd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -229,6 +238,7 @@
                     <connections>
                         <outlet property="bluerView" destination="krg-fe-Ej0" id="rSU-m6-tFQ"/>
                         <outlet property="captureButton" destination="R1K-nc-imy" id="2US-0m-lab"/>
+                        <outlet property="pageControl" destination="xra-dY-fKq" id="OVE-nv-EDS"/>
                         <outlet property="previewView" destination="jse-Z5-8co" id="mHZ-MU-dxw"/>
                     </connections>
                 </viewController>
@@ -241,7 +251,7 @@
             <objects>
                 <viewController id="scU-Ba-eea" customClass="Test" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LGA-fV-trS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Sx-dl-PLp"/>
@@ -264,11 +274,11 @@
             <objects>
                 <viewController storyboardIdentifier="PosterViewController" id="yTz-t5-xq9" customClass="PosterViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dDp-6R-6DX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BR6-RB-fAe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

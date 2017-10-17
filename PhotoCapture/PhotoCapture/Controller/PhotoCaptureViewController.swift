@@ -4,6 +4,7 @@ import AVFoundation
 class PhotoCaptureViewController: UIViewController {
 
     fileprivate var pageViewController: PageViewController!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
@@ -68,6 +69,7 @@ class PhotoCaptureViewController: UIViewController {
         if segue.identifier == "goToPageViewController" {
             pageViewController = segue.destination as! PageViewController
             pageViewController.dataProvider = [#imageLiteral(resourceName: "s1"), #imageLiteral(resourceName: "s2"), #imageLiteral(resourceName: "s3")]
+            pageViewController.pageControl = pageControl
         }
     }
     

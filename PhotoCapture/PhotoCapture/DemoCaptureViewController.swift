@@ -27,7 +27,6 @@ class DemoCaptureViewController: UIViewController {
         cameraButton.layer.borderColor = UIColor.white.cgColor
         cameraButton.layer.borderWidth = 5
         cameraButton.clipsToBounds = true
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     func setupCaptureSession() {

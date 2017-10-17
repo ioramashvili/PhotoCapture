@@ -2,6 +2,8 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
+    weak var pageControl: UIPageControl?
+    
     fileprivate lazy var orderedViewControllers: [PosterViewController] = {
         return [self.newPosterVC(), self.newPosterVC(), self.newPosterVC()]
     }()
@@ -15,7 +17,7 @@ class PageViewController: UIPageViewController {
     
     fileprivate(set) var activePageIndex: Int = 0 {
         didSet {
-            print(activePageIndex)
+            pageControl?.currentPage = activePageIndex
         }
     }
     
@@ -43,6 +45,8 @@ class PageViewController: UIPageViewController {
         orderedViewControllers.enumerated().forEach { (index, page) in
             page.posterImageView.image = dataProvider[index]
         }
+        
+        pageControl?.numberOfPages = dataProvider.count
     }
     
     fileprivate func disableScolling() {
