@@ -8,12 +8,6 @@ class PageViewController: UIPageViewController {
         return (0..<self.dataProvider.count).map { _ in self.newPosterVC() }
     }()
     
-    private func newPosterVC() -> PosterViewController {
-        let controller = AppStoryboard.main.instantiate(controller: PosterViewController.self)!
-        controller.view.backgroundColor = .clear
-        return controller
-    }
-    
     fileprivate(set) var activePageIndex: Int = 0 {
         didSet {
             pageControl?.currentPage = activePageIndex
@@ -48,13 +42,19 @@ class PageViewController: UIPageViewController {
         pageControl?.numberOfPages = dataProvider.count
     }
     
+    private func newPosterVC() -> PosterViewController {
+        let controller = AppStoryboard.main.instantiate(controller: PosterViewController.self)!
+        controller.view.backgroundColor = .clear
+        return controller
+    }
+    
     fileprivate func disableScolling() {
         view.subviews.filter({ $0 is UIScrollView }).forEach { v in
             (v as? UIScrollView)?.isScrollEnabled = false
         }
     }
     
-    func changePage(at index: Int) {
+    fileprivate func changePage(at index: Int) {
         guard index >= 0 && index < orderedViewControllers.count else {
             return
         }
@@ -64,15 +64,21 @@ class PageViewController: UIPageViewController {
 
         }
     }
+    
+    fileprivate func index(of controller: UIViewController) -> Int? {
+        guard let index = orderedViewControllers.index(of: controller as! PosterViewController) else {
+            return nil
+        }
+        
+        return index
+    }
 }
 
 extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController as! PosterViewController) else {
-            return nil
-        }
         
-        let nextIndex = viewControllerIndex + 1
+        guard let currentIndex = index(of: viewController) else { return nil }
+        let nextIndex = currentIndex + 1
         
         if nextIndex == orderedViewControllers.count {
             return orderedViewControllers.first
@@ -82,11 +88,9 @@ extension PageViewController: UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController as! PosterViewController) else {
-            return nil
-        }
         
-        let previousIndex = viewControllerIndex - 1
+        guard let currentIndex = index(of: viewController) else { return nil }
+        let previousIndex = currentIndex - 1
         
         if previousIndex < 0 {
             return orderedViewControllers.last
