@@ -4,12 +4,10 @@ import AVFoundation
 extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
-        
-        
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: pixelBuffer)
         
-        guard var result = ciImage.addCIColorMonochrome(with: context) else { return }
+        guard var result = ciImage.addCIColorMonochrome(with: context, intensity: 0.5) else { return }
         
         if currentCaptureDevicePosistion == .front {
             result = UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .upMirrored)

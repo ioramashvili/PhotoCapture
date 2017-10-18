@@ -68,7 +68,7 @@ class PhotoCaptureViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPageViewController" {
             pageViewController = segue.destination as! PageViewController
-            pageViewController.dataProvider = [#imageLiteral(resourceName: "s1"), #imageLiteral(resourceName: "s2"), #imageLiteral(resourceName: "s3")]
+            pageViewController.dataProvider = [#imageLiteral(resourceName: "s4"), #imageLiteral(resourceName: "s1"), #imageLiteral(resourceName: "s2"), #imageLiteral(resourceName: "s3")]
             pageViewController.pageControl = pageControl
         }
     }
@@ -263,7 +263,7 @@ class PhotoCaptureViewController: UIViewController {
             nomalizedImage = nomalizedImage.fixOrientation()
             
             guard let image = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
-            guard let filteredImage = image.addCIColorMonochrome(with: self.context) else { return }
+            guard let filteredImage = image.addCIColorMonochrome(with: self.context, intensity: 0.5) else { return }
             guard let activePoster = self.pageViewController.activePoster else { return }
             guard let composition = activePoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             

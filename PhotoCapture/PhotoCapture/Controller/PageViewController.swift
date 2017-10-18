@@ -5,7 +5,7 @@ class PageViewController: UIPageViewController {
     weak var pageControl: UIPageControl?
     
     fileprivate lazy var orderedViewControllers: [PosterViewController] = {
-        return [self.newPosterVC(), self.newPosterVC(), self.newPosterVC()]
+        return (0..<self.dataProvider.count).map { _ in self.newPosterVC() }
     }()
     
     private func newPosterVC() -> PosterViewController {
