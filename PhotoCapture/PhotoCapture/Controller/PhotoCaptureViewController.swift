@@ -250,8 +250,7 @@ class PhotoCaptureViewController: UIViewController {
     func normalizedCapturedImage(data: Data?, position: AVCaptureDevice.Position, complition: @escaping (_ image: UIImage) -> Void) {
         
         DispatchQueue.global(qos: .userInteractive).async {
-            guard let imageData = data else { return }
-            guard let originalImage = UIImage(data: imageData) else { return }
+            guard let originalImage = data?.toImage else { return }
             guard var nomalizedImage = self.cropToPreviewLayer(originalImage: originalImage) else { return }
             
             guard let nomalizedImageCGImage = nomalizedImage.cgImage else { return }
@@ -262,8 +261,8 @@ class PhotoCaptureViewController: UIViewController {
             
             nomalizedImage = nomalizedImage.fixOrientation()
             
-            guard let image = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
-            guard let filteredImage = image.addCIColorMonochrome(with: self.context, intensity: 0.5) else { return }
+            guard let squareImage = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
+            guard let filteredImage = squareImage.addCIColorMonochrome(with: self.context, intensity: 0.5) else { return }
             guard let activePoster = self.pageViewController.activePoster else { return }
             guard let composition = activePoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             
