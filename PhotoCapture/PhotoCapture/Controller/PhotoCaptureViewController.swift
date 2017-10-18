@@ -280,22 +280,37 @@ class PhotoCaptureViewController: UIViewController {
         imageView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.frame = CGRect(origin: CGPoint(x: -200, y: 50), size: CGSize(width: 200, height: 200))
-        imageView.alpha = 0
+        
+        let width = UIScreen.main.bounds.width
+        let y = (UIScreen.main.bounds.height - width) / 2
+        imageView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: CGSize(width: width, height: width))
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(previewImageTapped(sender:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tap)
         
         view.addSubview(imageView)
         
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
             imageView.frame.origin = CGPoint(x: 20, y: 50)
-            imageView.alpha = 1
+            imageView.frame.size = CGSize(width: 200, height: 200)
         })
         
-        UIView.animate(withDuration: 0.6, delay: 3, options: .curveEaseInOut, animations: {
-            imageView.frame.origin.x -= 400
-            imageView.alpha = 0
-        }, completion: { _ in
-            imageView.removeFromSuperview()
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
+                imageView.frame.origin.x -= 400
+            }, completion: { _ in
+                imageView.removeFromSuperview()
+            })
+        }
+    }
+    
+    @objc fileprivate func previewImageTapped(sender: UITapGestureRecognizer) {
+        guard let imageView = sender.view as? UIImageView, let image = imageView.image else {
+            return
+        }
+        
+        share(image: image)
     }
     
     fileprivate func share(image: UIImage) {

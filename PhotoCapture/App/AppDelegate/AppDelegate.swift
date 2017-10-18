@@ -31,5 +31,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-//https://github.com/makomori/Sharaku
-
