@@ -9,8 +9,7 @@ class PageViewController: UIPageViewController {
     }()
     
     private func newPosterVC() -> PosterViewController {
-        let controller = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "PosterViewController") as! PosterViewController
+        let controller = AppStoryboard.main.instantiate(controller: PosterViewController.self)!
         controller.view.backgroundColor = .clear
         return controller
     }

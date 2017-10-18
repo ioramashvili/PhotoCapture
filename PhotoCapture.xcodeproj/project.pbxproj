@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		433D0B501F977838007AB702 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B4F1F977838007AB702 /* AppStoryboard.swift */; };
+		433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B511F977ABB007AB702 /* NSObject+Extension.swift */; };
 		4343307D1F95E9AA00632C65 /* CIFilter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */; };
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PageViewController.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		433D0B4F1F977838007AB702 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
+		433D0B511F977ABB007AB702 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIFilter+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B91F8266100010E565 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				43AFE2801F8901C50065B496 /* UIImage+Extension.swift */,
 				43E530851F8A537000D074E5 /* CIImage+Extension.swift */,
 				4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */,
+				433D0B511F977ABB007AB702 /* NSObject+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
+				433D0B4F1F977838007AB702 /* AppStoryboard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				43A516CD1F7E248100DCECFF /* PhotoCaptureViewController.swift in Sources */,
 				43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */,
 				43F0F7571F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift in Sources */,
+				433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */,
 				43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */,
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
@@ -266,6 +273,7 @@
 				4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */,
 				43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */,
 				4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */,
+				433D0B501F977838007AB702 /* AppStoryboard.swift in Sources */,
 				43E530861F8A537000D074E5 /* CIImage+Extension.swift in Sources */,
 				43A35A9F1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift in Sources */,
 				4343307D1F95E9AA00632C65 /* CIFilter+Extension.swift in Sources */,
