@@ -18,4 +18,8 @@ class Poster: PosterDataProvider {
     func filter(with context: CIContext, image: UIImage) -> UIImage? {
         return nil
     }
+    
+    func filter(with context: CIContext, ciImage: CIImage) -> UIImage? {
+        return nil
+    }
 }

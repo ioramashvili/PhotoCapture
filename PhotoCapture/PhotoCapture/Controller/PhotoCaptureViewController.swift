@@ -43,6 +43,10 @@ class PhotoCaptureViewController: UIViewController {
         return imageView
     }()
     
+    var activePoster: PosterDataProvider? {
+        return pageViewController?.activePoster
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +72,15 @@ class PhotoCaptureViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPageViewController" {
             pageViewController = segue.destination as! PageViewController
-            pageViewController.dataProvider = [#imageLiteral(resourceName: "s4"), #imageLiteral(resourceName: "s1"), #imageLiteral(resourceName: "s2"), #imageLiteral(resourceName: "s3")]
+            
+            let posters: [PosterDataProvider] = [
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s4"), intensity: 1, color: .black),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s1"), intensity: 0.5, color: .red),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s3"), intensity: 0.9, color: .blue),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s2"), intensity: 0.6, color: .green)
+            ]
+            
+            pageViewController.dataProvider = posters
             pageViewController.pageControl = pageControl
         }
     }
@@ -260,11 +272,11 @@ class PhotoCaptureViewController: UIViewController {
             }
             
             nomalizedImage = nomalizedImage.fixOrientation()
-            
             guard let squareImage = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
-            guard let filteredImage = squareImage.addCIColorMonochrome(with: self.context, intensity: 0.5, color: .red) else { return }
-            guard let activePoster = self.pageViewController.activePoster else { return }
-            guard let composition = activePoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
+            
+            guard let activePoster = self.activePoster else { return }
+            guard let filteredImage = activePoster.filter(with: self.context, image: squareImage) else { return }
+            guard let composition = self.activePoster?.mainPoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             
             DispatchQueue.main.async {
                 print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)

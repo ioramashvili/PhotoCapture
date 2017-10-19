@@ -14,11 +14,11 @@ class PageViewController: UIPageViewController {
         }
     }
     
-    var activePoster: UIImage? {
+    var activePoster: PosterDataProvider? {
         return dataProvider[activePageIndex]
     }
     
-    var dataProvider: [UIImage] = [] {
+    var dataProvider: [PosterDataProvider] = [] {
         didSet {
             initialize()
         }
@@ -36,7 +36,7 @@ class PageViewController: UIPageViewController {
     
     fileprivate func initialize() {
         orderedViewControllers.enumerated().forEach { (index, page) in
-            page.posterImageView.image = dataProvider[index]
+            page.posterImageView.image = dataProvider[index].mainPoster
         }
         
         pageControl?.numberOfPages = dataProvider.count

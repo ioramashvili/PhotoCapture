@@ -18,6 +18,10 @@ class MonochromePoster: Poster {
         return image.addCIColorMonochrome(with: context, intensity: intensity, color: color)
     }
     
+    override func filter(with context: CIContext, ciImage: CIImage) -> UIImage? {
+        return ciImage.addCIColorMonochrome(with: context, intensity: intensity, color: color)
+    }
+    
     override var posterFilterType: PosterFilterType {
         return .monochrome
     }
