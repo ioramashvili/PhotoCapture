@@ -1,16 +1,22 @@
 import UIKit
 
-extension CIImage {
-    func addCIColorMonochrome(with context: CIContext, intensity: NSNumber = 1) -> UIImage? {
+protocol Monochromable: class {
+    func addCIColorMonochrome(with context: CIContext, intensity: NSNumber, color: UIColor) -> UIImage?
+}
+
+extension CIImage: Monochromable {
+    func addCIColorMonochrome(with context: CIContext, intensity: NSNumber, color: UIColor) -> UIImage? {
         guard let filter = CIFilter(name: "CIColorMonochrome") else { return nil }
         
         filter.setValue(self, forKey: kCIInputImageKey)
-        filter.setValue(CIColor(color: .red), forKey: kCIInputColorKey)
         filter.setValue(intensity, forKey: kCIInputIntensityKey)
+        filter.setValue(CIColor(color: .red), forKey: kCIInputColorKey)
         
         return filter.filteredOutputImage(with: context)
     }
-    
+}
+
+extension CIImage {
     func addCILanczosScaleTransform(with context: CIContext, scale: NSNumber) -> UIImage? {
         guard let filter = CIFilter(name: "CILanczosScaleTransform") else { return nil }
         

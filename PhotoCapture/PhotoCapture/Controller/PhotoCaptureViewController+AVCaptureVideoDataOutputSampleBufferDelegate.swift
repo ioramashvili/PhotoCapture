@@ -7,7 +7,7 @@ extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelega
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: pixelBuffer)
         
-        guard var result = ciImage.addCIColorMonochrome(with: context, intensity: 0.5) else { return }
+        guard var result = ciImage.addCIColorMonochrome(with: context, intensity: 0.5, color: .red) else { return }
         
         if currentCaptureDevicePosistion == .front {
             result = UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .upMirrored)

@@ -262,7 +262,7 @@ class PhotoCaptureViewController: UIViewController {
             nomalizedImage = nomalizedImage.fixOrientation()
             
             guard let squareImage = self.cropToCenterSquare(originalImage: nomalizedImage) else { return }
-            guard let filteredImage = squareImage.addCIColorMonochrome(with: self.context, intensity: 0.5) else { return }
+            guard let filteredImage = squareImage.addCIColorMonochrome(with: self.context, intensity: 0.5, color: .red) else { return }
             guard let activePoster = self.pageViewController.activePoster else { return }
             guard let composition = activePoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             
@@ -276,7 +276,6 @@ class PhotoCaptureViewController: UIViewController {
     
     func showCaptured(_ image: UIImage) {
         let imageView = UIImageView(image: image)
-        imageView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         

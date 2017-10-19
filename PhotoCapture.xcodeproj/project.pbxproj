@@ -14,6 +14,10 @@
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PageViewController.swift */; };
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
+		43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */; };
+		43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D261F98BEF700E8D868 /* PosterFilterType.swift */; };
+		43822D291F98BF2B00E8D868 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D281F98BF2B00E8D868 /* Poster.swift */; };
+		43822D2B1F98C7D700E8D868 /* MonochromePoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D2A1F98C7D700E8D868 /* MonochromePoster.swift */; };
 		4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC751F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift */; };
 		4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */; };
 		4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC7C1F8CB99700A10E30 /* AppButton.swift */; };
@@ -38,6 +42,10 @@
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B91F8266100010E565 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
+		43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterDataProvider.swift; sourceTree = "<group>"; };
+		43822D261F98BEF700E8D868 /* PosterFilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterFilterType.swift; sourceTree = "<group>"; };
+		43822D281F98BF2B00E8D868 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
+		43822D2A1F98C7D700E8D868 /* MonochromePoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonochromePoster.swift; sourceTree = "<group>"; };
 		4383BC751F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift"; sourceTree = "<group>"; };
 		4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift"; sourceTree = "<group>"; };
 		4383BC7C1F8CB99700A10E30 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
@@ -68,9 +76,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43822D231F98BDE700E8D868 /* Poster */ = {
+			isa = PBXGroup;
+			children = (
+				43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */,
+				43822D261F98BEF700E8D868 /* PosterFilterType.swift */,
+				43822D281F98BF2B00E8D868 /* Poster.swift */,
+				43822D2A1F98C7D700E8D868 /* MonochromePoster.swift */,
+			);
+			path = Poster;
+			sourceTree = "<group>";
+		};
 		4383BC7B1F8CB98600A10E30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				43822D231F98BDE700E8D868 /* Poster */,
 				4383BC7C1F8CB99700A10E30 /* AppButton.swift */,
 			);
 			path = Model;
@@ -265,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43822D291F98BF2B00E8D868 /* Poster.swift in Sources */,
 				43A516CD1F7E248100DCECFF /* PhotoCaptureViewController.swift in Sources */,
 				433D0B561F978C9D007AB702 /* Data+Extension.swift in Sources */,
 				43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */,
@@ -274,8 +295,11 @@
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */,
+				43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */,
 				4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */,
 				43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */,
+				43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */,
+				43822D2B1F98C7D700E8D868 /* MonochromePoster.swift in Sources */,
 				4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */,
 				433D0B501F977838007AB702 /* AppStoryboard.swift in Sources */,
 				43E530861F8A537000D074E5 /* CIImage+Extension.swift in Sources */,

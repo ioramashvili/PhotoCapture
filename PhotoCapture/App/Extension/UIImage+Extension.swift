@@ -21,10 +21,6 @@ extension UIImage {
         return backgroundCIImage
     }
     
-    func addCIColorMonochrome(with context: CIContext, intensity: NSNumber = 1) -> UIImage? {
-        return tryCreateCIImage()?.addCIColorMonochrome(with: context, intensity: intensity)
-    }
-    
     func addCILanczosScaleTransform(with context: CIContext, scale: NSNumber) -> UIImage? {
         return tryCreateCIImage()?.addCILanczosScaleTransform(with: context, scale: scale)
     }
@@ -40,6 +36,12 @@ extension UIImage {
         guard let scaledForegroundImage = addCILanczosScaleTransform(with: context, scale: scale) else { return nil }
         
         return scaledForegroundImage.addCISourceOverCompositing(with: context, backgroundImage: backgroundImage)
+    }
+}
+
+extension UIImage: Monochromable {
+    func addCIColorMonochrome(with context: CIContext, intensity: NSNumber, color: UIColor) -> UIImage? {
+        return tryCreateCIImage()?.addCIColorMonochrome(with: context, intensity: intensity, color: color)
     }
 }
 
