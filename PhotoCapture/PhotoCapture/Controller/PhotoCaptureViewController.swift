@@ -74,10 +74,10 @@ class PhotoCaptureViewController: UIViewController {
             pageViewController = segue.destination as! PageViewController
             
             let posters: [PosterDataProvider] = [
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s4"), intensity: 1, color: .black),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s1"), intensity: 0.5, color: .red),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s3"), intensity: 0.9, color: .blue),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s2"), intensity: 0.6, color: .green)
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s4"), intensity: 0.7, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s1"), intensity: 0.7, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s3"), intensity: 0.7, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s2"), intensity: 0.7, color: UIColor(name: "ff1515FF"))
             ]
             
             pageViewController.dataProvider = posters

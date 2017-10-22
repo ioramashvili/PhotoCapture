@@ -49,5 +49,7 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) requests access to Photos to use your photo for profile picture</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) requests access to Photos to use add photos</string>
 </dict>
 </plist>
