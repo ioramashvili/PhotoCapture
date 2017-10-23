@@ -16,8 +16,6 @@ extension PhotoCaptureViewController: AVCapturePhotoCaptureDelegate {
             captureButton.isEnabled = true
         }
         
-        animateFlashView()
-        
         if
             let sampleBuffer = photoSampleBuffer,
             let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewPhotoSampleBuffer) {
@@ -33,8 +31,6 @@ extension PhotoCaptureViewController: AVCapturePhotoCaptureDelegate {
         defer {
             captureButton.isEnabled = true
         }
-        
-        animateFlashView()
         
         normalizedCapturedImage(data: photo.fileDataRepresentation(), position: currentCaptureDevicePosistion) { image in
             self.showCaptured(image)

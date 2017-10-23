@@ -2,7 +2,47 @@ import UIKit
 import AVFoundation
 
 class PhotoCaptureViewController: UIViewController {
+    
+    enum State {
+        case liveCamera, photoLibrary(image: UIImage)
+        
+        var isLiveCamera: Bool {
+            switch self {
+            case .liveCamera: return true
+            default: return false
+            }
+        }
+        
+        var photoLibraryImage: UIImage? {
+            switch self {
+            case .photoLibrary(let image): return image
+            default: return nil
+            }
+        }
+    }
 
+    var currentState: State = .liveCamera {
+        didSet {
+            let isLiveCamera = currentState.isLiveCamera
+            liveCameraControlSW.isHidden = !isLiveCamera
+            
+            photoLibraryControlSW.isHidden = !liveCameraControlSW.isHidden
+            
+            let contentMode: UIViewContentMode = isLiveCamera ? .scaleAspectFill : .scaleAspectFit
+            previewImageView.contentMode = contentMode
+            
+            let backgroundColor: UIColor = isLiveCamera ? .clear : .black
+            topBlurOverlay.backgroundColor = backgroundColor
+            bottomBlurOverlay.backgroundColor = backgroundColor
+        }
+    }
+    
+    @IBOutlet weak var topBlurOverlay: UIView!
+    @IBOutlet weak var bottomBlurOverlay: UIView!
+    
+    @IBOutlet weak var liveCameraControlSW: UIStackView!
+    @IBOutlet weak var photoLibraryControlSW: UIStackView!
+    
     fileprivate var pageViewController: PageViewController!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -50,6 +90,7 @@ class PhotoCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         setupFlashView()
         
         setupVideoOutput()
@@ -59,6 +100,8 @@ class PhotoCaptureViewController: UIViewController {
         setupCameraAndStartSession()
         
         updateBlurViewHole()
+        
+        currentState = .liveCamera
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,15 +117,32 @@ class PhotoCaptureViewController: UIViewController {
             pageViewController = segue.destination as! PageViewController
             
             let posters: [PosterDataProvider] = [
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s4"), intensity: 0.7, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s1"), intensity: 0.7, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s3"), intensity: 0.7, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s2"), intensity: 0.7, color: UIColor(name: "ff1515FF"))
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s4"), intensity: 0.3, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s1"), intensity: 0.3, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s3"), intensity: 0.3, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "s2"), intensity: 0.4, color: UIColor(name: "ff1515FF"))
             ]
             
             pageViewController.dataProvider = posters
             pageViewController.pageControl = pageControl
         }
+    }
+    
+    @IBAction func donePhotoLibraryActionTapped(_ sender: UIButton) {
+        // TODO
+        normalize(image: currentState.photoLibraryImage!) { image in
+            self.showCaptured(image)
+            self.currentState = .liveCamera
+        }
+    }
+    
+    @IBAction func calncelPhotoLibraryActionTapped(_ sender: UIButton) {
+        currentState = .liveCamera
+    }
+    
+    @IBAction func filterIntensityTapped(_ sender: UIButton) {
+        let intensity = Double(sender.tag) / 100
+        (activePoster as? MonochromePoster)?.intensity = NSNumber(value: intensity)
     }
     
     @IBAction func captureImageTapped(_ sender: UIButton) {
@@ -107,7 +167,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func setupSession() {
-        session.sessionPreset = AVCaptureSession.Preset.medium
+        session.sessionPreset = AVCaptureSession.Preset.photo
     }
     
     fileprivate func setupPhotoOutput() {
@@ -280,6 +340,17 @@ class PhotoCaptureViewController: UIViewController {
             
             DispatchQueue.main.async {
                 print("nomalizedImage", nomalizedImage.size, nomalizedImage.imageOrientation.rawValue)
+                print("Cropped", composition.size)
+                complition(composition)
+            }
+        }
+    }
+    
+    func normalize(image: UIImage, complition: @escaping (_ image: UIImage) -> Void) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            guard let composition = self.activePoster?.mainPoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: image) else { return }
+            
+            DispatchQueue.main.async {
                 print("Cropped", composition.size)
                 complition(composition)
             }

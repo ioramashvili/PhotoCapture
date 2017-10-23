@@ -3,55 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "PhotoCaptureViewController.cropToCenterSquare(originalImage:):PhotoCaptureViewController+Extension.swift">
+         contextName = "PhotoCaptureViewController.previewCapturedImage(data:position:):PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "UIImage(cgImage: cgImage).size">
+               value = "image.ciImage">
+            </PersistentString>
+            <PersistentString
+               value = "nomalizedImage.ciImage">
+            </PersistentString>
+            <PersistentString
+               value = "CIImage(cgImage: originamImage.cgImage!).addFilter(with: context)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
+         contextName = "PhotoCaptureViewController.captureImageTapped(_:):PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "image.imageOrientation">
-            </PersistentString>
-            <PersistentString
-               value = "i.imageOrientation">
-            </PersistentString>
-            <PersistentString
-               value = "aawda.size">
-            </PersistentString>
-            <PersistentString
-               value = "image.size">
-            </PersistentString>
-            <PersistentString
-               value = "nomalizedImage.imageOrientation">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "videoOutput.connections.first?.videoOrientation">
-            </PersistentString>
-            <PersistentString
-               value = "videoOutput.connections">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "PhotoCaptureViewController.cropToPreviewLayer(originalImage:):PhotoCaptureViewController+Extension.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
-            </PersistentString>
-            <PersistentString
-               value = "UIScreen.main.bounds">
-            </PersistentString>
-            <PersistentString
-               value = "originalImage.scale">
+               value = "(session.inputs[0] as? AVCaptureDeviceInput)?.device.isFlashAvailable">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -70,16 +39,74 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "PhotoCaptureViewController.previewCapturedImage(data:position:):PhotoCaptureViewController.swift">
+         contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "image.ciImage">
+               value = "nomalizedImage.imageOrientation">
             </PersistentString>
             <PersistentString
-               value = "nomalizedImage.ciImage">
+               value = "i.imageOrientation">
             </PersistentString>
             <PersistentString
-               value = "CIImage(cgImage: originamImage.cgImage!).addFilter(with: context)">
+               value = "aawda.size">
+            </PersistentString>
+            <PersistentString
+               value = "image.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "image.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.photoOutput(_:didFinishProcessingPhoto:error:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.frame">
+            </PersistentString>
+            <PersistentString
+               value = "UIImage(data: imageData)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.setupAVCaptureDeviceInput(for:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoOutput.connections">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoOutput.connections">
+            </PersistentString>
+            <PersistentString
+               value = "videoOutput.connections.first?.videoOrientation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CIFilter.filteredOutputImage(with:):CIFilter+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "exposureOutput.extent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):PhotoCaptureViewController+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedImageFromImagePicker?.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "selectedImageFromImagePicker?.fixOrientation()">
+            </PersistentString>
+            <PersistentString
+               value = "result.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -101,29 +128,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.setupAVCaptureDeviceInput(for:):ViewController.swift">
+         contextName = "PhotoCaptureViewController.cropToPreviewLayer(originalImage:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "videoOutput.connections">
+               value = "originalImage.scale">
+            </PersistentString>
+            <PersistentString
+               value = "UIScreen.main.bounds">
+            </PersistentString>
+            <PersistentString
+               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "PhotoCaptureViewController.captureImageTapped(_:):PhotoCaptureViewController.swift">
+         contextName = "PhotoCaptureViewController.cropToCenterSquare(originalImage:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "(session.inputs[0] as? AVCaptureDeviceInput)?.device.isFlashAvailable">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ViewController.photoOutput(_:didFinishProcessingPhoto:error:):ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "imageView.frame">
-            </PersistentString>
-            <PersistentString
-               value = "UIImage(data: imageData)">
+               value = "UIImage(cgImage: cgImage).size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
