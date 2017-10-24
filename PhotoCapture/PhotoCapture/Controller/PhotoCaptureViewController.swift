@@ -37,6 +37,8 @@ class PhotoCaptureViewController: UIViewController {
         }
     }
     
+    fileprivate let cameraQueue = DispatchQueue(label: "com.engersun.cameraqueue")
+    
     @IBOutlet weak var topBlurOverlay: UIView!
     @IBOutlet weak var bottomBlurOverlay: UIView!
     
@@ -204,40 +206,26 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func trySwapCameras() {
-        videoOutput.setSampleBufferDelegate(nil, queue: nil)
-        
-        DispatchQueue
-            .global(qos: .userInteractive)
-            .asyncAfter(deadline: .now() + .milliseconds(300)) { [weak self] in
-            self?.swapCameras()
-        }
+        swapCameras()
     }
     
     fileprivate func swapCameras() {
-        guard let input = session.inputs[0] as? AVCaptureDeviceInput else { return }
+        guard let input = session.inputs.first as? AVCaptureDeviceInput else { return }
         
         session.beginConfiguration()
-        defer {
-            DispatchQueue.main.async {
-                self.videoOutputOrientationToPortrait()
-                self.session.commitConfiguration()
-                self.setupVideoOutput()
-            }
-        }
+        session.removeInput(input)
         
         guard let newDevice = input.device.position == .back ? frontCamera : backCamera else {
             return
         }
         
-        var deviceInput: AVCaptureDeviceInput!
-        do {
-            deviceInput = try AVCaptureDeviceInput(device: newDevice)
-        } catch {
+        guard let newInput = try? AVCaptureDeviceInput(device: newDevice) else {
             return
         }
         
-        session.removeInput(input)
-        session.addInput(deviceInput)
+        session.addInput(newInput)
+        rotatePreview()
+        session.commitConfiguration()
     }
     
     fileprivate func videoOutputOrientationToPortrait() {
@@ -274,14 +262,21 @@ class PhotoCaptureViewController: UIViewController {
             if session.canAddOutput(videoOutput) {
                 session.addOutput(videoOutput)
                 
-                session.startRunning()
-                videoOutputOrientationToPortrait()
+//                session.startRunning()
+//                videoOutputOrientationToPortrait()
             }
             
             if session.canAddOutput(photoOutput) {
                 session.addOutput(photoOutput)
 
-                session.startRunning()
+//                session.startRunning()
+            }
+        }
+        
+        cameraQueue.sync {
+            session.startRunning()
+            DispatchQueue.main.async() { [weak self] in
+                self?.rotatePreview()
             }
         }
         
@@ -400,6 +395,28 @@ class PhotoCaptureViewController: UIViewController {
         activity.excludedActivityTypes = [.postToVimeo, .addToReadingList]
         
         present(activity, animated: true, completion: nil)
+    }
+    
+    fileprivate func rotatePreview() {
+        switch UIApplication.shared.statusBarOrientation {
+        case .portrait:
+            videoPreviewLayer?.connection?.videoOrientation = .portrait
+            videoOutput.connections.first?.videoOrientation = .portrait
+            break
+        case .portraitUpsideDown:
+            videoPreviewLayer?.connection?.videoOrientation = .portraitUpsideDown
+            videoOutput.connections.first?.videoOrientation = .portraitUpsideDown
+            break
+        case .landscapeRight:
+            videoPreviewLayer?.connection?.videoOrientation = .landscapeRight
+            videoOutput.connections.first?.videoOrientation = .landscapeRight
+            break
+        case .landscapeLeft:
+            videoPreviewLayer?.connection?.videoOrientation = .landscapeLeft
+            videoOutput.connections.first?.videoOrientation = .landscapeLeft
+            break
+        default: break
+        }
     }
 }
 
