@@ -104,6 +104,50 @@ class PhotoCaptureViewController: UIViewController {
         updateBlurViewHole()
         
         currentState = .liveCamera
+        
+        setupFocusGesture()
+    }
+    
+    @objc func focusGesture(_ sender: UITapGestureRecognizer) {
+        let point = sender.location(in: view)
+        
+        let rect = CGRect(
+            x: 0,
+            y: (view.bounds.height - view.bounds.width) / 2,
+            width: view.bounds.width,
+            height: view.bounds.width)
+        
+        guard rect.contains(point) else {return}
+        
+        focusCamera(to: point)
+    }
+    
+    @discardableResult
+    public func focusCamera(to point: CGPoint) -> Bool {
+        guard let input = session.inputs.first as? AVCaptureDeviceInput else {
+            return false
+        }
+        
+        let device = input.device
+        guard device.isFocusModeSupported(.continuousAutoFocus) else {
+            return false
+        }
+        
+        do { try device.lockForConfiguration() } catch {
+            return false
+        }
+        
+        let focusPoint = videoPreviewLayer.captureDevicePointConverted(fromLayerPoint: point)
+        
+        device.focusPointOfInterest = focusPoint
+        device.focusMode = .continuousAutoFocus
+        
+        device.exposurePointOfInterest = focusPoint
+        device.exposureMode = .continuousAutoExposure
+        
+        device.unlockForConfiguration()
+        
+        return true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -130,8 +174,9 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func donePhotoLibraryActionTapped(_ sender: UIButton) {
-        // TODO
-        normalize(image: currentState.photoLibraryImage!) { image in
+        guard let photoLibraryImage = currentState.photoLibraryImage else {return}
+        
+        normalize(image: photoLibraryImage) { image in
             self.showCaptured(image)
             self.currentState = .liveCamera
         }
@@ -160,16 +205,15 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func swapCameras(_ sender: UIButton) {
-//        trySwapCameras()
-        
+        trySwapCameras()
+    }
+    
+    @IBAction func chooseImage(_ sender: UIButton) {
+//        tryOpenImagePicker(allowsEditing: false)
         guard let photoLibraryWrapper = AppStoryboard.photoLibrary.instantiate(controller: PhotoLibraryWrapper.self) else {return}
         photoLibraryWrapper.delegate = self
         
         present(photoLibraryWrapper, animated: true, completion: nil)
-    }
-    
-    @IBAction func chooseImage(_ sender: UIButton) {
-        tryOpenImagePicker(allowsEditing: false)
     }
     
     fileprivate func setupSession() {
@@ -207,6 +251,12 @@ class PhotoCaptureViewController: UIViewController {
         }
         
         setupAVCaptureDeviceInput(for: backCamera)
+    }
+    
+    fileprivate func setupFocusGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(focusGesture(_:)))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     fileprivate func trySwapCameras() {
@@ -265,15 +315,10 @@ class PhotoCaptureViewController: UIViewController {
             
             if session.canAddOutput(videoOutput) {
                 session.addOutput(videoOutput)
-                
-//                session.startRunning()
-//                videoOutputOrientationToPortrait()
             }
             
             if session.canAddOutput(photoOutput) {
                 session.addOutput(photoOutput)
-
-//                session.startRunning()
             }
         }
         
@@ -283,16 +328,6 @@ class PhotoCaptureViewController: UIViewController {
                 self?.rotatePreview()
             }
         }
-        
-//        if let input = input, session.canAddInput(input) {
-//            session.addInput(input)
-//
-//            if session.canAddOutput(photoOutput) {
-//                session.addOutput(photoOutput)
-//
-//                session.startRunning()
-//            }
-//        }
     }
     
     fileprivate func setupFlashView() {
