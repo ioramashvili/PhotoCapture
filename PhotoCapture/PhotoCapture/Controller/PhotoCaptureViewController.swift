@@ -160,7 +160,12 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func swapCameras(_ sender: UIButton) {
-        trySwapCameras()
+//        trySwapCameras()
+        
+        guard let photoLibraryWrapper = AppStoryboard.imageCrop.instantiate(controller: PhotoLibraryWrapper.self) else {return}
+        photoLibraryWrapper.delegate = self
+        
+        present(photoLibraryWrapper, animated: true, completion: nil)
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {

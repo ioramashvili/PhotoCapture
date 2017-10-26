@@ -22,6 +22,7 @@ class ImageCropViewController: UIViewController {
     fileprivate var imageView: UIImageView!
     
     weak var delegate: ImageCropDelegate?
+    weak var photoLibraryWrapperDelegate: PhotoLibraryWrapperDelegate?
     
     var dataSource: ImageCropDataSource?
     
@@ -81,7 +82,7 @@ class ImageCropViewController: UIViewController {
     }
     
     @IBAction func close(_ sender: UIButton) {
-        closeVC()
+        photoLibraryWrapperDelegate?.goToPhotoLibraryViewController()
     }
     
     @IBAction func crop(_ sender: UIButton) {
@@ -97,7 +98,6 @@ class ImageCropViewController: UIViewController {
         view.bringSubview(toFront: previewImageView)
         
         delegate?.croppingDidFinish(with: screenshot)
-        closeVC()
     }
     
     fileprivate func setZoomScale() {

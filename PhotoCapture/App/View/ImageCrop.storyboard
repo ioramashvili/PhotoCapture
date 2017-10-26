@@ -11,6 +11,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Photo Library View Controller-->
+        <scene sceneID="XZi-gy-jli">
+            <objects>
+                <viewController storyboardIdentifier="PhotoLibraryViewController" id="RcZ-Ol-mt0" customClass="PhotoLibraryViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TS5-uI-HoH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gui-YL-471"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FFh-Fi-hlt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="close" id="DnU-Od-c29">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="close" destination="RcZ-Ol-mt0" id="D2s-Fv-vv4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKR-eA-Q4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-236" y="1161"/>
+        </scene>
         <!--Image Crop View Controller-->
         <scene sceneID="pqj-lv-rdA">
             <objects>
@@ -120,7 +143,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIL-Dh-WVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138.40000000000001" y="916.1919040479761"/>
+            <point key="canvasLocation" x="-1087" y="1941"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o1u-fF-SfQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24L-bU-MbP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="uJA-Gy-8uF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RcZ-Ol-mt0" kind="relationship" relationship="rootViewController" id="Q9r-47-zsJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdE-ju-zAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1087" y="1161"/>
+        </scene>
+        <!--Photo Library Wrapper-->
+        <scene sceneID="hrd-sh-7P6">
+            <objects>
+                <viewController storyboardIdentifier="PhotoLibraryWrapper" modalPresentationStyle="overCurrentContext" id="aJg-vS-e6B" customClass="PhotoLibraryWrapper" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9tg-cD-52e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2S-Qg-SUH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2L-vq-DsT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <connections>
+                                            <segue destination="24L-bU-MbP" kind="embed" identifier="goToPhotoLibraryViewController" id="56f-Dw-HPf"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pp3-YE-BPN">
+                                        <rect key="frame" x="375" y="0.0" width="375" height="667"/>
+                                        <connections>
+                                            <segue destination="24m-NW-pig" kind="embed" identifier="goToImageCropViewController" id="HmD-Ls-hIX"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pp3-YE-BPN" firstAttribute="width" secondItem="C2L-vq-DsT" secondAttribute="width" id="4Ch-Mr-NvH"/>
+                                    <constraint firstItem="Pp3-YE-BPN" firstAttribute="top" secondItem="t2S-Qg-SUH" secondAttribute="top" id="4oz-8e-HCX"/>
+                                    <constraint firstItem="Pp3-YE-BPN" firstAttribute="height" secondItem="C2L-vq-DsT" secondAttribute="height" id="8Gx-4p-6O2"/>
+                                    <constraint firstItem="Pp3-YE-BPN" firstAttribute="leading" secondItem="C2L-vq-DsT" secondAttribute="trailing" id="Evh-k1-fbi"/>
+                                    <constraint firstItem="C2L-vq-DsT" firstAttribute="height" secondItem="t2S-Qg-SUH" secondAttribute="height" id="TSc-Ql-nB8"/>
+                                    <constraint firstItem="C2L-vq-DsT" firstAttribute="top" secondItem="t2S-Qg-SUH" secondAttribute="top" id="WJf-x3-KYe"/>
+                                    <constraint firstItem="C2L-vq-DsT" firstAttribute="width" secondItem="t2S-Qg-SUH" secondAttribute="width" id="bvt-5U-ZWz"/>
+                                    <constraint firstItem="C2L-vq-DsT" firstAttribute="leading" secondItem="t2S-Qg-SUH" secondAttribute="leading" id="dbq-ox-8Za"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pp3-YE-BPN" secondAttribute="trailing" id="lOb-kb-eG4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pp3-YE-BPN" secondAttribute="bottom" id="xQF-lb-LEa"/>
+                                    <constraint firstAttribute="bottom" secondItem="C2L-vq-DsT" secondAttribute="bottom" id="yJF-1O-Uv5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t2S-Qg-SUH" firstAttribute="leading" secondItem="9tg-cD-52e" secondAttribute="leading" id="4al-Ik-WYQ"/>
+                            <constraint firstAttribute="trailing" secondItem="t2S-Qg-SUH" secondAttribute="trailing" id="csJ-zD-kF9"/>
+                            <constraint firstAttribute="bottom" secondItem="t2S-Qg-SUH" secondAttribute="bottom" id="edN-NF-V20"/>
+                            <constraint firstItem="t2S-Qg-SUH" firstAttribute="top" secondItem="9tg-cD-52e" secondAttribute="top" id="hMS-Om-mhO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qaX-4s-XS5"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="t2S-Qg-SUH" id="lLh-Rq-4KQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P93-kG-DTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1993" y="1693"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="16" height="16"/>
+    </resources>
 </document>
