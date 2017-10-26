@@ -255,27 +255,59 @@
                                             <constraint firstItem="oG9-mT-tEb" firstAttribute="width" secondItem="9qd-wG-7md" secondAttribute="width" id="unp-su-0MZ"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Uj4-zC-2eU">
-                                        <rect key="frame" x="85" y="104.33333333333337" width="205" height="38"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-hR-CDb">
+                                        <rect key="frame" x="95" y="105.33333333333337" width="184" height="36"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gby-oo-C0I">
-                                                <rect key="frame" x="0.0" y="0.0" width="68" height="38"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW5-0G-gJ7" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                        <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="calncelPhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lBr-ET-u4c"/>
+                                                    <action selector="calncelPhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1i-cS-brz"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-Rb-BiW">
-                                                <rect key="frame" x="148" y="0.0" width="57" height="38"/>
-                                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                <state key="normal" title="Done">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-pk-sTc" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
+                                                <rect key="frame" x="112" y="0.0" width="72" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                                <state key="normal" title="Create">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                        <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oO1-0e-iIh"/>
+                                                    <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLC-dm-fUV"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -285,11 +317,11 @@
                                 <constraints>
                                     <constraint firstItem="xra-dY-fKq" firstAttribute="top" secondItem="ioQ-nT-mKV" secondAttribute="top" id="3MC-pq-Sk5"/>
                                     <constraint firstItem="R1K-nc-imy" firstAttribute="height" secondItem="ioQ-nT-mKV" secondAttribute="height" multiplier="0.5" priority="999" id="5fO-iZ-Ci1"/>
-                                    <constraint firstItem="Uj4-zC-2eU" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" constant="14" id="BhI-sL-KeN"/>
                                     <constraint firstAttribute="trailing" secondItem="UoU-tY-XpB" secondAttribute="trailing" id="Srj-Dl-YJn"/>
                                     <constraint firstAttribute="trailing" secondItem="xra-dY-fKq" secondAttribute="trailing" id="SvH-IE-DFS"/>
-                                    <constraint firstItem="Uj4-zC-2eU" firstAttribute="centerX" secondItem="ioQ-nT-mKV" secondAttribute="centerX" id="d7x-Zz-vxD"/>
+                                    <constraint firstItem="gsy-hR-CDb" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" constant="14" id="fKC-hV-r9P"/>
                                     <constraint firstItem="UoU-tY-XpB" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" constant="14" id="oY3-mt-dQk"/>
+                                    <constraint firstItem="gsy-hR-CDb" firstAttribute="centerX" secondItem="ioQ-nT-mKV" secondAttribute="centerX" id="tFF-iD-kiB"/>
                                     <constraint firstItem="UoU-tY-XpB" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="uOb-U5-LvL"/>
                                     <constraint firstItem="xra-dY-fKq" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="ylN-ls-Afd"/>
                                 </constraints>
@@ -325,7 +357,7 @@
                         <outlet property="captureButton" destination="R1K-nc-imy" id="2US-0m-lab"/>
                         <outlet property="liveCameraControlSW" destination="UoU-tY-XpB" id="R4Q-9h-owS"/>
                         <outlet property="pageControl" destination="xra-dY-fKq" id="OVE-nv-EDS"/>
-                        <outlet property="photoLibraryControlSW" destination="Uj4-zC-2eU" id="Nxv-4N-xJb"/>
+                        <outlet property="photoLibraryControlSW" destination="gsy-hR-CDb" id="aS1-iG-p3g"/>
                         <outlet property="previewView" destination="jse-Z5-8co" id="mHZ-MU-dxw"/>
                         <outlet property="topBlurOverlay" destination="B5w-8a-dsw" id="qEW-2e-gD9"/>
                     </connections>

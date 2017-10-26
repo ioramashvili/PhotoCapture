@@ -67,7 +67,9 @@ extension CIImage {
         filter.setValue(self, forKey: kCIInputImageKey)
         filter.setValue(backgroundCIImage, forKey: kCIInputBackgroundImageKey)
         
-        return filter.filteredOutputImage(with: context)
+        let result = filter.filteredOutputImage(with: context)
+        
+        return result
     }
 }
 

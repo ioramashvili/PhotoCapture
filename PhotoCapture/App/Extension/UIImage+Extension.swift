@@ -31,11 +31,13 @@ extension UIImage {
     
     func normalizedCISourceOverCompositing(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
         
-        let scale = NSNumber(value: Double(backgroundImage.size.width / size.width))
+        let scale = NSNumber(value: Double(backgroundImage.size.width / size.width) * Double(backgroundImage.scale))
         
         guard let scaledForegroundImage = addCILanczosScaleTransform(with: context, scale: scale) else { return nil }
         
-        return scaledForegroundImage.addCISourceOverCompositing(with: context, backgroundImage: backgroundImage)
+        let result = scaledForegroundImage.addCISourceOverCompositing(with: context, backgroundImage: backgroundImage)
+        
+        return result
     }
 }
 

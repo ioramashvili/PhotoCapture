@@ -31,6 +31,10 @@
 		43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */; };
 		43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AFE2801F8901C50065B496 /* UIImage+Extension.swift */; };
 		43C02E3D1F9D0644002F79B4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C02E3C1F9D0644002F79B4 /* UIColor+Extension.swift */; };
+		43C134F91FA1BB2100938218 /* ImageCrop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C134F81FA1BB2100938218 /* ImageCrop.storyboard */; };
+		43C134FC1FA1BC2800938218 /* ImageCropInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */; };
+		43C134FD1FA1BCDD00938218 /* ImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134F71FA1BAD000938218 /* ImageCropViewController.swift */; };
+		43C134FF1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */; };
 		43E530861F8A537000D074E5 /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E530851F8A537000D074E5 /* CIImage+Extension.swift */; };
 		43F0F7571F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,10 @@
 		43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCaptureViewController.swift; sourceTree = "<group>"; };
 		43AFE2801F8901C50065B496 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		43C02E3C1F9D0644002F79B4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		43C134F71FA1BAD000938218 /* ImageCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropViewController.swift; sourceTree = "<group>"; };
+		43C134F81FA1BB2100938218 /* ImageCrop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageCrop.storyboard; sourceTree = "<group>"; };
+		43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropInfo.swift; sourceTree = "<group>"; };
+		43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+ImageCropDelegate.swift"; sourceTree = "<group>"; };
 		43E530851F8A537000D074E5 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
 		43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIImagePickerControllerDelegate+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				43A35A971F8A2151004037F1 /* AppDelegate */,
-				43A35A9C1F8A21D9004037F1 /* View */,
 				4383BC7B1F8CB98600A10E30 /* Model */,
+				43A35A9C1F8A21D9004037F1 /* View */,
+				43C134F61FA1BAB100938218 /* Controllers */,
 				43A35A981F8A216B004037F1 /* Extension */,
 				43A35A991F8A218D004037F1 /* Plist */,
 				43A516D11F7E248100DCECFF /* Assets.xcassets */,
@@ -145,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */,
+				43C134FA1FA1BC1500938218 /* Models */,
 				43A35A9B1F8A21C0004037F1 /* Controller */,
 				43A35A9D1F8A21F9004037F1 /* View */,
 			);
@@ -158,6 +168,7 @@
 				43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */,
 				4383BC751F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift */,
 				4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */,
+				43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */,
 				4378D3B91F8266100010E565 /* PageViewController.swift */,
 				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
 			);
@@ -169,6 +180,7 @@
 			children = (
 				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
 				433D0B4F1F977838007AB702 /* AppStoryboard.swift */,
+				43C134F81FA1BB2100938218 /* ImageCrop.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +226,22 @@
 				43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43C134F61FA1BAB100938218 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43C134F71FA1BAD000938218 /* ImageCropViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		43C134FA1FA1BC1500938218 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +305,7 @@
 			files = (
 				43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */,
 				43A516D21F7E248100DCECFF /* Assets.xcassets in Resources */,
+				43C134F91FA1BB2100938218 /* ImageCrop.storyboard in Resources */,
 				43A516D01F7E248100DCECFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,12 +323,15 @@
 				43C02E3D1F9D0644002F79B4 /* UIColor+Extension.swift in Sources */,
 				43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */,
 				43F0F7571F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift in Sources */,
+				43C134FD1FA1BCDD00938218 /* ImageCropViewController.swift in Sources */,
 				433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */,
 				43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */,
+				43C134FF1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift in Sources */,
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */,
 				43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */,
+				43C134FC1FA1BC2800938218 /* ImageCropInfo.swift in Sources */,
 				4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */,
 				43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */,
 				43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */,

@@ -119,10 +119,9 @@ class PhotoCaptureViewController: UIViewController {
             pageViewController = segue.destination as! PageViewController
             
             let posters: [PosterDataProvider] = [
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s4"), intensity: 0.3, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s1"), intensity: 0.3, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s3"), intensity: 0.3, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "s2"), intensity: 0.4, color: UIColor(name: "ff1515FF"))
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "f1"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "f2"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
+                MonochromePoster(posterImage: #imageLiteral(resourceName: "f3"), intensity: 0.35, color: UIColor(name: "ff1515FF"))
             ]
             
             pageViewController.dataProvider = posters
@@ -165,7 +164,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {
-        tryOpenImagePicker()
+        tryOpenImagePicker(allowsEditing: false)
     }
     
     fileprivate func setupSession() {

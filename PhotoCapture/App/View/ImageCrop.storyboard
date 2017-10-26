@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Crop View Controller-->
+        <scene sceneID="pqj-lv-rdA">
+            <objects>
+                <viewController storyboardIdentifier="ImageCropViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="24m-NW-pig" customClass="ImageCropViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tEB-dl-LFA"/>
+                        <viewControllerLayoutGuide type="bottom" id="uFr-EU-3tw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5XC-2f-YEZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARw-r3-Cfs" customClass="CropAreaView" customModule="PhotoCapture" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-aS-QDY" customClass="CropAreaView" customModule="PhotoCapture" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uRi-aS-QDY" secondAttribute="height" multiplier="1:1" id="xlR-13-aMg"/>
+                                </constraints>
+                            </view>
+                            <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB2-PW-WnH" customClass="CropAreaView" customModule="PhotoCapture" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="521" width="375" height="146"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-lK-uJ6">
+                                <rect key="frame" x="95.5" y="590" width="184" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-hM-Hnv" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="close:" destination="24m-NW-pig" eventType="touchUpInside" id="Jm0-zG-IV7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-v3-V0v" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
+                                        <rect key="frame" x="112" y="0.0" width="72" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                        <state key="normal" title="Crop">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="crop:" destination="24m-NW-pig" eventType="touchUpInside" id="3gn-5x-34H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uRi-aS-QDY" firstAttribute="centerY" secondItem="5XC-2f-YEZ" secondAttribute="centerY" id="FuP-nL-ZBP"/>
+                            <constraint firstAttribute="trailing" secondItem="ARw-r3-Cfs" secondAttribute="trailing" id="IYY-hr-l5F"/>
+                            <constraint firstAttribute="trailing" secondItem="uB2-PW-WnH" secondAttribute="trailing" id="KHN-lP-N9e"/>
+                            <constraint firstItem="uRi-aS-QDY" firstAttribute="width" secondItem="5XC-2f-YEZ" secondAttribute="width" id="KVj-CM-pgD"/>
+                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="centerX" secondItem="uB2-PW-WnH" secondAttribute="centerX" id="Of9-B1-lK8"/>
+                            <constraint firstItem="ARw-r3-Cfs" firstAttribute="top" secondItem="5XC-2f-YEZ" secondAttribute="top" id="RdM-QI-jCh"/>
+                            <constraint firstItem="uB2-PW-WnH" firstAttribute="top" secondItem="uRi-aS-QDY" secondAttribute="bottom" id="b2S-HW-g9L"/>
+                            <constraint firstItem="uRi-aS-QDY" firstAttribute="centerX" secondItem="5XC-2f-YEZ" secondAttribute="centerX" id="dEH-i5-AQV"/>
+                            <constraint firstAttribute="bottom" secondItem="uB2-PW-WnH" secondAttribute="bottom" id="gfD-ud-57j"/>
+                            <constraint firstItem="uB2-PW-WnH" firstAttribute="leading" secondItem="5XC-2f-YEZ" secondAttribute="leading" id="kkF-5c-YUJ"/>
+                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="centerY" secondItem="uB2-PW-WnH" secondAttribute="centerY" constant="14" id="mNd-h9-HzX"/>
+                            <constraint firstItem="uRi-aS-QDY" firstAttribute="top" secondItem="ARw-r3-Cfs" secondAttribute="bottom" id="tUj-9A-xXF"/>
+                            <constraint firstItem="ARw-r3-Cfs" firstAttribute="leading" secondItem="5XC-2f-YEZ" secondAttribute="leading" id="ymC-MP-pxu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XzC-ci-bth"/>
+                    </view>
+                    <connections>
+                        <outlet property="cropAreaView" destination="uRi-aS-QDY" id="EDX-Rh-jMz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sIL-Dh-WVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138.40000000000001" y="916.1919040479761"/>
+        </scene>
+    </scenes>
+</document>

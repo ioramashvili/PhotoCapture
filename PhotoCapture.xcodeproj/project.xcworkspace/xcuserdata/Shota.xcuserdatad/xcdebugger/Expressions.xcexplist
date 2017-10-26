@@ -25,6 +25,37 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "UIView.snapshot(of:):ImageCropViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "result.scale">
+            </PersistentString>
+            <PersistentString
+               value = "result.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CIImage.addCISourceOverCompositing(with:backgroundImage:):CIImage+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "backgroundImage.size">
+            </PersistentString>
+            <PersistentString
+               value = "backgroundCIImage.size">
+            </PersistentString>
+            <PersistentString
+               value = "UIImage(ciImage: self).scale">
+            </PersistentString>
+            <PersistentString
+               value = "backgroundImage.scale">
+            </PersistentString>
+            <PersistentString
+               value = "scale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CIImage.addFilter(with:):CIImage+Extension.swift">
          <PersistentStrings>
             <PersistentString
@@ -42,7 +73,7 @@
          contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "nomalizedImage.imageOrientation">
+               value = "image.size">
             </PersistentString>
             <PersistentString
                value = "i.imageOrientation">
@@ -54,7 +85,7 @@
                value = "image.imageOrientation">
             </PersistentString>
             <PersistentString
-               value = "image.size">
+               value = "nomalizedImage.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -81,10 +112,10 @@
          contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "videoOutput.connections">
+               value = "videoOutput.connections.first?.videoOrientation">
             </PersistentString>
             <PersistentString
-               value = "videoOutput.connections.first?.videoOrientation">
+               value = "videoOutput.connections">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -100,13 +131,13 @@
          contextName = "PhotoCaptureViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "selectedImageFromImagePicker?.imageOrientation">
-            </PersistentString>
-            <PersistentString
                value = "selectedImageFromImagePicker?.fixOrientation()">
             </PersistentString>
             <PersistentString
                value = "result.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "selectedImageFromImagePicker?.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -128,16 +159,50 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ImageCropViewController.setupScrollView(image:):ImageCropViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ImageCropViewController.setZoomScale():ImageCropViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "PhotoCaptureViewController.cropToPreviewLayer(originalImage:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
+            </PersistentString>
             <PersistentString
                value = "originalImage.scale">
             </PersistentString>
             <PersistentString
                value = "UIScreen.main.bounds">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PhotoCaptureViewController.croppingDidFinish(with:):PhotoCaptureViewController+ImageCropDelegate.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
+               value = "image.size">
+            </PersistentString>
+            <PersistentString
+               value = "image.scale">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIImage.normalizedCISourceOverCompositing(with:backgroundImage:):UIImage+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "backgroundImage.size">
+            </PersistentString>
+            <PersistentString
+               value = "size">
+            </PersistentString>
+            <PersistentString
+               value = "scaledForegroundImage.size">
+            </PersistentString>
+            <PersistentString
+               value = "result.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -146,6 +211,20 @@
          <PersistentStrings>
             <PersistentString
                value = "UIImage(cgImage: cgImage).size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ImageCropViewController.scrollViewDidZoom():ImageCropViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "calculateImageViewFrameInScrollView()">
+            </PersistentString>
+            <PersistentString
+               value = "imageView.frame">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.zoomScale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -6,24 +6,31 @@ extension PhotoCaptureViewController: UIImagePickerControllerDelegate, UINavigat
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//
+//        var selectedImageFromImagePicker: UIImage?
+//
+//        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+//            selectedImageFromImagePicker = editedImage.fixOrientation()
+//        } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            selectedImageFromImagePicker = originalImage.fixOrientation()
+//        }
+//
+//        guard let image = selectedImageFromImagePicker else { return }
+//        guard let activePoster = activePoster else { return }
+//        guard let result = activePoster.filter(with: context, image: image) else { return }
+//
+//        currentState = .photoLibrary(image: result)
+//        previewImageView.image = result
         
-        var selectedImageFromImagePicker: UIImage?
+        guard let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
+        let imageCropInfo = ImageCropInfo(image: originalImage)
+        guard let imageCropVC = AppStoryboard.imageCrop.instantiate(controller: ImageCropViewController.self) else {return}
+        imageCropVC.delegate = self
+        imageCropVC.dataSource = imageCropInfo
         
-        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            selectedImageFromImagePicker = editedImage.fixOrientation()
-        } else
-        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            selectedImageFromImagePicker = originalImage.fixOrientation()
+        dismiss(animated: true) {
+            self.present(imageCropVC, animated: true, completion: nil)
         }
-        
-        guard let image = selectedImageFromImagePicker else { return }
-        guard let activePoster = activePoster else { return }
-        guard let result = activePoster.filter(with: context, image: image) else { return }
-        
-        currentState = .photoLibrary(image: result)
-        previewImageView.image = result
-        
-        dismiss(animated: true, completion: nil)
     }
 }
 
