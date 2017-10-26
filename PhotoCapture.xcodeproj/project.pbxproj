@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43213BF21FA24AD1005F9C94 /* CropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43213BF11FA24AD1005F9C94 /* CropAreaView.swift */; };
 		433D0B501F977838007AB702 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B4F1F977838007AB702 /* AppStoryboard.swift */; };
 		433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B511F977ABB007AB702 /* NSObject+Extension.swift */; };
 		433D0B561F978C9D007AB702 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B551F978C9D007AB702 /* Data+Extension.swift */; };
@@ -36,7 +37,8 @@
 		43C041991FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C041981FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift */; };
 		43C0419B1FA1E56E00B8E978 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C0419A1FA1E56E00B8E978 /* ImageCell.swift */; };
 		43C041A11FA207E600B8E978 /* PhotoLibraryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C041A01FA207E600B8E978 /* PhotoLibraryWrapper.swift */; };
-		43C134F91FA1BB2100938218 /* ImageCrop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C134F81FA1BB2100938218 /* ImageCrop.storyboard */; };
+		43C041A31FA249FB00B8E978 /* PhotoLibraryWrapperDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C041A21FA249FB00B8E978 /* PhotoLibraryWrapperDelegate.swift */; };
+		43C134F91FA1BB2100938218 /* PhotoLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C134F81FA1BB2100938218 /* PhotoLibrary.storyboard */; };
 		43C134FC1FA1BC2800938218 /* ImageCropInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */; };
 		43C134FD1FA1BCDD00938218 /* ImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134F71FA1BAD000938218 /* ImageCropViewController.swift */; };
 		43C134FF1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */; };
@@ -45,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43213BF11FA24AD1005F9C94 /* CropAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropAreaView.swift; sourceTree = "<group>"; };
 		433D0B4F1F977838007AB702 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		433D0B511F977ABB007AB702 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		433D0B551F978C9D007AB702 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
@@ -76,8 +79,9 @@
 		43C041981FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryAuthorizer.swift; sourceTree = "<group>"; };
 		43C0419A1FA1E56E00B8E978 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		43C041A01FA207E600B8E978 /* PhotoLibraryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryWrapper.swift; sourceTree = "<group>"; };
+		43C041A21FA249FB00B8E978 /* PhotoLibraryWrapperDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryWrapperDelegate.swift; sourceTree = "<group>"; };
 		43C134F71FA1BAD000938218 /* ImageCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropViewController.swift; sourceTree = "<group>"; };
-		43C134F81FA1BB2100938218 /* ImageCrop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImageCrop.storyboard; sourceTree = "<group>"; };
+		43C134F81FA1BB2100938218 /* PhotoLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoLibrary.storyboard; sourceTree = "<group>"; };
 		43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropInfo.swift; sourceTree = "<group>"; };
 		43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+ImageCropDelegate.swift"; sourceTree = "<group>"; };
 		43E530851F8A537000D074E5 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -112,8 +116,6 @@
 			children = (
 				43822D231F98BDE700E8D868 /* Poster */,
 				4383BC7C1F8CB99700A10E30 /* AppButton.swift */,
-				43C041961FA1E4D200B8E978 /* ImageFetcher.swift */,
-				43C041981FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,8 +194,6 @@
 			children = (
 				43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */,
 				433D0B4F1F977838007AB702 /* AppStoryboard.swift */,
-				43C134F81FA1BB2100938218 /* ImageCrop.storyboard */,
-				43C0419A1FA1E56E00B8E978 /* ImageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +255,9 @@
 		43C0419D1FA2077900B8E978 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				43C041961FA1E4D200B8E978 /* ImageFetcher.swift */,
+				43C041981FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift */,
+				43C041A21FA249FB00B8E978 /* PhotoLibraryWrapperDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,9 @@
 		43C0419E1FA2078000B8E978 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				43C134F81FA1BB2100938218 /* PhotoLibrary.storyboard */,
+				43C0419A1FA1E56E00B8E978 /* ImageCell.swift */,
+				43213BF11FA24AD1005F9C94 /* CropAreaView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				43C041A01FA207E600B8E978 /* PhotoLibraryWrapper.swift */,
+				43C134F71FA1BAD000938218 /* ImageCropViewController.swift */,
+				43C041941FA1E2D200B8E978 /* PhotoLibraryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,8 +285,6 @@
 		43C134F61FA1BAB100938218 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				43C134F71FA1BAD000938218 /* ImageCropViewController.swift */,
-				43C041941FA1E2D200B8E978 /* PhotoLibraryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,7 +358,7 @@
 			files = (
 				43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */,
 				43A516D21F7E248100DCECFF /* Assets.xcassets in Resources */,
-				43C134F91FA1BB2100938218 /* ImageCrop.storyboard in Resources */,
+				43C134F91FA1BB2100938218 /* PhotoLibrary.storyboard in Resources */,
 				43A516D01F7E248100DCECFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,9 +391,11 @@
 				43C134FC1FA1BC2800938218 /* ImageCropInfo.swift in Sources */,
 				4383BC761F8B66AD00A10E30 /* PhotoCaptureViewController+AVCaptureVideoDataOutputSampleBufferDelegate.swift in Sources */,
 				43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */,
+				43213BF21FA24AD1005F9C94 /* CropAreaView.swift in Sources */,
 				43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */,
 				43822D2B1F98C7D700E8D868 /* MonochromePoster.swift in Sources */,
 				4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */,
+				43C041A31FA249FB00B8E978 /* PhotoLibraryWrapperDelegate.swift in Sources */,
 				43C041971FA1E4D300B8E978 /* ImageFetcher.swift in Sources */,
 				433D0B501F977838007AB702 /* AppStoryboard.swift in Sources */,
 				43E530861F8A537000D074E5 /* CIImage+Extension.swift in Sources */,

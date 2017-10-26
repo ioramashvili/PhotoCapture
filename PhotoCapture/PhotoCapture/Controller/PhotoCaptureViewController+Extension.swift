@@ -24,7 +24,7 @@ extension PhotoCaptureViewController: UIImagePickerControllerDelegate, UINavigat
         
         guard let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
         let imageCropInfo = ImageCropInfo(image: originalImage)
-        guard let imageCropVC = AppStoryboard.imageCrop.instantiate(controller: ImageCropViewController.self) else {return}
+        guard let imageCropVC = AppStoryboard.photoLibrary.instantiate(controller: ImageCropViewController.self) else {return}
         imageCropVC.delegate = self
         imageCropVC.dataSource = imageCropInfo
         

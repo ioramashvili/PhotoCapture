@@ -49,12 +49,6 @@ class PhotoLibraryWrapper: UIViewController {
     }
 }
 
-protocol PhotoLibraryWrapperDelegate: class {
-    func closeVC()
-    func goToPhotoLibraryViewController()
-    func goToImageCropViewController()
-}
-
 extension PhotoLibraryWrapper: PhotoLibraryWrapperDelegate {
     func closeVC() {
         view.isUserInteractionEnabled = false

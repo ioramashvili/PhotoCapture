@@ -3,7 +3,7 @@ import Foundation
 
 enum AppStoryboard: String {
     case main = "Main"
-    case imageCrop = "ImageCrop"
+    case photoLibrary = "PhotoLibrary"
     
     var storyboard: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: nil)
