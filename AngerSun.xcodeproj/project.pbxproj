@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43213BF21FA24AD1005F9C94 /* CropAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43213BF11FA24AD1005F9C94 /* CropAreaView.swift */; };
+		43213BF41FA252DE005F9C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43213BF31FA252D7005F9C94 /* Assets.xcassets */; };
 		433D0B501F977838007AB702 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B4F1F977838007AB702 /* AppStoryboard.swift */; };
 		433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B511F977ABB007AB702 /* NSObject+Extension.swift */; };
 		433D0B561F978C9D007AB702 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B551F978C9D007AB702 /* Data+Extension.swift */; };
@@ -26,7 +27,6 @@
 		43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CA1F7E248100DCECFF /* AppDelegate.swift */; };
 		43A516CD1F7E248100DCECFF /* PhotoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CC1F7E248100DCECFF /* PhotoCaptureViewController.swift */; };
 		43A516D01F7E248100DCECFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516CE1F7E248100DCECFF /* Main.storyboard */; };
-		43A516D21F7E248100DCECFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A516D11F7E248100DCECFF /* Assets.xcassets */; };
 		43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */; };
 		43A516DE1F7E24DB00DCECFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */; };
 		43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */; };
@@ -48,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		43213BF11FA24AD1005F9C94 /* CropAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropAreaView.swift; sourceTree = "<group>"; };
+		43213BF31FA252D7005F9C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43213BF51FA252F1005F9C94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		433D0B4F1F977838007AB702 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		433D0B511F977ABB007AB702 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		433D0B551F978C9D007AB702 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
@@ -63,13 +65,11 @@
 		4383BC771F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift"; sourceTree = "<group>"; };
 		4383BC7C1F8CB99700A10E30 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+Extension.swift"; sourceTree = "<group>"; };
-		43A516C71F7E248100DCECFF /* PhotoCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A516C71F7E248100DCECFF /* AngerSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngerSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A516CA1F7E248100DCECFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A516CC1F7E248100DCECFF /* PhotoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureViewController.swift; sourceTree = "<group>"; };
 		43A516CF1F7E248100DCECFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43A516D11F7E248100DCECFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A516D41F7E248100DCECFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		43A516D61F7E248100DCECFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCaptureViewController.swift; sourceTree = "<group>"; };
 		43AFE2801F8901C50065B496 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -123,13 +123,13 @@
 		43A35A961F8A2142004037F1 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				43213BF31FA252D7005F9C94 /* Assets.xcassets */,
 				43A35A971F8A2151004037F1 /* AppDelegate */,
 				4383BC7B1F8CB98600A10E30 /* Model */,
 				43A35A9C1F8A21D9004037F1 /* View */,
 				43C134F61FA1BAB100938218 /* Controllers */,
 				43A35A981F8A216B004037F1 /* Extension */,
 				43A35A991F8A218D004037F1 /* Plist */,
-				43A516D11F7E248100DCECFF /* Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -160,11 +160,12 @@
 		43A35A991F8A218D004037F1 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				43213BF51FA252F1005F9C94 /* Info.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
 		};
-		43A35A9A1F8A21AF004037F1 /* PhotoCapture */ = {
+		43A35A9A1F8A21AF004037F1 /* AngerSun */ = {
 			isa = PBXGroup;
 			children = (
 				43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */,
@@ -172,7 +173,7 @@
 				43A35A9B1F8A21C0004037F1 /* Controller */,
 				43A35A9D1F8A21F9004037F1 /* View */,
 			);
-			path = PhotoCapture;
+			path = AngerSun;
 			sourceTree = "<group>";
 		};
 		43A35A9B1F8A21C0004037F1 /* Controller */ = {
@@ -209,7 +210,7 @@
 		43A516BE1F7E248100DCECFF = {
 			isa = PBXGroup;
 			children = (
-				43A516C91F7E248100DCECFF /* PhotoCapture */,
+				43A516C91F7E248100DCECFF /* AngerSun */,
 				43A516C81F7E248100DCECFF /* Products */,
 				43A516DC1F7E24DB00DCECFF /* Frameworks */,
 			);
@@ -218,20 +219,19 @@
 		43A516C81F7E248100DCECFF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				43A516C71F7E248100DCECFF /* PhotoCapture.app */,
+				43A516C71F7E248100DCECFF /* AngerSun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		43A516C91F7E248100DCECFF /* PhotoCapture */ = {
+		43A516C91F7E248100DCECFF /* AngerSun */ = {
 			isa = PBXGroup;
 			children = (
-				43A516D61F7E248100DCECFF /* Info.plist */,
 				43A35A961F8A2142004037F1 /* App */,
 				43C0419C1FA2075900B8E978 /* PhotoLibrary */,
-				43A35A9A1F8A21AF004037F1 /* PhotoCapture */,
+				43A35A9A1F8A21AF004037F1 /* AngerSun */,
 			);
-			path = PhotoCapture;
+			path = AngerSun;
 			sourceTree = "<group>";
 		};
 		43A516DC1F7E24DB00DCECFF /* Frameworks */ = {
@@ -300,9 +300,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		43A516C61F7E248100DCECFF /* PhotoCapture */ = {
+		43A516C61F7E248100DCECFF /* AngerSun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43A516D91F7E248100DCECFF /* Build configuration list for PBXNativeTarget "PhotoCapture" */;
+			buildConfigurationList = 43A516D91F7E248100DCECFF /* Build configuration list for PBXNativeTarget "AngerSun" */;
 			buildPhases = (
 				43A516C31F7E248100DCECFF /* Sources */,
 				43A516C41F7E248100DCECFF /* Frameworks */,
@@ -312,9 +312,9 @@
 			);
 			dependencies = (
 			);
-			name = PhotoCapture;
+			name = AngerSun;
 			productName = PhotoCapture;
-			productReference = 43A516C71F7E248100DCECFF /* PhotoCapture.app */;
+			productReference = 43A516C71F7E248100DCECFF /* AngerSun.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -333,7 +333,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 43A516C21F7E248100DCECFF /* Build configuration list for PBXProject "PhotoCapture" */;
+			buildConfigurationList = 43A516C21F7E248100DCECFF /* Build configuration list for PBXProject "AngerSun" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -346,7 +346,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				43A516C61F7E248100DCECFF /* PhotoCapture */,
+				43A516C61F7E248100DCECFF /* AngerSun */,
 			);
 		};
 /* End PBXProject section */
@@ -357,8 +357,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */,
-				43A516D21F7E248100DCECFF /* Assets.xcassets in Resources */,
 				43C134F91FA1BB2100938218 /* PhotoLibrary.storyboard in Resources */,
+				43213BF41FA252DE005F9C94 /* Assets.xcassets in Resources */,
 				43A516D01F7E248100DCECFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,13 +540,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P56L8EXYGW;
-				INFOPLIST_FILE = PhotoCapture/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AngerSun/App/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.self.PhotoCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angersun.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -556,20 +556,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P56L8EXYGW;
-				INFOPLIST_FILE = PhotoCapture/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AngerSun/App/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.self.PhotoCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angersun.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43A516C21F7E248100DCECFF /* Build configuration list for PBXProject "PhotoCapture" */ = {
+		43A516C21F7E248100DCECFF /* Build configuration list for PBXProject "AngerSun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43A516D71F7E248100DCECFF /* Debug */,
@@ -578,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43A516D91F7E248100DCECFF /* Build configuration list for PBXNativeTarget "PhotoCapture" */ = {
+		43A516D91F7E248100DCECFF /* Build configuration list for PBXNativeTarget "AngerSun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43A516DA1F7E248100DCECFF /* Debug */,
