@@ -18,7 +18,6 @@ class ImageCropViewController: UIViewController {
         return scrollView
     }()
     
-//    fileprivate var scrollView: UIScrollView!
     fileprivate var imageView: UIImageView!
     
     weak var delegate: ImageCropDelegate?
@@ -87,15 +86,11 @@ class ImageCropViewController: UIViewController {
     
     @IBAction func crop(_ sender: UIButton) {
         sender.isUserInteractionEnabled = false
+        
         guard let screenshot = view.snapshot(of: cropRect) else {
             sender.isUserInteractionEnabled = true
             return
         }
-        
-        let previewImageView = UIImageView(frame: cropRect)
-        previewImageView.image = screenshot
-        view.addSubview(previewImageView)
-        view.bringSubview(toFront: previewImageView)
         
         delegate?.croppingDidFinish(with: screenshot)
     }
