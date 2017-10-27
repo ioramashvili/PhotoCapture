@@ -2,24 +2,6 @@ import UIKit
 import AVFoundation
 
 class PhotoCaptureViewController: UIViewController {
-    
-    enum State {
-        case liveCamera, photoLibrary(image: UIImage)
-        
-        var isLiveCamera: Bool {
-            switch self {
-            case .liveCamera: return true
-            default: return false
-            }
-        }
-        
-        var photoLibraryImage: UIImage? {
-            switch self {
-            case .photoLibrary(let image): return image
-            default: return nil
-            }
-        }
-    }
 
     var currentState: State = .liveCamera {
         didSet {
@@ -37,7 +19,7 @@ class PhotoCaptureViewController: UIViewController {
         }
     }
     
-    fileprivate let cameraQueue = DispatchQueue(label: "com.engersun.cameraqueue")
+    fileprivate let cameraQueue = DispatchQueue(label: "com.angersun.cameraqueue")
     
     @IBOutlet weak var topBlurOverlay: UIView!
     @IBOutlet weak var bottomBlurOverlay: UIView!
@@ -52,6 +34,9 @@ class PhotoCaptureViewController: UIViewController {
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet var bluerView: UIVisualEffectView!
     fileprivate let flashView = UIView()
+    
+    @IBOutlet weak var photoLibraryButton: UIButton!
+    @IBOutlet weak var swapCameraButton: UIButton!
     
     fileprivate(set) var session = AVCaptureSession()
     fileprivate(set) var photoOutput = AVCapturePhotoOutput()
@@ -92,6 +77,10 @@ class PhotoCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        checkPermissions()
+        
+        cameraNotReady()
+        addCameraObserver()
         
         setupFlashView()
         
@@ -214,6 +203,28 @@ class PhotoCaptureViewController: UIViewController {
         photoLibraryWrapper.delegate = self
         
         present(photoLibraryWrapper, animated: true, completion: nil)
+    }
+    
+    fileprivate func addCameraObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(notifyCameraReady),
+            name: NSNotification.Name.AVCaptureSessionDidStartRunning,
+            object: nil)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(cameraNotReady),
+            name: NSNotification.Name.AVCaptureSessionDidStopRunning,
+            object: nil)
+    }
+    
+    @objc func notifyCameraReady() {
+        [captureButton, photoLibraryButton, swapCameraButton].forEach { $0?.isEnabled = true }
+    }
+    
+    @objc func cameraNotReady() {
+        [captureButton, photoLibraryButton, swapCameraButton].forEach { $0?.isEnabled = false }
     }
     
     fileprivate func setupSession() {
@@ -454,6 +465,24 @@ class PhotoCaptureViewController: UIViewController {
             videoPreviewLayer?.connection?.videoOrientation = .landscapeLeft
             videoOutput.connections.first?.videoOrientation = .landscapeLeft
             break
+        default: break
+        }
+    }
+    
+    fileprivate func checkPermissions() {
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        
+        switch status {
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { granted in
+                DispatchQueue.main.async() { [weak self] in
+                    if !granted {
+                        self?.openAppPermisions()
+                    }
+                }
+            }
+        case .denied, .restricted:
+            openAppPermisions()
         default: break
         }
     }

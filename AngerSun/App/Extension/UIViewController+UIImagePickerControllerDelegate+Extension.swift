@@ -17,8 +17,7 @@ extension UIImagePickerControllerDelegate where Self: UIViewController {
         case .authorized, .notDetermined:
             showImagePicker()
         case .restricted, .denied:
-            print("showAcessDeniedAlert")
-//            showAcessDeniedAlert(for: .photoLibrary)
+            openAppPermisions()
         }
     }
 }
