@@ -117,7 +117,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7R-BJ-UZy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                         <connections>
-                                            <segue destination="Rbo-kc-jpy" kind="embed" identifier="goToPageViewController" id="5b6-BJ-P44"/>
+                                            <segue destination="Rbo-kc-jpy" kind="embed" identifier="goToPosterPageViewController" id="5b6-BJ-P44"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -383,10 +383,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="799"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Poster Page View Controller-->
         <scene sceneID="Q2c-df-cRD">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rbo-kc-jpy" customClass="PageViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PosterPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rbo-kc-jpy" customClass="PosterPageViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ge-51-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1061" y="132"/>

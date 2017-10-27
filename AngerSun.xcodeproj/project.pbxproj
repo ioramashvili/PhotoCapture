@@ -14,7 +14,7 @@
 		433D0B561F978C9D007AB702 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D0B551F978C9D007AB702 /* Data+Extension.swift */; };
 		4343307D1F95E9AA00632C65 /* CIFilter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */; };
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
-		4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PageViewController.swift */; };
+		4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PosterPageViewController.swift */; };
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
 		43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */; };
 		43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D261F98BEF700E8D868 /* PosterFilterType.swift */; };
@@ -57,7 +57,7 @@
 		433D0B551F978C9D007AB702 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		4343307C1F95E9AA00632C65 /* CIFilter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIFilter+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		4378D3B91F8266100010E565 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4378D3B91F8266100010E565 /* PosterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPageViewController.swift; sourceTree = "<group>"; };
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
 		43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterDataProvider.swift; sourceTree = "<group>"; };
 		43822D261F98BEF700E8D868 /* PosterFilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterFilterType.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 		4383BC7B1F8CB98600A10E30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				43822D231F98BDE700E8D868 /* Poster */,
 				4383BC7C1F8CB99700A10E30 /* AppButton.swift */,
 			);
 			path = Model;
@@ -127,7 +126,7 @@
 		438ED7461FA2F8940042D243 /* PhosterPager */ = {
 			isa = PBXGroup;
 			children = (
-				4378D3B91F8266100010E565 /* PageViewController.swift */,
+				4378D3B91F8266100010E565 /* PosterPageViewController.swift */,
 				4378D3BB1F82667D0010E565 /* PosterViewController.swift */,
 			);
 			path = PhosterPager;
@@ -136,13 +135,13 @@
 		43A35A961F8A2142004037F1 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				43213BF31FA252D7005F9C94 /* Assets.xcassets */,
 				43A35A971F8A2151004037F1 /* AppDelegate */,
 				4383BC7B1F8CB98600A10E30 /* Model */,
 				43A35A9C1F8A21D9004037F1 /* View */,
 				43C134F61FA1BAB100938218 /* Controllers */,
 				43A35A981F8A216B004037F1 /* Extension */,
 				43A35A991F8A218D004037F1 /* Plist */,
+				43213BF31FA252D7005F9C94 /* Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -306,6 +305,7 @@
 		43C134FA1FA1BC1500938218 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				43822D231F98BDE700E8D868 /* Poster */,
 				43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */,
 			);
 			path = Model;
@@ -401,7 +401,7 @@
 				43C041A11FA207E600B8E978 /* PhotoLibraryWrapper.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
 				43C041951FA1E2D200B8E978 /* PhotoLibraryViewController.swift in Sources */,
-				4378D3BA1F8266100010E565 /* PageViewController.swift in Sources */,
+				4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */,
 				43C0419B1FA1E56E00B8E978 /* ImageCell.swift in Sources */,
 				43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */,
 				43C134FC1FA1BC2800938218 /* ImageCropInfo.swift in Sources */,

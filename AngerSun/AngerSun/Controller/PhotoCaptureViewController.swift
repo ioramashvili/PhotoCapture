@@ -27,7 +27,7 @@ class PhotoCaptureViewController: UIViewController {
     @IBOutlet weak var liveCameraControlSW: UIStackView!
     @IBOutlet weak var photoLibraryControlSW: UIStackView!
     
-    fileprivate var pageViewController: PageViewController!
+    fileprivate var pageViewController: PosterPageViewController!
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var previewView: UIView!
@@ -148,16 +148,10 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToPageViewController" {
-            pageViewController = segue.destination as! PageViewController
-            
-            let posters: [PosterDataProvider] = [
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "f1"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "f2"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
-                MonochromePoster(posterImage: #imageLiteral(resourceName: "f3"), intensity: 0.35, color: UIColor(name: "ff1515FF"))
-            ]
-            
-            pageViewController.dataProvider = posters
+        if segue.identifier == "goToPosterPageViewController" {
+            pageViewController = segue.destination as! PosterPageViewController
+
+            pageViewController.dataProvider = Poster.staticPosters()
             pageViewController.pageControl = pageControl
         }
     }
@@ -228,7 +222,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func setupSession() {
-        session.sessionPreset = AVCaptureSession.Preset.photo
+        session.sessionPreset = AVCaptureSession.Preset.high
     }
     
     fileprivate func setupPhotoOutput() {
@@ -306,7 +300,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     fileprivate func setupVideoOutput() {
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer delegate"))
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "com.angersun.cameradelegate"))
     }
     
     fileprivate func setupAVCaptureDeviceInput(for device: AVCaptureDevice?) {

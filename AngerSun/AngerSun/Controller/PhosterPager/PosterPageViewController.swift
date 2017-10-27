@@ -1,6 +1,6 @@
 import UIKit
 
-class PageViewController: UIPageViewController {
+class PosterPageViewController: UIPageViewController {
     
     weak var pageControl: UIPageControl?
     
@@ -74,7 +74,7 @@ class PageViewController: UIPageViewController {
     }
 }
 
-extension PageViewController: UIPageViewControllerDataSource {
+extension PosterPageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let currentIndex = index(of: viewController) else { return nil }
@@ -100,7 +100,7 @@ extension PageViewController: UIPageViewControllerDataSource {
     }
 }
 
-extension PageViewController: UIPageViewControllerDelegate {
+extension PosterPageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
     }
     
