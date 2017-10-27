@@ -25,6 +25,8 @@
 		4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383BC7C1F8CB99700A10E30 /* AppButton.swift */; };
 		438ED7451FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED7441FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift */; };
 		438ED7481FA2FBCB0042D243 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED7471FA2FBCB0042D243 /* UIViewController+Extension.swift */; };
+		438ED74A1FA31A9D0042D243 /* ImageCropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED7491FA31A9D0042D243 /* ImageCropDelegate.swift */; };
+		438ED74C1FA31AB20042D243 /* ImageCropDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED74B1FA31AB20042D243 /* ImageCropDataSource.swift */; };
 		43A35A9F1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */; };
 		43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CA1F7E248100DCECFF /* AppDelegate.swift */; };
 		43A516CD1F7E248100DCECFF /* PhotoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CC1F7E248100DCECFF /* PhotoCaptureViewController.swift */; };
@@ -68,6 +70,8 @@
 		4383BC7C1F8CB99700A10E30 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		438ED7441FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureViewControllerState.swift; sourceTree = "<group>"; };
 		438ED7471FA2FBCB0042D243 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		438ED7491FA31A9D0042D243 /* ImageCropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropDelegate.swift; sourceTree = "<group>"; };
+		438ED74B1FA31AB20042D243 /* ImageCropDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropDataSource.swift; sourceTree = "<group>"; };
 		43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+Extension.swift"; sourceTree = "<group>"; };
 		43A516C71F7E248100DCECFF /* AngerSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngerSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A516CA1F7E248100DCECFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 				43C041961FA1E4D200B8E978 /* ImageFetcher.swift */,
 				43C041981FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift */,
 				43C041A21FA249FB00B8E978 /* PhotoLibraryWrapperDelegate.swift */,
+				438ED7491FA31A9D0042D243 /* ImageCropDelegate.swift */,
+				438ED74B1FA31AB20042D243 /* ImageCropDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,12 +400,14 @@
 				43C134FD1FA1BCDD00938218 /* ImageCropViewController.swift in Sources */,
 				43C041991FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift in Sources */,
 				433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */,
+				438ED74C1FA31AB20042D243 /* ImageCropDataSource.swift in Sources */,
 				43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */,
 				438ED7451FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift in Sources */,
 				43C134FF1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift in Sources */,
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
 				43C041A11FA207E600B8E978 /* PhotoLibraryWrapper.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
+				438ED74A1FA31A9D0042D243 /* ImageCropDelegate.swift in Sources */,
 				43C041951FA1E2D200B8E978 /* PhotoLibraryViewController.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */,
 				43C0419B1FA1E56E00B8E978 /* ImageCell.swift in Sources */,

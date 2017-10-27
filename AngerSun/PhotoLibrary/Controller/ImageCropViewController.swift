@@ -131,14 +131,6 @@ extension ImageCropViewController: UIScrollViewDelegate {
     }
 }
 
-protocol ImageCropDelegate: class {
-    func croppingDidFinish(with image: UIImage)
-}
-
-protocol ImageCropDataSource: class {
-    var croppableImage: UIImage { get }
-}
-
 extension UIView {
     fileprivate func snapshot(of rect: CGRect? = nil) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, UIScreen.main.scale)
