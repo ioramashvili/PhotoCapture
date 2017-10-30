@@ -14,7 +14,7 @@
         <!--Photo Library View Controller-->
         <scene sceneID="XZi-gy-jli">
             <objects>
-                <viewController storyboardIdentifier="PhotoLibraryViewController" id="RcZ-Ol-mt0" customClass="PhotoLibraryViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoLibraryViewController" id="RcZ-Ol-mt0" customClass="PhotoLibraryViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TS5-uI-HoH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
         <!--Image Crop View Controller-->
         <scene sceneID="pqj-lv-rdA">
             <objects>
-                <viewController storyboardIdentifier="ImageCropViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="24m-NW-pig" customClass="ImageCropViewController" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageCropViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="24m-NW-pig" customClass="ImageCropViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tEB-dl-LFA"/>
                         <viewControllerLayoutGuide type="bottom" id="uFr-EU-3tw"/>
@@ -46,25 +46,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARw-r3-Cfs" customClass="CropAreaView" customModule="PhotoCapture" customModuleProvider="target">
+                            <view opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARw-r3-Cfs" customClass="CropAreaView" customModule="AngerSun" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-aS-QDY" customClass="CropAreaView" customModule="PhotoCapture" customModuleProvider="target">
+                            <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRi-aS-QDY" customClass="CropAreaView" customModule="AngerSun" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uRi-aS-QDY" secondAttribute="height" multiplier="1:1" id="xlR-13-aMg"/>
                                 </constraints>
                             </view>
-                            <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB2-PW-WnH" customClass="CropAreaView" customModule="PhotoCapture" customModuleProvider="target">
+                            <view opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB2-PW-WnH" customClass="CropAreaView" customModule="AngerSun" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="521" width="375" height="146"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-lK-uJ6">
                                 <rect key="frame" x="95.5" y="590" width="184" height="36"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-hM-Hnv" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-hM-Hnv" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
@@ -90,7 +90,7 @@
                                             <action selector="close:" destination="24m-NW-pig" eventType="touchUpInside" id="Jm0-zG-IV7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-v3-V0v" customClass="AppButton" customModule="PhotoCapture" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-v3-V0v" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
                                         <rect key="frame" x="112" y="0.0" width="72" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
@@ -170,7 +170,7 @@
         <!--Photo Library Wrapper-->
         <scene sceneID="hrd-sh-7P6">
             <objects>
-                <viewController storyboardIdentifier="PhotoLibraryWrapper" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="aJg-vS-e6B" customClass="PhotoLibraryWrapper" customModule="PhotoCapture" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoLibraryWrapper" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="aJg-vS-e6B" customClass="PhotoLibraryWrapper" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9tg-cD-52e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
