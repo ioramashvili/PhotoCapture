@@ -26,8 +26,8 @@ class Poster: PosterDataProvider {
     static func staticPosters() -> [PosterDataProvider] {
         let posters: [PosterDataProvider] = [
             MonochromePoster(posterImage: #imageLiteral(resourceName: "04"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
-            MonochromePoster(posterImage: #imageLiteral(resourceName: "f1"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
-            MonochromePoster(posterImage: #imageLiteral(resourceName: "f2"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
+            MonochromePoster(posterImage: #imageLiteral(resourceName: "why"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
+            MonochromePoster(posterImage: #imageLiteral(resourceName: "stop"), intensity: 0.35, color: UIColor(name: "ff1515FF")),
             MonochromePoster(posterImage: #imageLiteral(resourceName: "f3"), intensity: 0.35, color: UIColor(name: "ff1515FF"))
         ]
         
