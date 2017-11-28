@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ek-Y8-FGL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Odd-o9-oRr">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -438,12 +438,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTT-Np-Xtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="799"/>
+            <point key="canvasLocation" x="140" y="1645"/>
         </scene>
         <!--Poster Text Creation View Controller-->
         <scene sceneID="c0b-Sh-bug">
             <objects>
-                <viewController storyboardIdentifier="PosterTextCreationViewController" id="Odd-o9-oRr" customClass="PosterTextCreationViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PosterTextCreationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Odd-o9-oRr" customClass="PosterTextCreationViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kTI-CO-rOg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +452,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-YR-Onh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="465"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-j6-cTS">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -461,14 +461,14 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-mC-4Zi">
-                                                <rect key="frame" x="0.0" y="375" width="375" height="140"/>
+                                                <rect key="frame" x="0.0" y="375" width="375" height="90"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-X9-FxV">
-                                                        <rect key="frame" x="20" y="47.666666666666686" width="335" height="45.333333333333343"/>
+                                                        <rect key="frame" x="20" y="22.666666666666689" width="335" height="45.333333333333343"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Text"/>
                                                         </userDefinedRuntimeAttributes>
@@ -477,7 +477,7 @@
                                                 <color key="backgroundColor" red="0.89645135399999998" green="0.01829209737" blue="0.1230432913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="gmE-X9-FxV" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" constant="20" id="5CA-7B-9Vr"/>
-                                                    <constraint firstAttribute="height" constant="140" id="6LC-ub-XK8"/>
+                                                    <constraint firstAttribute="height" constant="90" id="6LC-ub-XK8"/>
                                                     <constraint firstAttribute="trailing" secondItem="gmE-X9-FxV" secondAttribute="trailing" constant="20" id="Tqg-zE-hWH"/>
                                                     <constraint firstItem="gmE-X9-FxV" firstAttribute="centerY" secondItem="6L5-mC-4Zi" secondAttribute="centerY" id="sCv-Qm-9tx"/>
                                                 </constraints>
@@ -494,17 +494,91 @@
                                     <constraint firstItem="f4d-j6-cTS" firstAttribute="width" secondItem="KS1-lu-KFC" secondAttribute="width" id="nMr-70-pLe"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEq-bf-Vwh">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfK-Mq-fFs" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="9" width="65" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" red="1" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="1" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1z-GP-Qzh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-A3-MI4" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="307" y="9.3333333333333357" width="58" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.80000000000000004"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jkX-4U-5wK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GfK-Mq-fFs" firstAttribute="leading" secondItem="hEq-bf-Vwh" secondAttribute="leading" constant="10" id="89S-uh-ct3"/>
+                                    <constraint firstAttribute="height" constant="44" id="DA4-GI-aI2"/>
+                                    <constraint firstItem="Otj-A3-MI4" firstAttribute="centerY" secondItem="hEq-bf-Vwh" secondAttribute="centerY" id="Ght-Sa-1MB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Otj-A3-MI4" secondAttribute="trailing" constant="10" id="QZt-Bi-hyt"/>
+                                    <constraint firstItem="GfK-Mq-fFs" firstAttribute="centerY" secondItem="hEq-bf-Vwh" secondAttribute="centerY" id="syr-ES-eay"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xgs-3d-Byh" firstAttribute="trailing" secondItem="hEq-bf-Vwh" secondAttribute="trailing" id="0eR-8O-WtV"/>
+                            <constraint firstItem="KS1-lu-KFC" firstAttribute="top" secondItem="hEq-bf-Vwh" secondAttribute="bottom" id="578-C8-ZZw"/>
                             <constraint firstItem="KS1-lu-KFC" firstAttribute="leading" secondItem="Xgs-3d-Byh" secondAttribute="leading" id="6hf-Ah-t9j"/>
+                            <constraint firstItem="hEq-bf-Vwh" firstAttribute="top" secondItem="Xgs-3d-Byh" secondAttribute="top" id="7dK-wP-Ctr"/>
                             <constraint firstAttribute="bottom" secondItem="KS1-lu-KFC" secondAttribute="bottom" id="cRV-9t-3iX"/>
                             <constraint firstItem="Xgs-3d-Byh" firstAttribute="trailing" secondItem="KS1-lu-KFC" secondAttribute="trailing" id="qoC-Tr-IsW"/>
-                            <constraint firstItem="KS1-lu-KFC" firstAttribute="top" secondItem="Xgs-3d-Byh" secondAttribute="top" id="rGw-rD-AWb"/>
+                            <constraint firstItem="hEq-bf-Vwh" firstAttribute="leading" secondItem="Xgs-3d-Byh" secondAttribute="leading" id="x4p-gQ-isF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xgs-3d-Byh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pbD-X0-b67"/>
+                    <navigationItem key="navigationItem" id="pbD-X0-b67">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NTD-uG-WQS">
+                            <connections>
+                                <action selector="saveButtonDidTap:" destination="Odd-o9-oRr" id="s0v-AO-rft"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="f4d-j6-cTS" id="vyo-2d-OON"/>
                         <outlet property="scrollView" destination="KS1-lu-KFC" id="7zz-zv-K8C"/>
@@ -513,7 +587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKL-fj-OUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2125.5999999999999" y="874.13793103448279"/>
+            <point key="canvasLocation" x="140" y="877"/>
         </scene>
         <!--Poster Page View Controller-->
         <scene sceneID="Q2c-df-cRD">
@@ -551,25 +625,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-Ko-0bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1783.2" y="142.61083743842366"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="I0D-Fg-rAD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ek-Y8-FGL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xvC-Lz-HIv">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Odd-o9-oRr" kind="relationship" relationship="rootViewController" id="gp3-vJ-IOU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ePw-sv-u5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1247" y="874"/>
         </scene>
     </scenes>
     <resources>

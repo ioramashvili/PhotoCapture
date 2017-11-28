@@ -6,6 +6,8 @@ class PosterTextCreationViewController: BaseViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
+    var dataProvider: PosterTextCreationDataProvider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,14 @@ class PosterTextCreationViewController: BaseViewController {
 //        scrollView.contentInset.top = (scrollView.frame.height - scrollView.contentSize.height) / 2
         
         textView.becomeFirstResponder()
+    }
+    
+    @IBAction func saveButtonDidTap(_ sender: UIBarButtonItem) {
+        guard let image = imageView.superview?.toImage() else {
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
     override var keyScrollView: UIScrollView {
@@ -71,11 +81,10 @@ extension PosterTextCreationViewController: UITextViewDelegate {
 
         let boundingRect = sizeOfString(string: newText, constrainedToWidth: textView.frame.width, font: textView.font!)
         let numberOfLines = boundingRect.height / textView.font!.lineHeight
-
+        
         return numberOfLines <= 2
     }
 }
-
 
 
 

@@ -21,6 +21,8 @@
 		436A67581FCDBB49005B8FCA /* xerox-sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 436A67571FCDBB48005B8FCA /* xerox-sans.ttf */; };
 		436A675A1FCDC01D005B8FCA /* KMPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A67591FCDC01D005B8FCA /* KMPlaceholderTextView.swift */; };
 		436A675D1FCDC177005B8FCA /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A675C1FCDC177005B8FCA /* AppFont.swift */; };
+		436A67631FCDFB55005B8FCA /* PosterTextCreationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A67621FCDFB55005B8FCA /* PosterTextCreationInfo.swift */; };
+		436A67651FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A67641FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift */; };
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PosterPageViewController.swift */; };
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
@@ -75,6 +77,8 @@
 		436A67571FCDBB48005B8FCA /* xerox-sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "xerox-sans.ttf"; sourceTree = "<group>"; };
 		436A67591FCDC01D005B8FCA /* KMPlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMPlaceholderTextView.swift; sourceTree = "<group>"; };
 		436A675C1FCDC177005B8FCA /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		436A67621FCDFB55005B8FCA /* PosterTextCreationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTextCreationInfo.swift; sourceTree = "<group>"; };
+		436A67641FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTextCreationDataProvider.swift; sourceTree = "<group>"; };
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B91F8266100010E565 /* PosterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPageViewController.swift; sourceTree = "<group>"; };
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,23 @@
 				436A675C1FCDC177005B8FCA /* AppFont.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		436A67601FCDFB33005B8FCA /* PosterTextCreation */ = {
+			isa = PBXGroup;
+			children = (
+				436A674D1FCDB626005B8FCA /* PosterTextCreationViewController.swift */,
+			);
+			path = PosterTextCreation;
+			sourceTree = "<group>";
+		};
+		436A67611FCDFB4C005B8FCA /* PosterTextCreation */ = {
+			isa = PBXGroup;
+			children = (
+				436A67621FCDFB55005B8FCA /* PosterTextCreationInfo.swift */,
+				436A67641FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift */,
+			);
+			path = PosterTextCreation;
 			sourceTree = "<group>";
 		};
 		43822D231F98BDE700E8D868 /* Poster */ = {
@@ -235,7 +256,7 @@
 				43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */,
 				438ED7441FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift */,
 				438ED7461FA2F8940042D243 /* PhosterPager */,
-				436A674D1FCDB626005B8FCA /* PosterTextCreationViewController.swift */,
+				436A67601FCDFB33005B8FCA /* PosterTextCreation */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -346,6 +367,7 @@
 		43C134FA1FA1BC1500938218 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				436A67611FCDFB4C005B8FCA /* PosterTextCreation */,
 				43822D231F98BDE700E8D868 /* Poster */,
 				43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */,
 			);
@@ -445,7 +467,9 @@
 				43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */,
 				438ED7451FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift in Sources */,
 				43C134FF1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift in Sources */,
+				436A67651FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift in Sources */,
 				4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */,
+				436A67631FCDFB55005B8FCA /* PosterTextCreationInfo.swift in Sources */,
 				43C041A11FA207E600B8E978 /* PhotoLibraryWrapper.swift in Sources */,
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
 				43F7DA141FCD676900D1BB8B /* PosterPageDelegate.swift in Sources */,

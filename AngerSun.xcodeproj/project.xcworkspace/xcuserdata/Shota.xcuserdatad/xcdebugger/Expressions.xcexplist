@@ -9,13 +9,13 @@
          contextName = "PhotoCaptureViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "result.imageOrientation">
-            </PersistentString>
-            <PersistentString
                value = "selectedImageFromImagePicker?.imageOrientation">
             </PersistentString>
             <PersistentString
                value = "selectedImageFromImagePicker?.fixOrientation()">
+            </PersistentString>
+            <PersistentString
+               value = "result.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -106,6 +106,14 @@
          contextName = "ImageCropViewController.setupScrollView(image:):ImageCropViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "PosterTextCreationViewController.textView(_:shouldChangeTextIn:replacementText:):PosterTextCreationViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageView.superview?.toImage()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ImageCropViewController.scrollViewDidZoom():ImageCropViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -190,13 +198,13 @@
          contextName = "PhotoCaptureViewController.cropToPreviewLayer(originalImage:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
+               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
+            </PersistentString>
+            <PersistentString
                value = "UIScreen.main.bounds">
             </PersistentString>
             <PersistentString
                value = "originalImage.scale">
-            </PersistentString>
-            <PersistentString
-               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -231,7 +239,7 @@
          contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "nomalizedImage.imageOrientation">
+               value = "image.imageOrientation">
             </PersistentString>
             <PersistentString
                value = "i.imageOrientation">
@@ -243,7 +251,7 @@
                value = "image.size">
             </PersistentString>
             <PersistentString
-               value = "image.imageOrientation">
+               value = "nomalizedImage.imageOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -251,10 +259,10 @@
          contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "videoOutput.connections">
+               value = "videoOutput.connections.first?.videoOrientation">
             </PersistentString>
             <PersistentString
-               value = "videoOutput.connections.first?.videoOrientation">
+               value = "videoOutput.connections">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
