@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Ek-Y8-FGL">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="VerdanaBold.ttf">
+            <string>Verdana-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Photo Capture View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -435,6 +440,81 @@
             </objects>
             <point key="canvasLocation" x="139" y="799"/>
         </scene>
+        <!--Poster Text Creation View Controller-->
+        <scene sceneID="c0b-Sh-bug">
+            <objects>
+                <viewController storyboardIdentifier="PosterTextCreationViewController" id="Odd-o9-oRr" customClass="PosterTextCreationViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kTI-CO-rOg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS1-lu-KFC">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-YR-Onh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="515"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-j6-cTS">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="f4d-j6-cTS" secondAttribute="height" multiplier="1:1" id="Cfn-6K-5gL"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-mC-4Zi">
+                                                <rect key="frame" x="0.0" y="375" width="375" height="140"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-X9-FxV">
+                                                        <rect key="frame" x="20" y="47.666666666666686" width="335" height="45.333333333333343"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Text"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.89645135399999998" green="0.01829209737" blue="0.1230432913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="gmE-X9-FxV" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" constant="20" id="5CA-7B-9Vr"/>
+                                                    <constraint firstAttribute="height" constant="140" id="6LC-ub-XK8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gmE-X9-FxV" secondAttribute="trailing" constant="20" id="Tqg-zE-hWH"/>
+                                                    <constraint firstItem="gmE-X9-FxV" firstAttribute="centerY" secondItem="6L5-mC-4Zi" secondAttribute="centerY" id="sCv-Qm-9tx"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Qse-YR-Onh" secondAttribute="bottom" id="0f9-Hx-zJE"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="centerX" secondItem="KS1-lu-KFC" secondAttribute="centerX" id="AVQ-7f-O9C"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="top" secondItem="KS1-lu-KFC" secondAttribute="top" id="cY1-u2-GiO"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="leading" secondItem="KS1-lu-KFC" secondAttribute="leading" id="jJl-Si-e5e"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qse-YR-Onh" secondAttribute="trailing" id="mJc-sr-9xV"/>
+                                    <constraint firstItem="f4d-j6-cTS" firstAttribute="width" secondItem="KS1-lu-KFC" secondAttribute="width" id="nMr-70-pLe"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KS1-lu-KFC" firstAttribute="leading" secondItem="Xgs-3d-Byh" secondAttribute="leading" id="6hf-Ah-t9j"/>
+                            <constraint firstAttribute="bottom" secondItem="KS1-lu-KFC" secondAttribute="bottom" id="cRV-9t-3iX"/>
+                            <constraint firstItem="Xgs-3d-Byh" firstAttribute="trailing" secondItem="KS1-lu-KFC" secondAttribute="trailing" id="qoC-Tr-IsW"/>
+                            <constraint firstItem="KS1-lu-KFC" firstAttribute="top" secondItem="Xgs-3d-Byh" secondAttribute="top" id="rGw-rD-AWb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xgs-3d-Byh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pbD-X0-b67"/>
+                    <connections>
+                        <outlet property="imageView" destination="f4d-j6-cTS" id="vyo-2d-OON"/>
+                        <outlet property="scrollView" destination="KS1-lu-KFC" id="7zz-zv-K8C"/>
+                        <outlet property="textView" destination="gmE-X9-FxV" id="y34-cr-dvy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GKL-fj-OUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2125.5999999999999" y="874.13793103448279"/>
+        </scene>
         <!--Poster Page View Controller-->
         <scene sceneID="Q2c-df-cRD">
             <objects>
@@ -472,8 +552,28 @@
             </objects>
             <point key="canvasLocation" x="1783.2" y="142.61083743842366"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I0D-Fg-rAD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Ek-Y8-FGL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xvC-Lz-HIv">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Odd-o9-oRr" kind="relationship" relationship="rootViewController" id="gp3-vJ-IOU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ePw-sv-u5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="874"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="2.3" width="1000" height="1000"/>
         <image name="camera" width="14" height="11"/>
         <image name="flash-off" width="20" height="20"/>
         <image name="gallery" width="14" height="14"/>

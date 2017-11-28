@@ -8,6 +8,7 @@ class PhotoCaptureViewController: UIViewController {
             let isLiveCamera = currentState.isLiveCamera
             liveCameraControlSW.isHidden = !isLiveCamera
             
+            flashModeButton.isHidden = !isLiveCamera
             photoLibraryControlSW.isHidden = !liveCameraControlSW.isHidden
             
             let contentMode: UIViewContentMode = isLiveCamera ? .scaleAspectFill : .scaleAspectFit
