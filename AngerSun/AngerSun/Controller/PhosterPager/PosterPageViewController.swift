@@ -3,6 +3,7 @@ import UIKit
 class PosterPageViewController: UIPageViewController {
     
     weak var pageControl: UIPageControl?
+    weak var posterPageDelegate: PosterPageDelegate?
     
     fileprivate lazy var orderedViewControllers: [PosterViewController] = {
         return (0..<self.dataProvider.count).map { _ in self.newPosterVC() }
@@ -11,6 +12,9 @@ class PosterPageViewController: UIPageViewController {
     fileprivate(set) var activePageIndex: Int = 0 {
         didSet {
             pageControl?.currentPage = activePageIndex
+            
+            guard let poster = activePoster else {return}
+            posterPageDelegate?.pageChanged(to: poster, at: activePageIndex)
         }
     }
     

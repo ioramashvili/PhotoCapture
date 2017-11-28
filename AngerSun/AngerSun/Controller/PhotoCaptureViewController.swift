@@ -21,6 +21,16 @@ class PhotoCaptureViewController: UIViewController {
     
     fileprivate let cameraQueue = DispatchQueue(label: "com.angersun.cameraqueue")
     
+    fileprivate(set) var currentFlashMode: AVCaptureDevice.FlashMode = .off {
+        didSet {
+            flashModeButton.setImageAnimated(image: flashModes[currentFlashMode])
+        }
+    }
+    
+    fileprivate let flashModes: [AVCaptureDevice.FlashMode: UIImage] = [.off: #imageLiteral(resourceName: "flash-off"), .on: #imageLiteral(resourceName: "flash-on"), .auto: #imageLiteral(resourceName: "flash-auto")]
+    
+    @IBOutlet weak var flashModeButton: UIButton!
+    
     @IBOutlet weak var topBlurOverlay: UIView!
     @IBOutlet weak var bottomBlurOverlay: UIView!
     
@@ -77,6 +87,7 @@ class PhotoCaptureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentFlashModeToOff()
         checkPermissions()
         
         cameraNotReady()
@@ -151,6 +162,7 @@ class PhotoCaptureViewController: UIViewController {
         if segue.identifier == "goToPosterPageViewController" {
             pageViewController = segue.destination as! PosterPageViewController
 
+            pageViewController.posterPageDelegate = self
             pageViewController.dataProvider = Poster.staticPosters()
             pageViewController.pageControl = pageControl
         }
@@ -159,7 +171,7 @@ class PhotoCaptureViewController: UIViewController {
     @IBAction func donePhotoLibraryActionTapped(_ sender: UIButton) {
         guard let photoLibraryImage = currentState.photoLibraryImage else {return}
         
-        normalize(image: photoLibraryImage) { image in
+        normalize(image: photoLibraryImage, for: activePoster) { image in
             self.showCaptured(image)
             self.currentState = .liveCamera
         }
@@ -178,13 +190,31 @@ class PhotoCaptureViewController: UIViewController {
         captureButton.isEnabled = false
         
         let settings = AVCapturePhotoSettings()
-        settings.flashMode = .off
-        
-//        if (session.inputs.first as? AVCaptureDeviceInput)?.device.isFlashAvailable ?? false {
-//            settings.flashMode = .auto
-//        }
+        settings.flashMode = currentFlashMode
         
         photoOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    @IBAction func flashModeDidTap(_ sender: UIButton) {
+        currentFlashModeToNext()
+    }
+    
+    fileprivate func currentFlashModeToOff() {
+        currentFlashMode = .off
+    }
+    
+    fileprivate func currentFlashModeToNext() {
+        let isFlashAvailable = (session.inputs.first as? AVCaptureDeviceInput)?.device.isFlashAvailable ?? false
+        if !isFlashAvailable {
+            currentFlashModeToOff()
+            return
+        }
+        
+        let modeIndex = currentFlashMode.rawValue
+        let nextIndex = modeIndex + 1
+        let normalizedNextIndex = nextIndex > 2 ? 0 : nextIndex
+        guard let nextMode = AVCaptureDevice.FlashMode(rawValue: normalizedNextIndex) else {return}
+        currentFlashMode = nextMode
     }
     
     @IBAction func swapCameras(_ sender: UIButton) {
@@ -192,7 +222,6 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func chooseImage(_ sender: UIButton) {
-//        tryOpenImagePicker(allowsEditing: false)
         guard let photoLibraryWrapper = AppStoryboard.photoLibrary.instantiate(controller: PhotoLibraryWrapper.self) else {return}
         photoLibraryWrapper.delegate = self
         
@@ -298,6 +327,7 @@ class PhotoCaptureViewController: UIViewController {
         session.addInput(newInput)
         rotatePreview()
         session.commitConfiguration()
+        currentFlashModeToOff()
     }
     
     fileprivate func videoOutputOrientationToPortrait() {
@@ -398,9 +428,11 @@ class PhotoCaptureViewController: UIViewController {
         }
     }
     
-    func normalize(image: UIImage, complition: @escaping (_ image: UIImage) -> Void) {
+    func normalize(image: UIImage, for poster: PosterDataProvider?, complition: @escaping (_ image: UIImage) -> Void) {
+        guard let poster = poster else {return}
         DispatchQueue.global(qos: .userInteractive).async {
-            guard let composition = self.activePoster?.mainPoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: image) else { return }
+            guard let filteredImage = poster.filter(with: self.context, image: image) else { return }
+            guard let composition = poster.mainPoster.normalizedCISourceOverCompositing(with: self.context, backgroundImage: filteredImage) else { return }
             
             DispatchQueue.main.async {
                 print("Cropped", composition.size)
@@ -491,6 +523,19 @@ class PhotoCaptureViewController: UIViewController {
         case .denied, .restricted:
             openAppPermisions()
         default: break
+        }
+    }
+}
+
+extension PhotoCaptureViewController: PosterPageDelegate {
+    func pageChanged(to poster: PosterDataProvider, at index: Int) {
+        guard let photoLibraryImage = currentState.photoLibraryImage else {return}
+        DispatchQueue.global(qos: .userInteractive).async {
+            guard let filteredImage = poster.filter(with: self.context, image: photoLibraryImage) else { return }
+            
+            DispatchQueue.main.async {
+                self.previewImageView.image = filteredImage
+            }
         }
     }
 }

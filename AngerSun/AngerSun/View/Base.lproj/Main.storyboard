@@ -50,7 +50,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5w-8a-dsw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="218.66666666666666"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VrR-3G-rWV">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VrR-3G-rWV">
                                         <rect key="frame" x="0.0" y="188.66666666666666" width="375" height="30"/>
                                         <subviews>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qz-S7-uQy">
@@ -143,23 +143,24 @@
                                         <color key="currentPageIndicatorTintColor" red="0.89645135402679443" green="0.018292097374796867" blue="0.12304329127073288" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UoU-tY-XpB">
-                                        <rect key="frame" x="0.0" y="83.333333333333371" width="375" height="80.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="83.666666666666742" width="375" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dif-Oo-N5a">
-                                                <rect key="frame" x="0.0" y="40.333333333333371" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="40" width="0.0" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="AWM-D9-rfv"/>
                                                     <constraint firstAttribute="height" id="JqH-Iz-HLD"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-wG-7md" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="53.666666666666657" y="20.333333333333368" width="40" height="39.666666666666657"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-wG-7md" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                                <rect key="frame" x="49.666666666666657" y="16.333333333333254" width="48" height="47.666666666666657"/>
                                                 <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9qd-wG-7md" secondAttribute="height" multiplier="1:1" id="JN1-1y-s8c"/>
                                                 </constraints>
-                                                <state key="normal">
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="gallery">
                                                     <color key="titleColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -180,7 +181,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
-                                                        <color key="value" red="0.16078431369999999" green="0.19215686269999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -188,10 +189,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="147.66666666666666" y="0.0" width="80" height="80.333333333333329"/>
+                                                <rect key="frame" x="147.33333333333334" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="80" id="WT1-q5-UmL"/>
+                                                    <constraint firstAttribute="width" constant="80" id="WT1-q5-UmL"/>
                                                     <constraint firstAttribute="width" secondItem="R1K-nc-imy" secondAttribute="height" multiplier="1:1" id="xc4-JH-bgj"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -210,11 +211,13 @@
                                                     <action selector="captureImageTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cT-1S-QVE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-mT-tEb" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="281.33333333333331" y="20.333333333333368" width="40" height="39.666666666666657"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-mT-tEb" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                                <rect key="frame" x="277" y="16.333333333333254" width="48.333333333333314" height="47.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oG9-mT-tEb" secondAttribute="height" multiplier="1:1" id="bQL-zE-gvI"/>
                                                 </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="camera"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                         <real key="value" value="0.0"/>
@@ -226,7 +229,7 @@
                                                         <size key="value" width="0.0" height="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
-                                                        <color key="value" red="0.16078431369999999" green="0.19215686269999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="2.5"/>
@@ -241,7 +244,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1J-7C-soH">
-                                                <rect key="frame" x="375" y="40.333333333333371" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="375" y="40" width="0.0" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="LIJ-a0-UDg"/>
@@ -251,12 +254,12 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="oG9-mT-tEb" firstAttribute="height" secondItem="9qd-wG-7md" secondAttribute="height" id="eku-W3-sDI"/>
-                                            <constraint firstItem="9qd-wG-7md" firstAttribute="width" secondItem="R1K-nc-imy" secondAttribute="width" multiplier="0.5" id="fjT-Ti-yWm"/>
+                                            <constraint firstItem="9qd-wG-7md" firstAttribute="width" secondItem="R1K-nc-imy" secondAttribute="width" multiplier="0.6" id="fjT-Ti-yWm"/>
                                             <constraint firstItem="oG9-mT-tEb" firstAttribute="width" secondItem="9qd-wG-7md" secondAttribute="width" id="unp-su-0MZ"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-hR-CDb">
-                                        <rect key="frame" x="95" y="105.33333333333337" width="184" height="36"/>
+                                        <rect key="frame" x="96.333333333333314" y="105" width="184" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW5-0G-gJ7" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
@@ -326,10 +329,56 @@
                                     <constraint firstItem="xra-dY-fKq" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="ylN-ls-Afd"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-wg-e1O">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-ex-aQB" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="325.33333333333331" y="0.0" width="44.666666666666686" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="24Y-ex-aQB" secondAttribute="height" multiplier="1:1" id="Mdx-20-4mw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="flash-off"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.16078431369999999" green="0.19215686269999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="flashModeDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NiH-bN-jaE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="24Y-ex-aQB" secondAttribute="trailing" constant="5" id="6uO-ob-atJ"/>
+                                    <constraint firstItem="24Y-ex-aQB" firstAttribute="centerY" secondItem="Wcd-wg-e1O" secondAttribute="centerY" id="Gvs-qw-FZ4"/>
+                                    <constraint firstItem="24Y-ex-aQB" firstAttribute="width" secondItem="24Y-ex-aQB" secondAttribute="height" multiplier="1:1" id="NnW-2e-B4Z"/>
+                                    <constraint firstAttribute="height" constant="44" id="Qsg-7Z-nA7"/>
+                                    <constraint firstItem="24Y-ex-aQB" firstAttribute="height" secondItem="Wcd-wg-e1O" secondAttribute="height" id="fgw-eL-x0s"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0pe-Hn-g3O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wcd-wg-e1O" secondAttribute="trailing" id="2w1-gY-G8p"/>
                             <constraint firstAttribute="bottom" secondItem="ioQ-nT-mKV" secondAttribute="bottom" id="3Aw-jD-k9f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B5w-8a-dsw" secondAttribute="trailing" id="9De-DC-Y47"/>
                             <constraint firstItem="Nyc-FD-xEy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CAP-7f-e3c"/>
@@ -337,6 +386,7 @@
                             <constraint firstItem="Nyc-FD-xEy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="I98-CS-LK1"/>
                             <constraint firstItem="B5w-8a-dsw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="INJ-lo-e0G"/>
                             <constraint firstItem="B5w-8a-dsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JKx-IC-mW4"/>
+                            <constraint firstItem="Wcd-wg-e1O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RJ4-mF-cAg"/>
                             <constraint firstAttribute="trailing" secondItem="krg-fe-Ej0" secondAttribute="trailing" id="ST9-ee-sdX"/>
                             <constraint firstAttribute="bottom" secondItem="krg-fe-Ej0" secondAttribute="bottom" id="VqW-uF-eAR"/>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEK-Pz-vRh"/>
@@ -348,6 +398,7 @@
                             <constraint firstItem="krg-fe-Ej0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="p1F-Bo-i9z"/>
                             <constraint firstItem="Nyc-FD-xEy" firstAttribute="top" secondItem="B5w-8a-dsw" secondAttribute="bottom" id="uLX-2C-pKv"/>
                             <constraint firstItem="ioQ-nT-mKV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ubS-hw-3EX"/>
+                            <constraint firstItem="Wcd-wg-e1O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wAB-dE-pXT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -355,6 +406,7 @@
                         <outlet property="bluerView" destination="krg-fe-Ej0" id="rSU-m6-tFQ"/>
                         <outlet property="bottomBlurOverlay" destination="ioQ-nT-mKV" id="gEM-7L-iTE"/>
                         <outlet property="captureButton" destination="R1K-nc-imy" id="2US-0m-lab"/>
+                        <outlet property="flashModeButton" destination="24Y-ex-aQB" id="GKa-gJ-UR1"/>
                         <outlet property="liveCameraControlSW" destination="UoU-tY-XpB" id="R4Q-9h-owS"/>
                         <outlet property="pageControl" destination="xra-dY-fKq" id="OVE-nv-EDS"/>
                         <outlet property="photoLibraryButton" destination="9qd-wG-7md" id="eYg-Kt-bnU"/>
@@ -421,4 +473,9 @@
             <point key="canvasLocation" x="1783.2" y="142.61083743842366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="14" height="11"/>
+        <image name="flash-off" width="20" height="20"/>
+        <image name="gallery" width="14" height="14"/>
+    </resources>
 </document>

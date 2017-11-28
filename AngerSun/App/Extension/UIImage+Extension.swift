@@ -47,5 +47,21 @@ extension UIImage: Monochromable {
     }
 }
 
-
+extension UIImage {
+    public func mask(with color: UIColor) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        let context = UIGraphicsGetCurrentContext()!
+        let rect = CGRect(origin: .zero, size: size)
+        
+        color.setFill()
+        draw(in: rect)
+        
+        context.setBlendMode(.sourceIn)
+        context.fill(rect)
+        
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return resultImage
+    }
+}
 
