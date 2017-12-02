@@ -23,6 +23,8 @@
 		436A675D1FCDC177005B8FCA /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A675C1FCDC177005B8FCA /* AppFont.swift */; };
 		436A67631FCDFB55005B8FCA /* PosterTextCreationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A67621FCDFB55005B8FCA /* PosterTextCreationInfo.swift */; };
 		436A67651FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A67641FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift */; };
+		436A676F1FCE01D2005B8FCA /* LSFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436A676C1FCE01C3005B8FCA /* LSFramework.framework */; };
+		436A67701FCE01D3005B8FCA /* LSFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 436A676C1FCE01C3005B8FCA /* LSFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PosterPageViewController.swift */; };
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
@@ -61,6 +63,44 @@
 		43F7DA141FCD676900D1BB8B /* PosterPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7DA131FCD676900D1BB8B /* PosterPageDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		436A676B1FCE01C3005B8FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 436A67661FCE01C2005B8FCA /* LSFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43B0C6521FA725E8003180DC;
+			remoteInfo = LSFramework;
+		};
+		436A676D1FCE01C3005B8FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 436A67661FCE01C2005B8FCA /* LSFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43B0C65B1FA725E9003180DC;
+			remoteInfo = LSFrameworkTests;
+		};
+		436A67711FCE01D3005B8FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 436A67661FCE01C2005B8FCA /* LSFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 43B0C6511FA725E8003180DC;
+			remoteInfo = LSFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		436A67731FCE01D3005B8FCA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				436A67701FCE01D3005B8FCA /* LSFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		43213BF11FA24AD1005F9C94 /* CropAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropAreaView.swift; sourceTree = "<group>"; };
 		43213BF31FA252D7005F9C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +119,7 @@
 		436A675C1FCDC177005B8FCA /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		436A67621FCDFB55005B8FCA /* PosterTextCreationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTextCreationInfo.swift; sourceTree = "<group>"; };
 		436A67641FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTextCreationDataProvider.swift; sourceTree = "<group>"; };
+		436A67661FCE01C2005B8FCA /* LSFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LSFramework.xcodeproj; path = ../../LSFramework/LSFramework.xcodeproj; sourceTree = "<group>"; };
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B91F8266100010E565 /* PosterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPageViewController.swift; sourceTree = "<group>"; };
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436A676F1FCE01D2005B8FCA /* LSFramework.framework in Frameworks */,
 				43A516DE1F7E24DB00DCECFF /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +196,15 @@
 				436A67641FCDFB96005B8FCA /* PosterTextCreationDataProvider.swift */,
 			);
 			path = PosterTextCreation;
+			sourceTree = "<group>";
+		};
+		436A67671FCE01C2005B8FCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				436A676C1FCE01C3005B8FCA /* LSFramework.framework */,
+				436A676E1FCE01C3005B8FCA /* LSFrameworkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		43822D231F98BDE700E8D868 /* Poster */ = {
@@ -282,6 +333,7 @@
 		43A516BE1F7E248100DCECFF = {
 			isa = PBXGroup;
 			children = (
+				436A67661FCE01C2005B8FCA /* LSFramework.xcodeproj */,
 				43A516C91F7E248100DCECFF /* AngerSun */,
 				43A516C81F7E248100DCECFF /* Products */,
 				43A516DC1F7E24DB00DCECFF /* Frameworks */,
@@ -384,10 +436,12 @@
 				43A516C31F7E248100DCECFF /* Sources */,
 				43A516C41F7E248100DCECFF /* Frameworks */,
 				43A516C51F7E248100DCECFF /* Resources */,
+				436A67731FCE01D3005B8FCA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				436A67721FCE01D3005B8FCA /* PBXTargetDependency */,
 			);
 			name = AngerSun;
 			productName = PhotoCapture;
@@ -421,12 +475,35 @@
 			mainGroup = 43A516BE1F7E248100DCECFF;
 			productRefGroup = 43A516C81F7E248100DCECFF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 436A67671FCE01C2005B8FCA /* Products */;
+					ProjectRef = 436A67661FCE01C2005B8FCA /* LSFramework.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				43A516C61F7E248100DCECFF /* AngerSun */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		436A676C1FCE01C3005B8FCA /* LSFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LSFramework.framework;
+			remoteRef = 436A676B1FCE01C3005B8FCA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		436A676E1FCE01C3005B8FCA /* LSFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = LSFrameworkTests.xctest;
+			remoteRef = 436A676D1FCE01C3005B8FCA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		43A516C51F7E248100DCECFF /* Resources */ = {
@@ -498,6 +575,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		436A67721FCE01D3005B8FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LSFramework;
+			targetProxy = 436A67711FCE01D3005B8FCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		43A516CE1F7E248100DCECFF /* Main.storyboard */ = {
@@ -629,6 +714,7 @@
 		43A516DA1F7E248100DCECFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P56L8EXYGW;
@@ -645,6 +731,7 @@
 		43A516DB1F7E248100DCECFF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P56L8EXYGW;

@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 @objc protocol KeyboardDelegate: class {
-    var keyScrollView: UIScrollView { get set }
+    var keyScrollView: UIScrollView { get }
     var isKeyboardOpen: Bool { get set }
     var keyboardFrame: CGRect { get set }
     var constantBottomOffset: CGFloat { get }

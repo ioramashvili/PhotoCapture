@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Odd-o9-oRr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sHK-G5-Fcd">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -263,63 +263,6 @@
                                             <constraint firstItem="oG9-mT-tEb" firstAttribute="width" secondItem="9qd-wG-7md" secondAttribute="width" id="unp-su-0MZ"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-hR-CDb">
-                                        <rect key="frame" x="96.333333333333314" y="105" width="184" height="36"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW5-0G-gJ7" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
-                                                <state key="normal" title="Cancel">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
-                                                        <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                        <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                        <real key="value" value="0.80000000000000004"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                        <size key="value" width="0.0" height="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="calncelPhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T1i-cS-brz"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-pk-sTc" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="112" y="0.0" width="72" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
-                                                <state key="normal" title="Create">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
-                                                        <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                        <real key="value" value="0.80000000000000004"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                        <size key="value" width="0.0" height="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                        <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wLC-dm-fUV"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -327,9 +270,7 @@
                                     <constraint firstItem="R1K-nc-imy" firstAttribute="height" secondItem="ioQ-nT-mKV" secondAttribute="height" multiplier="0.5" priority="999" id="5fO-iZ-Ci1"/>
                                     <constraint firstAttribute="trailing" secondItem="UoU-tY-XpB" secondAttribute="trailing" id="Srj-Dl-YJn"/>
                                     <constraint firstAttribute="trailing" secondItem="xra-dY-fKq" secondAttribute="trailing" id="SvH-IE-DFS"/>
-                                    <constraint firstItem="gsy-hR-CDb" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" constant="14" id="fKC-hV-r9P"/>
                                     <constraint firstItem="UoU-tY-XpB" firstAttribute="centerY" secondItem="ioQ-nT-mKV" secondAttribute="centerY" constant="14" id="oY3-mt-dQk"/>
-                                    <constraint firstItem="gsy-hR-CDb" firstAttribute="centerX" secondItem="ioQ-nT-mKV" secondAttribute="centerX" id="tFF-iD-kiB"/>
                                     <constraint firstItem="UoU-tY-XpB" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="uOb-U5-LvL"/>
                                     <constraint firstItem="xra-dY-fKq" firstAttribute="leading" secondItem="ioQ-nT-mKV" secondAttribute="leading" id="ylN-ls-Afd"/>
                                 </constraints>
@@ -379,18 +320,76 @@
                                     <constraint firstItem="24Y-ex-aQB" firstAttribute="height" secondItem="Wcd-wg-e1O" secondAttribute="height" id="fgw-eL-x0s"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gsy-hR-CDb">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ups-uS-MB5" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="9" width="65" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="calncelPhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JgP-Wz-XFV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-91-RyE" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="311" y="9" width="54" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
+                                                <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KnV-sQ-KdG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2YC-cQ-ogz"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gsy-hR-CDb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0hJ-48-er0"/>
                             <constraint firstItem="jse-Z5-8co" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0pe-Hn-g3O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wcd-wg-e1O" secondAttribute="trailing" id="2w1-gY-G8p"/>
                             <constraint firstAttribute="bottom" secondItem="ioQ-nT-mKV" secondAttribute="bottom" id="3Aw-jD-k9f"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B5w-8a-dsw" secondAttribute="trailing" id="9De-DC-Y47"/>
                             <constraint firstItem="Nyc-FD-xEy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CAP-7f-e3c"/>
                             <constraint firstAttribute="bottom" secondItem="jse-Z5-8co" secondAttribute="bottom" id="Eww-Yt-z6y"/>
+                            <constraint firstItem="gsy-hR-CDb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GgH-ii-fCo"/>
                             <constraint firstItem="Nyc-FD-xEy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="I98-CS-LK1"/>
                             <constraint firstItem="B5w-8a-dsw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="INJ-lo-e0G"/>
                             <constraint firstItem="B5w-8a-dsw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JKx-IC-mW4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gsy-hR-CDb" secondAttribute="trailing" id="MLb-hP-JDJ"/>
                             <constraint firstItem="Wcd-wg-e1O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RJ4-mF-cAg"/>
                             <constraint firstAttribute="trailing" secondItem="krg-fe-Ej0" secondAttribute="trailing" id="ST9-ee-sdX"/>
                             <constraint firstAttribute="bottom" secondItem="krg-fe-Ej0" secondAttribute="bottom" id="VqW-uF-eAR"/>
@@ -407,6 +406,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VHM-pG-IXn"/>
                     <connections>
                         <outlet property="bluerView" destination="krg-fe-Ej0" id="rSU-m6-tFQ"/>
                         <outlet property="bottomBlurOverlay" destination="ioQ-nT-mKV" id="gEM-7L-iTE"/>
@@ -423,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="132.26600985221674"/>
+            <point key="canvasLocation" x="482.39999999999998" y="132.26600985221674"/>
         </scene>
         <!--Test-->
         <scene sceneID="NXX-xb-LXn">
@@ -438,12 +438,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTT-Np-Xtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="1645"/>
+            <point key="canvasLocation" x="1404" y="876"/>
         </scene>
         <!--Poster Text Creation View Controller-->
         <scene sceneID="c0b-Sh-bug">
             <objects>
-                <viewController storyboardIdentifier="PosterTextCreationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Odd-o9-oRr" customClass="PosterTextCreationViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PosterTextCreationViewController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overCurrentContext" id="Odd-o9-oRr" customClass="PosterTextCreationViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kTI-CO-rOg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +452,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-YR-Onh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="465"/>
+                                        <rect key="frame" x="0.0" y="129.66666666666663" width="375" height="465"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-j6-cTS">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -463,8 +463,11 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-mC-4Zi">
                                                 <rect key="frame" x="0.0" y="375" width="375" height="90"/>
                                                 <subviews>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-9x-kqI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                    </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-X9-FxV">
-                                                        <rect key="frame" x="20" y="22.666666666666689" width="335" height="45.333333333333343"/>
+                                                        <rect key="frame" x="20" y="22.666666666666746" width="335" height="45.333333333333343"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
@@ -474,34 +477,38 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.89645135399999998" green="0.01829209737" blue="0.1230432913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.16078431372549018" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="lLR-9x-kqI" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" id="4aT-PZ-q3M"/>
                                                     <constraint firstItem="gmE-X9-FxV" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" constant="20" id="5CA-7B-9Vr"/>
                                                     <constraint firstAttribute="height" constant="90" id="6LC-ub-XK8"/>
                                                     <constraint firstAttribute="trailing" secondItem="gmE-X9-FxV" secondAttribute="trailing" constant="20" id="Tqg-zE-hWH"/>
+                                                    <constraint firstItem="lLR-9x-kqI" firstAttribute="top" secondItem="6L5-mC-4Zi" secondAttribute="top" id="bPu-sb-jKw"/>
                                                     <constraint firstItem="gmE-X9-FxV" firstAttribute="centerY" secondItem="6L5-mC-4Zi" secondAttribute="centerY" id="sCv-Qm-9tx"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lLR-9x-kqI" secondAttribute="trailing" id="sqV-JD-ZdR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lLR-9x-kqI" secondAttribute="bottom" id="yQY-8N-CMb"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Qse-YR-Onh" secondAttribute="bottom" id="0f9-Hx-zJE"/>
-                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="centerX" secondItem="KS1-lu-KFC" secondAttribute="centerX" id="AVQ-7f-O9C"/>
-                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="top" secondItem="KS1-lu-KFC" secondAttribute="top" id="cY1-u2-GiO"/>
-                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="leading" secondItem="KS1-lu-KFC" secondAttribute="leading" id="jJl-Si-e5e"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qse-YR-Onh" secondAttribute="trailing" id="mJc-sr-9xV"/>
-                                    <constraint firstItem="f4d-j6-cTS" firstAttribute="width" secondItem="KS1-lu-KFC" secondAttribute="width" id="nMr-70-pLe"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KS1-lu-KFC" secondAttribute="top" id="Pbn-05-Ut7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qse-YR-Onh" secondAttribute="trailing" id="YUn-Yf-aRs"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="leading" secondItem="KS1-lu-KFC" secondAttribute="leading" id="eV1-QF-JFJ"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="centerX" secondItem="KS1-lu-KFC" secondAttribute="centerX" id="u1B-JT-ggX"/>
+                                    <constraint firstItem="Qse-YR-Onh" firstAttribute="centerY" secondItem="KS1-lu-KFC" secondAttribute="centerY" id="xHK-jF-c8M"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qse-YR-Onh" secondAttribute="bottom" id="zx6-5e-5hD"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEq-bf-Vwh">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfK-Mq-fFs" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="9" width="65" height="26"/>
+                                        <rect key="frame" x="10" y="9" width="52" height="26"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" title="Back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -520,6 +527,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="cancelButtonDidTap:" destination="Odd-o9-oRr" eventType="touchUpInside" id="Azu-2N-6gc"/>
                                             <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1z-GP-Qzh"/>
                                         </connections>
                                     </button>
@@ -547,6 +555,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="donePhotoLibraryActionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jkX-4U-5wK"/>
+                                            <action selector="shareButtonDidTap:" destination="Odd-o9-oRr" eventType="touchUpInside" id="cc2-eW-lm4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -580,6 +589,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="appendingImageView" destination="lLR-9x-kqI" id="7Hj-Lz-1sr"/>
                         <outlet property="imageView" destination="f4d-j6-cTS" id="vyo-2d-OON"/>
                         <outlet property="scrollView" destination="KS1-lu-KFC" id="7zz-zv-K8C"/>
                         <outlet property="textView" destination="gmE-X9-FxV" id="y34-cr-dvy"/>
@@ -587,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKL-fj-OUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="877"/>
+            <point key="canvasLocation" x="482" y="876"/>
         </scene>
         <!--Poster Page View Controller-->
         <scene sceneID="Q2c-df-cRD">
@@ -595,7 +605,7 @@
                 <pageViewController storyboardIdentifier="PosterPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rbo-kc-jpy" customClass="PosterPageViewController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ge-51-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="132"/>
+            <point key="canvasLocation" x="1402.4000000000001" y="131.89655172413794"/>
         </scene>
         <!--Poster View Controller-->
         <scene sceneID="zFJ-yq-Net">
@@ -624,7 +634,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-Ko-0bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783.2" y="142.61083743842366"/>
+            <point key="canvasLocation" x="2125.5999999999999" y="142.61083743842366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iPa-fe-EcB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sHK-G5-Fcd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="thO-jB-RvR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="l0c-gA-qFy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ei4-aa-PyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="132"/>
         </scene>
     </scenes>
     <resources>

@@ -8,4 +8,12 @@ extension UIViewController {
             }
         }
     }
+    
+    func share(image: UIImage) {
+        let imageToShare = [ image ]
+        let activity = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activity.excludedActivityTypes = [.postToVimeo, .addToReadingList]
+        
+        present(activity, animated: true, completion: nil)
+    }
 }

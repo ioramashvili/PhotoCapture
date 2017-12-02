@@ -3,6 +3,7 @@ import UIKit
 class PosterTextCreationViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var appendingImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     
@@ -10,7 +11,7 @@ class PosterTextCreationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        scrollView.keyboardDismissMode = .interactive
         setupUI()
     }
     
@@ -18,30 +19,35 @@ class PosterTextCreationViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         observeKeyboardNotifications()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        scrollView.contentInset.top = (scrollView.frame.height - scrollView.contentSize.height) / 2
         
-        textView.becomeFirstResponder()
+        if dataProvider.posterDataProvider.isTextAppandable {
+            textView.becomeFirstResponder()
+        }
     }
     
-    @IBAction func saveButtonDidTap(_ sender: UIBarButtonItem) {
-        guard let image = imageView.superview?.toImage() else {
-            return
+    @IBAction func shareButtonDidTap(_ sender: UIButton) {
+        textView.resignFirstResponder()
+        
+        var image: UIImage?
+        if textView.text.isEmpty {
+            image = imageView.toImage()
+        } else {
+            image = imageView.superview?.toImage()
         }
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        guard let sharableImage = image else {return}
+        
+        UIImageWriteToSavedPhotosAlbum(sharableImage, nil, nil, nil)
+        share(image: sharableImage)
+    }
+    
+    @IBAction func cancelButtonDidTap(_ sender: UIButton) {
+        textView.resignFirstResponder()
+        navigationController?.popViewController(animated: true)
     }
     
     override var keyScrollView: UIScrollView {
-        get {
-            return scrollView
-        }
-        set {
-            
-        }
+        return scrollView
     }
     
     override var constantBottomOffset: CGFloat {
@@ -49,12 +55,23 @@ class PosterTextCreationViewController: BaseViewController {
     }
     
     fileprivate func setupUI() {
+        setupText()
+        
+        imageView.image = dataProvider.capturedImage
+        
+        if !dataProvider.posterDataProvider.isTextAppandable {
+            appendingImageView.superview?.isHidden = true
+        }
+
+        scrollView.isScrollEnabled = dataProvider.posterDataProvider.isTextAppandable
+    }
+    
+    fileprivate func setupText() {
         textView.delegate = self
 //        textView.font = AppFont.base.with(size: 24)
         textView.textColor = .white
 //        textView.placeholderColor = UIColor.white.withAlphaComponent(0.5)
         textView.backgroundColor = .clear
-//        textView.textContainer.lineFragmentPadding = 0
         textView.contentInset = .zero
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = .zero

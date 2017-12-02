@@ -16,12 +16,7 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController: KeyboardDelegate {
     var keyScrollView: UIScrollView {
-        get {
-            return UIScrollView()
-        }
-        set {
-            
-        }
+        return UIScrollView()
     }
     
     var isKeyboardOpen: Bool {

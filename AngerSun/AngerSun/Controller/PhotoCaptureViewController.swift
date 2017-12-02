@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import LSFramework
 
 class PhotoCaptureViewController: UIViewController {
 
@@ -164,7 +165,7 @@ class PhotoCaptureViewController: UIViewController {
             pageViewController = segue.destination as! PosterPageViewController
 
             pageViewController.posterPageDelegate = self
-            pageViewController.dataProvider = Poster.staticPosters()
+            pageViewController.dataProvider = Poster.getPosters()
             pageViewController.pageControl = pageControl
         }
     }
@@ -443,32 +444,37 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     func showCaptured(_ image: UIImage) {
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
+        let controller = storyboard!.instantiate(controller: PosterTextCreationViewController.self)!
+        controller.dataProvider = PosterTextCreationInfo(capturedImage: image, posterDataProvider: activePoster!)
+        navigationController?.pushViewController(controller, animated: true)
+//        present(controller, animated: true, completion: nil)
         
-        let width = UIScreen.main.bounds.width
-        let y = (UIScreen.main.bounds.height - width) / 2
-        imageView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: CGSize(width: width, height: width))
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(previewImageTapped(sender:)))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tap)
-        
-        view.addSubview(imageView)
-        
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
-            imageView.frame.origin = CGPoint(x: 20, y: 50)
-            imageView.frame.size = CGSize(width: 200, height: 200)
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
-                imageView.frame.origin.x -= 400
-            }, completion: { _ in
-                imageView.removeFromSuperview()
-            })
-        }
+//        let imageView = UIImageView(image: image)
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.clipsToBounds = true
+//
+//        let width = UIScreen.main.bounds.width
+//        let y = (UIScreen.main.bounds.height - width) / 2
+//        imageView.frame = CGRect(origin: CGPoint(x: 0, y: y), size: CGSize(width: width, height: width))
+//
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(previewImageTapped(sender:)))
+//        imageView.isUserInteractionEnabled = true
+//        imageView.addGestureRecognizer(tap)
+//
+//        view.addSubview(imageView)
+//
+//        UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
+//            imageView.frame.origin = CGPoint(x: 20, y: 50)
+//            imageView.frame.size = CGSize(width: 200, height: 200)
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+//            UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
+//                imageView.frame.origin.x -= 400
+//            }, completion: { _ in
+//                imageView.removeFromSuperview()
+//            })
+//        }
     }
     
     @objc fileprivate func previewImageTapped(sender: UITapGestureRecognizer) {
@@ -477,14 +483,6 @@ class PhotoCaptureViewController: UIViewController {
         }
         
         share(image: image)
-    }
-    
-    fileprivate func share(image: UIImage) {
-        let imageToShare = [ image ]
-        let activity = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
-        activity.excludedActivityTypes = [.postToVimeo, .addToReadingList]
-        
-        present(activity, animated: true, completion: nil)
     }
     
     fileprivate func rotatePreview() {

@@ -1,6 +1,6 @@
 import UIKit
 
-class PosterTextCreationInfo {
+class PosterTextCreationInfo: PosterTextCreationDataProvider {
     let capturedImage: UIImage
     let posterDataProvider: PosterDataProvider
     

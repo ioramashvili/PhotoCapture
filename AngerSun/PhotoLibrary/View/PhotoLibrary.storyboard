@@ -61,39 +61,36 @@
                                 <rect key="frame" x="0.0" y="521" width="375" height="146"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-lK-uJ6">
-                                <rect key="frame" x="95.5" y="590" width="184" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DI3-lK-uJ6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="26"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-hM-Hnv" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="72" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imH-TB-rIR" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="65" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hasSquareBorderRadius" value="YES"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="appButtonBackgroundColor">
-                                                <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="1" green="0.08235294118" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.80000000000000004"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                 <size key="value" width="0.0" height="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="close:" destination="24m-NW-pig" eventType="touchUpInside" id="Jm0-zG-IV7"/>
+                                            <action selector="close:" destination="24m-NW-pig" eventType="touchUpInside" id="vzE-PL-f8i"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9p-v3-V0v" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                        <rect key="frame" x="112" y="0.0" width="72" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCo-U7-cXo" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                        <rect key="frame" x="313" y="0.0" width="52" height="26"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Crop">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -103,35 +100,37 @@
                                                 <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.80000000000000004"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                                 <size key="value" width="0.0" height="0.0"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="crop:" destination="24m-NW-pig" eventType="touchUpInside" id="3gn-5x-34H"/>
+                                            <action selector="crop:" destination="24m-NW-pig" eventType="touchUpInside" id="6AU-3z-D1U"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uAL-FK-fcK"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="leading" secondItem="XzC-ci-bth" secondAttribute="leading" id="B5H-gY-6cX"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="centerY" secondItem="5XC-2f-YEZ" secondAttribute="centerY" id="FuP-nL-ZBP"/>
+                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="top" secondItem="tEB-dl-LFA" secondAttribute="bottom" id="Hjr-bK-riO"/>
                             <constraint firstAttribute="trailing" secondItem="ARw-r3-Cfs" secondAttribute="trailing" id="IYY-hr-l5F"/>
                             <constraint firstAttribute="trailing" secondItem="uB2-PW-WnH" secondAttribute="trailing" id="KHN-lP-N9e"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="width" secondItem="5XC-2f-YEZ" secondAttribute="width" id="KVj-CM-pgD"/>
-                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="centerX" secondItem="uB2-PW-WnH" secondAttribute="centerX" id="Of9-B1-lK8"/>
                             <constraint firstItem="ARw-r3-Cfs" firstAttribute="top" secondItem="5XC-2f-YEZ" secondAttribute="top" id="RdM-QI-jCh"/>
                             <constraint firstItem="uB2-PW-WnH" firstAttribute="top" secondItem="uRi-aS-QDY" secondAttribute="bottom" id="b2S-HW-g9L"/>
+                            <constraint firstItem="XzC-ci-bth" firstAttribute="trailing" secondItem="DI3-lK-uJ6" secondAttribute="trailing" id="c3j-Qe-12z"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="centerX" secondItem="5XC-2f-YEZ" secondAttribute="centerX" id="dEH-i5-AQV"/>
                             <constraint firstAttribute="bottom" secondItem="uB2-PW-WnH" secondAttribute="bottom" id="gfD-ud-57j"/>
                             <constraint firstItem="uB2-PW-WnH" firstAttribute="leading" secondItem="5XC-2f-YEZ" secondAttribute="leading" id="kkF-5c-YUJ"/>
-                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="centerY" secondItem="uB2-PW-WnH" secondAttribute="centerY" constant="14" id="mNd-h9-HzX"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="top" secondItem="ARw-r3-Cfs" secondAttribute="bottom" id="tUj-9A-xXF"/>
                             <constraint firstItem="ARw-r3-Cfs" firstAttribute="leading" secondItem="5XC-2f-YEZ" secondAttribute="leading" id="ymC-MP-pxu"/>
                         </constraints>
