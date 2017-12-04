@@ -159,7 +159,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-wG-7md" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="49.666666666666657" y="16.333333333333254" width="48" height="47.666666666666657"/>
+                                                <rect key="frame" x="49.666666666666657" y="16" width="48" height="48"/>
                                                 <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9qd-wG-7md" secondAttribute="height" multiplier="1:1" id="JN1-1y-s8c"/>
@@ -194,7 +194,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="147.33333333333334" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="147.66666666666666" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" red="0.94117647059999998" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="WT1-q5-UmL"/>
@@ -217,7 +217,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oG9-mT-tEb" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                                <rect key="frame" x="277" y="16.333333333333254" width="48.333333333333314" height="47.666666666666657"/>
+                                                <rect key="frame" x="277.33333333333331" y="16" width="48" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oG9-mT-tEb" secondAttribute="height" multiplier="1:1" id="bQL-zE-gvI"/>
                                                 </constraints>
@@ -279,7 +279,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24Y-ex-aQB" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                        <rect key="frame" x="325.33333333333331" y="0.0" width="44.666666666666686" height="44"/>
+                                        <rect key="frame" x="325.66666666666669" y="0.0" width="44.333333333333314" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="24Y-ex-aQB" secondAttribute="height" multiplier="1:1" id="Mdx-20-4mw"/>
                                         </constraints>
@@ -452,7 +452,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-YR-Onh">
-                                        <rect key="frame" x="0.0" y="129.66666666666663" width="375" height="465"/>
+                                        <rect key="frame" x="0.0" y="130.33333333333334" width="375" height="463.33333333333326"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-j6-cTS">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -461,13 +461,13 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-mC-4Zi">
-                                                <rect key="frame" x="0.0" y="375" width="375" height="90"/>
+                                                <rect key="frame" x="0.0" y="375" width="375" height="88.333333333333314"/>
                                                 <subviews>
-                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-9x-kqI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-9x-kqI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="88.333333333333329"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-X9-FxV">
-                                                        <rect key="frame" x="20" y="22.666666666666746" width="335" height="45.333333333333343"/>
+                                                        <rect key="frame" x="20" y="22.000000000000004" width="335" height="45.333333333333343"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
@@ -477,11 +477,11 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.16078431372549018" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="lLR-9x-kqI" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" id="4aT-PZ-q3M"/>
                                                     <constraint firstItem="gmE-X9-FxV" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" constant="20" id="5CA-7B-9Vr"/>
-                                                    <constraint firstAttribute="height" constant="90" id="6LC-ub-XK8"/>
+                                                    <constraint firstAttribute="width" secondItem="6L5-mC-4Zi" secondAttribute="height" multiplier="1000:235" id="OuQ-TI-rhc"/>
                                                     <constraint firstAttribute="trailing" secondItem="gmE-X9-FxV" secondAttribute="trailing" constant="20" id="Tqg-zE-hWH"/>
                                                     <constraint firstItem="lLR-9x-kqI" firstAttribute="top" secondItem="6L5-mC-4Zi" secondAttribute="top" id="bPu-sb-jKw"/>
                                                     <constraint firstItem="gmE-X9-FxV" firstAttribute="centerY" secondItem="6L5-mC-4Zi" secondAttribute="centerY" id="sCv-Qm-9tx"/>
@@ -532,7 +532,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otj-A3-MI4" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                        <rect key="frame" x="307" y="9.3333333333333357" width="58" height="26"/>
+                                        <rect key="frame" x="307" y="9.6666666666666643" width="58" height="26"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                         <state key="normal" title="Share">

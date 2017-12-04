@@ -58,6 +58,7 @@ class PosterTextCreationViewController: BaseViewController {
         setupText()
         
         imageView.image = dataProvider.capturedImage
+        appendingImageView.image = dataProvider.posterDataProvider.appendableImage
         
         if !dataProvider.posterDataProvider.isTextAppandable {
             appendingImageView.superview?.isHidden = true
