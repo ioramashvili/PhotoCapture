@@ -65,6 +65,7 @@ class AppButton: UIButton {
         
         layer.cornerRadius = cornerRadius
         
+        
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
