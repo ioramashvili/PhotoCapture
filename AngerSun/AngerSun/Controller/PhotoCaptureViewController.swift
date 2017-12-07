@@ -86,8 +86,27 @@ class PhotoCaptureViewController: UIViewController {
         return pageViewController?.activePoster
     }
     
+    lazy var animatePageViewController: Void = {
+        self.pageViewController.view.transform = CGAffineTransform(scaleX: 2, y: 2)
+        self.pageViewController.view.alpha = 0
+        self.pageViewController.view.isHidden = false
+        self.pageControl.isHidden = false
+        
+        UIView.animate(withDuration: 0.55, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            self.pageViewController.view.transform = .identity
+            self.pageViewController.view.alpha = 1
+        }, completion: nil)
+    }()
+    
+    fileprivate func pageViewControllerToInitialState() {
+        pageViewController.view.isHidden = true
+        pageControl.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pageViewControllerToInitialState()
         
         currentFlashModeToOff()
         checkPermissions()
@@ -248,21 +267,11 @@ class PhotoCaptureViewController: UIViewController {
         [captureButton, photoLibraryButton, swapCameraButton].forEach { $0?.isEnabled = true }
         pageViewController.view.isUserInteractionEnabled = true
         
-        pageViewController.view.transform = CGAffineTransform(scaleX: 2, y: 2)
-        pageViewController.view.alpha = 0
-        pageViewController.view.isHidden = false
-        pageControl.isHidden = false
-        
-        UIView.animate(withDuration: 0.55, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
-            self.pageViewController.view.transform = .identity
-            self.pageViewController.view.alpha = 1
-        }, completion: nil)
+        _ = animatePageViewController
     }
     
     @objc func cameraNotReady() {
         [captureButton, photoLibraryButton, swapCameraButton].forEach { $0?.isEnabled = false }
-        pageViewController.view.isHidden = true
-        pageControl.isHidden = true
     }
     
     fileprivate func setupSession() {
