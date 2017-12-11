@@ -25,20 +25,34 @@ class PosterTextCreationViewController: BaseViewController {
         }
     }
     
-    @IBAction func shareButtonDidTap(_ sender: UIButton) {
-        textView.resignFirstResponder()
-        
+    fileprivate func createPoster() -> UIImage? {
         var image: UIImage?
+        
         if textView.text.isEmpty {
             image = imageView.toImage()
         } else {
             image = imageView.superview?.toImage()
         }
         
-        guard let sharableImage = image else {return}
+        return image
+    }
+    
+    @IBAction func saveButtonDidTap(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
         
-        UIImageWriteToSavedPhotosAlbum(sharableImage, nil, nil, nil)
-        share(image: sharableImage)
+        guard let poster = createPoster() else {return}
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            UIImageWriteToSavedPhotosAlbum(poster, nil, nil, nil)
+        }
+    }
+    
+    @IBAction func shareButtonDidTap(_ sender: UIButton) {
+        textView.resignFirstResponder()
+        
+        guard let poster = createPoster() else {return}
+        
+        share(image: poster)
     }
     
     @IBAction func cancelButtonDidTap(_ sender: UIButton) {

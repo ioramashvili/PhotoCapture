@@ -88,10 +88,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCo-U7-cXo" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
-                                        <rect key="frame" x="313" y="0.0" width="52" height="26"/>
+                                        <rect key="frame" x="300" y="0.0" width="65" height="26"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Crop">
+                                        <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -112,6 +112,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="gCo-U7-cXo" firstAttribute="width" secondItem="imH-TB-rIR" secondAttribute="width" id="1HZ-5c-DpE"/>
                                     <constraint firstAttribute="height" constant="44" id="uAL-FK-fcK"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
