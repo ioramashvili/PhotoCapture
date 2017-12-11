@@ -51,7 +51,7 @@ class PosterTextCreationViewController: BaseViewController {
     }
     
     override var constantBottomOffset: CGFloat {
-        return 0
+        return 38
     }
     
     fileprivate func setupUI() {

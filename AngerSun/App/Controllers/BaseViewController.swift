@@ -46,7 +46,7 @@ extension BaseViewController: KeyboardDelegate {
         keyScrollView.contentInset.bottom = getKeyboardHeight(notification) + constantBottomOffset
         
         // ვაკლებთ iPhone X-ის გამო
-        keyScrollView.contentInset.bottom -= UIApplication.safeAreaInsets.bottom
+//        keyScrollView.contentInset.bottom -= UIApplication.safeAreaInsets.bottom
     }
     
     func keyboardWillHide(notification: NSNotification) {
