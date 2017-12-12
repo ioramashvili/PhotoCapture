@@ -39,9 +39,9 @@ class Poster: PosterDataProvider {
         let filterColor = UIColor(name: "ff1515FF")
         
         let posters: [PosterDataProvider] = [
-            MonochromePoster(posterImage: #imageLiteral(resourceName: "why-fuck-style"), intensity: 0.35, color: filterColor, isTextAppandable: false),
-            MonochromePoster(posterImage: #imageLiteral(resourceName: "stop-fuck-style"), intensity: 0.35, color: filterColor, isTextAppandable: false),
-            MonochromePoster(posterImage: #imageLiteral(resourceName: "fuck-fuck-style"), intensity: 0.35, color: filterColor, isTextAppandable: false),
+            MonochromePoster(posterImage: #imageLiteral(resourceName: "why-fuck-style"), intensity: 0, color: filterColor, isTextAppandable: false),
+            MonochromePoster(posterImage: #imageLiteral(resourceName: "stop-fuck-style"), intensity: 0, color: filterColor, isTextAppandable: false),
+            MonochromePoster(posterImage: #imageLiteral(resourceName: "fuck-fuck-style"), intensity: 0, color: filterColor, isTextAppandable: false),
             MonochromePoster(posterImage: #imageLiteral(resourceName: "2.1"), intensity: 0.35, color: filterColor, isTextAppandable: true, appendableImage: #imageLiteral(resourceName: "2-bottom")),
             MonochromePoster(posterImage: #imageLiteral(resourceName: "2.2"), intensity: 0.35, color: filterColor, isTextAppandable: true, appendableImage: #imageLiteral(resourceName: "2-bottom")),
             MonochromePoster(posterImage: #imageLiteral(resourceName: "2.3"), intensity: 0.65, color: filterColor, isTextAppandable: true, appendableImage: #imageLiteral(resourceName: "2-bottom"))

@@ -11,6 +11,7 @@ class PosterTextCreationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        StoreReviewHelper.increaseTargetCount()
         scrollView.keyboardDismissMode = .interactive
         setupUI()
     }

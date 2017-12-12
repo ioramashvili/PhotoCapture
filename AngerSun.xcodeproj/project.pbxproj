@@ -39,6 +39,7 @@
 		438ED7481FA2FBCB0042D243 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED7471FA2FBCB0042D243 /* UIViewController+Extension.swift */; };
 		438ED74A1FA31A9D0042D243 /* ImageCropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED7491FA31A9D0042D243 /* ImageCropDelegate.swift */; };
 		438ED74C1FA31AB20042D243 /* ImageCropDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438ED74B1FA31AB20042D243 /* ImageCropDataSource.swift */; };
+		4390F3DB1FDFEEB000DE9999 /* StoreReviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390F3DA1FDFEEB000DE9999 /* StoreReviewHelper.swift */; };
 		43A35A9F1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */; };
 		43A516CB1F7E248100DCECFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CA1F7E248100DCECFF /* AppDelegate.swift */; };
 		43A516CD1F7E248100DCECFF /* PhotoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516CC1F7E248100DCECFF /* PhotoCaptureViewController.swift */; };
@@ -134,6 +135,7 @@
 		438ED7471FA2FBCB0042D243 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		438ED7491FA31A9D0042D243 /* ImageCropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropDelegate.swift; sourceTree = "<group>"; };
 		438ED74B1FA31AB20042D243 /* ImageCropDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropDataSource.swift; sourceTree = "<group>"; };
+		4390F3DA1FDFEEB000DE9999 /* StoreReviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewHelper.swift; sourceTree = "<group>"; };
 		43A35A9E1F8A22F5004037F1 /* PhotoCaptureViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+Extension.swift"; sourceTree = "<group>"; };
 		43A516C71F7E248100DCECFF /* AngerSun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AngerSun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A516CA1F7E248100DCECFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				4383BC7C1F8CB99700A10E30 /* AppButton.swift */,
 				436A67521FCDB719005B8FCA /* KeyboardDelegate.swift */,
+				4390F3DA1FDFEEB000DE9999 /* StoreReviewHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */,
 				43213BF21FA24AD1005F9C94 /* CropAreaView.swift in Sources */,
 				43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */,
+				4390F3DB1FDFEEB000DE9999 /* StoreReviewHelper.swift in Sources */,
 				43822D2B1F98C7D700E8D868 /* MonochromePoster.swift in Sources */,
 				4383BC781F8B66EC00A10E30 /* PhotoCaptureViewController+AVCapturePhotoCaptureDelegate.swift in Sources */,
 				436A67551FCDB74C005B8FCA /* UIApplication+Extension.swift in Sources */,
