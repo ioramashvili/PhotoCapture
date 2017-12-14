@@ -29,6 +29,7 @@ extension PhotoCaptureViewController: AVCapturePhotoCaptureDelegate {
     @available(iOS 11.0, *)
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         defer {
+            captureButton.stopAnimating()
             captureButton.isEnabled = true
         }
         

@@ -27,6 +27,11 @@ class Poster: PosterDataProvider {
         return .none
     }
     
+    var intensity: NSNumber {
+        get { return 0 }
+        set { }
+    }
+    
     func filter(with context: CIContext, image: UIImage) -> UIImage? {
         return nil
     }

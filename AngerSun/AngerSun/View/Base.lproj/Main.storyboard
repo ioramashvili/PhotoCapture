@@ -193,7 +193,7 @@
                                                     <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kHs-5C-s8a"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy" customClass="AppButton" customModule="AngerSun" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1K-nc-imy" customClass="LoadingAppButton" customModule="AngerSun" customModuleProvider="target">
                                                 <rect key="frame" x="120" y="0.0" width="80" height="80"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -726,7 +726,7 @@
     </scenes>
     <resources>
         <image name="1_1024" width="500" height="500"/>
-        <image name="2.3" width="1000" height="1000"/>
+        <image name="2.3" width="1500" height="1500"/>
         <image name="camera" width="14" height="11"/>
         <image name="flash-off" width="20" height="20"/>
         <image name="gallery" width="14" height="14"/>

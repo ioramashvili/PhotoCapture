@@ -1,11 +1,11 @@
 import UIKit
 
 class MonochromePoster: Poster {
-    var intensity: NSNumber
+    fileprivate var _intensity: NSNumber
     fileprivate(set) var color: UIColor
     
     init(posterImage: UIImage, intensity: NSNumber, color: UIColor, isTextAppandable: Bool, appendableImage: UIImage? = nil) {
-        self.intensity = intensity
+        self._intensity = intensity
         self.color = color
         super.init(mainPoster: posterImage, isTextAppandable: isTextAppandable, appendableImage: appendableImage)
     }
@@ -19,7 +19,13 @@ class MonochromePoster: Poster {
         appendableImage: appendableImage)
     }
     
+    override var intensity: NSNumber {
+        get { return _intensity }
+        set { _intensity = newValue }
+    }
+    
     override func filter(with context: CIContext, image: UIImage) -> UIImage? {
+        if !hasIntensity { return image }
         return image.addCIColorMonochrome(with: context, intensity: intensity, color: color)
     }
     

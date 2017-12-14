@@ -59,6 +59,7 @@
 		43C134FC1FA1BC2800938218 /* ImageCropInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */; };
 		43C134FD1FA1BCDD00938218 /* ImageCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134F71FA1BAD000938218 /* ImageCropViewController.swift */; };
 		43C134FF1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */; };
+		43C4D1301FE26D3A00EC6D22 /* LoadingAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4D12F1FE26D3A00EC6D22 /* LoadingAppButton.swift */; };
 		43E530861F8A537000D074E5 /* CIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E530851F8A537000D074E5 /* CIImage+Extension.swift */; };
 		43F0F7571F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */; };
 		43F7DA141FCD676900D1BB8B /* PosterPageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F7DA131FCD676900D1BB8B /* PosterPageDelegate.swift */; };
@@ -156,6 +157,7 @@
 		43C134F81FA1BB2100938218 /* PhotoLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoLibrary.storyboard; sourceTree = "<group>"; };
 		43C134FB1FA1BC2800938218 /* ImageCropInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropInfo.swift; sourceTree = "<group>"; };
 		43C134FE1FA1BE2C00938218 /* PhotoCaptureViewController+ImageCropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCaptureViewController+ImageCropDelegate.swift"; sourceTree = "<group>"; };
+		43C4D12F1FE26D3A00EC6D22 /* LoadingAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAppButton.swift; sourceTree = "<group>"; };
 		43E530851F8A537000D074E5 /* CIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Extension.swift"; sourceTree = "<group>"; };
 		43F0F7561F865AF000B251C3 /* UIViewController+UIImagePickerControllerDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+UIImagePickerControllerDelegate+Extension.swift"; sourceTree = "<group>"; };
 		43F7DA131FCD676900D1BB8B /* PosterPageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPageDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				4383BC7C1F8CB99700A10E30 /* AppButton.swift */,
 				436A67521FCDB719005B8FCA /* KeyboardDelegate.swift */,
 				4390F3DA1FDFEEB000DE9999 /* StoreReviewHelper.swift */,
+				43C4D12F1FE26D3A00EC6D22 /* LoadingAppButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				438ED74A1FA31A9D0042D243 /* ImageCropDelegate.swift in Sources */,
 				43C041951FA1E2D200B8E978 /* PhotoLibraryViewController.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */,
+				43C4D1301FE26D3A00EC6D22 /* LoadingAppButton.swift in Sources */,
 				43C0419B1FA1E56E00B8E978 /* ImageCell.swift in Sources */,
 				43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */,
 				436A674B1FCD8D4E005B8FCA /* UIButton+Extension.swift in Sources */,

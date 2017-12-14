@@ -43,7 +43,7 @@ class PhotoCaptureViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var previewView: UIView!
-    @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var captureButton: LoadingAppButton!
     @IBOutlet var bluerView: UIVisualEffectView!
     fileprivate let flashView = UIView()
     
@@ -207,8 +207,9 @@ class PhotoCaptureViewController: UIViewController {
         (activePoster as? MonochromePoster)?.intensity = NSNumber(value: intensity)
     }
     
-    @IBAction func captureImageTapped(_ sender: UIButton) {
+    @IBAction func captureImageTapped(_ sender: LoadingAppButton) {
         captureButton.isEnabled = false
+        sender.startAnimating()
         
         let settings = AVCapturePhotoSettings()
         settings.flashMode = currentFlashMode

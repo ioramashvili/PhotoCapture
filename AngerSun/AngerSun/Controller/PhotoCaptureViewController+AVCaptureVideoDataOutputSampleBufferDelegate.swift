@@ -13,8 +13,8 @@ extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelega
         
         guard var result = activePoster.filter(with: context, ciImage: ciImage) else { return }
         
-        if currentCaptureDevicePosistion == .front {
-            result = UIImage(cgImage: result.cgImage!, scale: result.scale, orientation: .upMirrored)
+        if let resultCGImage = result.cgImage, currentCaptureDevicePosistion == .front {
+            result = UIImage(cgImage: resultCGImage, scale: result.scale, orientation: .upMirrored)
         }
         
         DispatchQueue.main.async { [weak self] in

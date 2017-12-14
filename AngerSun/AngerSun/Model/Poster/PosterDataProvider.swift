@@ -8,4 +8,11 @@ protocol PosterDataProvider: class {
     var posterFilterType: PosterFilterType { get }
     var isTextAppandable: Bool { get }
     var appendableImage: UIImage? { get }
+    var intensity: NSNumber { get set }
+}
+
+extension PosterDataProvider {
+    var hasIntensity: Bool {
+        return intensity.doubleValue > 0
+    }
 }
