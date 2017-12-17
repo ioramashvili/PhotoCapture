@@ -196,7 +196,6 @@ class PhotoCaptureViewController: UIViewController {
         
         normalize(image: photoLibraryImage, for: activePoster) { image in
             self.showCaptured(image)
-            self.currentState = .liveCamera
         }
     }
     
@@ -523,6 +522,20 @@ extension PhotoCaptureViewController: PosterPageDelegate {
                 self.previewImageView.image = filteredImage
             }
         }
+    }
+}
+
+extension PhotoCaptureViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        print("did show", viewController.className)
+        
+        if viewController.className == PosterTextCreationViewController.className {
+            currentState = .liveCamera
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        print("will show", viewController.className)
     }
 }
 

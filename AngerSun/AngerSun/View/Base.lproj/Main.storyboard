@@ -706,10 +706,10 @@
             </objects>
             <point key="canvasLocation" x="2125.5999999999999" y="142.61083743842366"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="iPa-fe-EcB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sHK-G5-Fcd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="sHK-G5-Fcd" customClass="BaseNavigationController" customModule="AngerSun" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="thO-jB-RvR">
                         <autoresizingMask key="autoresizingMask"/>

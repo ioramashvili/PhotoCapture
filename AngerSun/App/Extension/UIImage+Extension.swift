@@ -31,9 +31,11 @@ extension UIImage {
     
     func normalizedCISourceOverCompositing(with context: CIContext, backgroundImage: UIImage) -> UIImage? {
         
-        let scale = NSNumber(value: Double(backgroundImage.size.width / size.width) * Double(backgroundImage.scale))
+//        let scale = NSNumber(value: Double(backgroundImage.size.width / size.width) * Double(backgroundImage.scale))
         
-        guard let scaledForegroundImage = addCILanczosScaleTransform(with: context, scale: scale) else { return nil }
+//        guard let scaledForegroundImage = addCILanczosScaleTransform(with: context, scale: scale) else { return nil }
+        
+        guard let scaledForegroundImage = resizeImage(with: backgroundImage.size, opaque: false, scale: backgroundImage.scale) else { return nil }
         
         let result = scaledForegroundImage.addCISourceOverCompositing(with: context, backgroundImage: backgroundImage)
         
@@ -44,6 +46,22 @@ extension UIImage {
 extension UIImage: Monochromable {
     func addCIColorMonochrome(with context: CIContext, intensity: NSNumber, color: UIColor) -> UIImage? {
         return tryCreateCIImage()?.addCIColorMonochrome(with: context, intensity: intensity, color: color)
+    }
+}
+
+extension UIImage{
+    func resizeImage(with newSize: CGSize, opaque: Bool = false, scale: CGFloat = 1) -> UIImage? {
+        
+        let horizontalRatio = newSize.width / size.width
+        let verticalRatio = newSize.height / size.height
+        
+        let ratio = max(horizontalRatio, verticalRatio)
+        let newSize = CGSize(width: size.width * ratio, height: size.height * ratio)
+        UIGraphicsBeginImageContextWithOptions(newSize, opaque, scale)
+        draw(in: CGRect(origin: CGPoint(x: 0, y: 0), size: newSize))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
 

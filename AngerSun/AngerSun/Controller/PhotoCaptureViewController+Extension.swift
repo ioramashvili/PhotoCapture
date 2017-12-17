@@ -1,6 +1,6 @@
 import UIKit
 
-extension PhotoCaptureViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension PhotoCaptureViewController: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
