@@ -171,12 +171,14 @@ class PhotoCaptureViewController: UIViewController {
         return true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        session.stopRunning()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        session.startRunning()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -246,8 +248,11 @@ class PhotoCaptureViewController: UIViewController {
     @IBAction func chooseImage(_ sender: UIButton) {
         guard let photoLibraryWrapper = AppStoryboard.photoLibrary.instantiate(controller: PhotoLibraryWrapper.self) else {return}
         photoLibraryWrapper.delegate = self
+        photoLibraryWrapper.photoCaptureSessionDelegate = self
         
-        present(photoLibraryWrapper, animated: true, completion: nil)
+        present(photoLibraryWrapper, animated: true) { [weak self] in
+            self?.session.stopRunning()
+        }
     }
     
     fileprivate func addCameraObserver() {
@@ -519,5 +524,15 @@ extension PhotoCaptureViewController: PosterPageDelegate {
             }
         }
     }
+}
+
+extension PhotoCaptureViewController: PhotoCaptureSessionDelegate {
+    func stopRunning() {
+        session.stopRunning()
+    }
+}
+
+protocol PhotoCaptureSessionDelegate: class {
+    func stopRunning()
 }
 

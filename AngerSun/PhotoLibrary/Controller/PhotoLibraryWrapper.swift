@@ -7,6 +7,7 @@ class PhotoLibraryWrapper: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     weak var delegate: ImageCropDelegate?
+    weak var photoCaptureSessionDelegate: PhotoCaptureSessionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class PhotoLibraryWrapper: UIViewController {
 
 extension PhotoLibraryWrapper: PhotoLibraryWrapperDelegate {
     func closeVC() {
+        photoCaptureSessionDelegate?.stopRunning()
         view.isUserInteractionEnabled = false
         
         UIView.animate(withDuration: 0.45, animations: {

@@ -5,14 +5,11 @@ extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelega
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
         guard currentState.isLiveCamera else { return }
+        guard let activePoster = activePoster else { return }
         
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: pixelBuffer)
-        
-        guard let activePoster = activePoster else { return }
-        
         guard var result = activePoster.filter(with: context, ciImage: ciImage) else { return }
-        
         if let resultCGImage = result.cgImage, currentCaptureDevicePosistion == .front {
             result = UIImage(cgImage: resultCGImage, scale: result.scale, orientation: .upMirrored)
         }
