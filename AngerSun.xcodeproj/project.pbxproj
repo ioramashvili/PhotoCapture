@@ -28,7 +28,6 @@
 		4378D3B81F8265060010E565 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B71F8265060010E565 /* UIView+Extension.swift */; };
 		4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3B91F8266100010E565 /* PosterPageViewController.swift */; };
 		4378D3BC1F82667D0010E565 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4378D3BB1F82667D0010E565 /* PosterViewController.swift */; };
-		437CF5281FE66DB80076070C /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437CF5271FE66DB80076070C /* BaseNavigationController.swift */; };
 		43822D251F98BE3B00E8D868 /* PosterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */; };
 		43822D271F98BEF700E8D868 /* PosterFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D261F98BEF700E8D868 /* PosterFilterType.swift */; };
 		43822D291F98BF2B00E8D868 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43822D281F98BF2B00E8D868 /* Poster.swift */; };
@@ -126,7 +125,6 @@
 		4378D3B71F8265060010E565 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4378D3B91F8266100010E565 /* PosterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterPageViewController.swift; sourceTree = "<group>"; };
 		4378D3BB1F82667D0010E565 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
-		437CF5271FE66DB80076070C /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		43822D241F98BE3B00E8D868 /* PosterDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterDataProvider.swift; sourceTree = "<group>"; };
 		43822D261F98BEF700E8D868 /* PosterFilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterFilterType.swift; sourceTree = "<group>"; };
 		43822D281F98BF2B00E8D868 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				436A67501FCDB6E5005B8FCA /* BaseViewController.swift */,
-				437CF5271FE66DB80076070C /* BaseNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -549,7 +546,6 @@
 				43C041991FA1E50600B8E978 /* PhotoLibraryAuthorizer.swift in Sources */,
 				436A67531FCDB719005B8FCA /* KeyboardDelegate.swift in Sources */,
 				433D0B521F977ABB007AB702 /* NSObject+Extension.swift in Sources */,
-				437CF5281FE66DB80076070C /* BaseNavigationController.swift in Sources */,
 				438ED74C1FA31AB20042D243 /* ImageCropDataSource.swift in Sources */,
 				43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */,
 				438ED7451FA2F82E0042D243 /* PhotoCaptureViewControllerState.swift in Sources */,

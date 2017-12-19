@@ -52,7 +52,11 @@ class PhotoLibraryWrapper: UIViewController {
 
 extension PhotoLibraryWrapper: PhotoLibraryWrapperDelegate {
     func closeVC() {
-        photoCaptureSessionDelegate?.stopRunning()
+        photoCaptureSessionDelegate?.startRunning()
+        closeWhenImageCropDidFinish()
+    }
+    
+    func closeWhenImageCropDidFinish() {
         view.isUserInteractionEnabled = false
         
         UIView.animate(withDuration: 0.45, animations: {
@@ -67,7 +71,7 @@ extension PhotoLibraryWrapper: ImageCropDelegate {
     func croppingDidFinish(with image: UIImage) {
         delegate?.croppingDidFinish(with: image)
         
-        closeVC()
+        closeWhenImageCropDidFinish()
     }
 }
 

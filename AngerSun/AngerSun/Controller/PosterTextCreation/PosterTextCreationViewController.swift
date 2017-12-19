@@ -8,6 +8,7 @@ class PosterTextCreationViewController: BaseViewController {
     @IBOutlet weak var textView: UITextView!
     
     var dataProvider: PosterTextCreationDataProvider!
+    weak var photoCaptureSessionDelegate: PhotoCaptureSessionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class PosterTextCreationViewController: BaseViewController {
     }
     
     @IBAction func saveButtonDidTap(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        closeVC()
         
         guard let poster = createPoster() else {return}
         
@@ -58,6 +59,11 @@ class PosterTextCreationViewController: BaseViewController {
     
     @IBAction func cancelButtonDidTap(_ sender: UIButton) {
         textView.resignFirstResponder()
+        closeVC()
+    }
+    
+    fileprivate func closeVC() {
+        photoCaptureSessionDelegate?.startRunning()
         navigationController?.popViewController(animated: true)
     }
     
@@ -84,9 +90,7 @@ class PosterTextCreationViewController: BaseViewController {
     
     fileprivate func setupText() {
         textView.delegate = self
-//        textView.font = AppFont.base.with(size: 24)
         textView.textColor = .white
-//        textView.placeholderColor = UIColor.white.withAlphaComponent(0.5)
         textView.backgroundColor = .clear
         textView.contentInset = .zero
         textView.textContainer.lineFragmentPadding = 0

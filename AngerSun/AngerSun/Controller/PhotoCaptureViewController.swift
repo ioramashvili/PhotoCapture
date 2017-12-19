@@ -2,20 +2,22 @@ import UIKit
 import AVFoundation
 import LSFramework
 
-class PhotoCaptureViewController: UIViewController {
+class PhotoCaptureViewController: PushViewControllerNotifiableViewController {
 
     var currentState: State = .liveCamera {
         didSet {
-            let isLiveCamera = currentState.isLiveCamera
-            liveCameraControlSW.isHidden = !isLiveCamera
+            print("current state to", currentState)
             
-            flashModeButton.isHidden = !isLiveCamera
+            let isLiveCamera = currentState.isPhotoLibrary
+            liveCameraControlSW.isHidden = isLiveCamera
+            
+            flashModeButton.isHidden = isLiveCamera
             photoLibraryControlSW.isHidden = !liveCameraControlSW.isHidden
             
-            let contentMode: UIViewContentMode = isLiveCamera ? .scaleAspectFill : .scaleAspectFit
+            let contentMode: UIViewContentMode = !isLiveCamera ? .scaleAspectFill : .scaleAspectFit
             previewImageView.contentMode = contentMode
             
-            let backgroundColor: UIColor = isLiveCamera ? .clear : .black
+            let backgroundColor: UIColor = !isLiveCamera ? .clear : .black
             topBlurOverlay.backgroundColor = backgroundColor
             bottomBlurOverlay.backgroundColor = backgroundColor
         }
@@ -173,7 +175,7 @@ class PhotoCaptureViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        session.stopRunning()
+        currentState = .sleepLiveCamera
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -200,7 +202,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func calncelPhotoLibraryActionTapped(_ sender: UIButton) {
-        session.startRunning()
+//        session.startRunning()
         currentState = .liveCamera
     }
     
@@ -251,7 +253,7 @@ class PhotoCaptureViewController: UIViewController {
         photoLibraryWrapper.photoCaptureSessionDelegate = self
         
         present(photoLibraryWrapper, animated: true) { [weak self] in
-            self?.session.stopRunning()
+            self?.currentState = .sleepLiveCamera
         }
     }
     
@@ -461,13 +463,14 @@ class PhotoCaptureViewController: UIViewController {
     func showCaptured(_ image: UIImage) {
         let controller = storyboard!.instantiate(controller: PosterTextCreationViewController.self)!
         controller.dataProvider = PosterTextCreationInfo(capturedImage: image, posterDataProvider: activePoster!)
-        navigationController?.pushViewController(controller, animated: true)
+        controller.photoCaptureSessionDelegate = self
+        navigationController?.pushViewController(viewController: controller, willShow: { }, didShow: {
+            self.currentState = .sleepLiveCamera
+        }, animated: true)
     }
     
     @objc fileprivate func previewImageTapped(sender: UITapGestureRecognizer) {
-        guard let imageView = sender.view as? UIImageView, let image = imageView.image else {
-            return
-        }
+        guard let imageView = sender.view as? UIImageView, let image = imageView.image else {return}
         
         share(image: image)
     }
@@ -541,12 +544,13 @@ extension PhotoCaptureViewController: UINavigationControllerDelegate {
 }
 
 extension PhotoCaptureViewController: PhotoCaptureSessionDelegate {
-    func stopRunning() {
-        session.stopRunning()
+    func startRunning() {
+        session.startRunning()
+        currentState = .liveCamera
     }
 }
 
 protocol PhotoCaptureSessionDelegate: class {
-    func stopRunning()
+    func startRunning()
 }
 

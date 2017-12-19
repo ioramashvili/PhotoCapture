@@ -1,6 +1,7 @@
 import UIKit
+import LSFramework
 
-class BaseViewController: UIViewController {
+class BaseViewController: PushViewControllerNotifiableViewController {
     
     fileprivate var _keyboardFrame = CGRect.zero
     fileprivate var _isKeyboardOpen = false

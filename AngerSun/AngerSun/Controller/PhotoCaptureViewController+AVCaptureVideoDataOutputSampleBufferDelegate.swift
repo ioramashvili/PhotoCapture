@@ -4,8 +4,8 @@ import AVFoundation
 extension PhotoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
-        guard currentState.isLiveCamera else { return }
-        guard let activePoster = activePoster else { return }
+        guard currentState.isLiveCamera, let activePoster = activePoster else { return }
+//        print(arc4random_uniform(100))
         
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         let ciImage = CIImage(cvImageBuffer: pixelBuffer)
