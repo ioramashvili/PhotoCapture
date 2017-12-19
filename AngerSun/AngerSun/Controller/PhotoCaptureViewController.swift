@@ -200,6 +200,7 @@ class PhotoCaptureViewController: UIViewController {
     }
     
     @IBAction func calncelPhotoLibraryActionTapped(_ sender: UIButton) {
+        session.startRunning()
         currentState = .liveCamera
     }
     
