@@ -292,7 +292,7 @@
 			path = Plist;
 			sourceTree = "<group>";
 		};
-		43A35A9A1F8A21AF004037F1 /* AngerSun */ = {
+		43A35A9A1F8A21AF004037F1 /* PhotoCapture */ = {
 			isa = PBXGroup;
 			children = (
 				43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */,
@@ -300,7 +300,7 @@
 				43A35A9B1F8A21C0004037F1 /* Controller */,
 				43A35A9D1F8A21F9004037F1 /* View */,
 			);
-			path = AngerSun;
+			path = PhotoCapture;
 			sourceTree = "<group>";
 		};
 		43A35A9B1F8A21C0004037F1 /* Controller */ = {
@@ -359,7 +359,7 @@
 			children = (
 				43A35A961F8A2142004037F1 /* App */,
 				43C0419C1FA2075900B8E978 /* PhotoLibrary */,
-				43A35A9A1F8A21AF004037F1 /* AngerSun */,
+				43A35A9A1F8A21AF004037F1 /* PhotoCapture */,
 			);
 			path = AngerSun;
 			sourceTree = "<group>";

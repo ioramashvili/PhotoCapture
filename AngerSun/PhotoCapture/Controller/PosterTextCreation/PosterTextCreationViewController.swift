@@ -3,9 +3,30 @@ import UIKit
 class PosterTextCreationViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var appendingImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageViewWrapper: UIView!
+    
+    @IBOutlet weak var appendingImageViewWrapper: UIView!
+    @IBOutlet weak var appendingImageView: UIImageView!
+    
+    lazy var textView: UITextView = {
+        let t = UITextView()
+        t.translatesAutoresizingMaskIntoConstraints = false
+        t.delegate = self
+        t.textColor = dataProvider.posterDataProvider.textColor
+        t.font = dataProvider.posterDataProvider.font
+        t.backgroundColor = .clear
+        t.contentInset = .zero
+        t.textContainer.lineFragmentPadding = 0
+        t.textContainerInset = .zero
+        t.isScrollEnabled = false
+        t.returnKeyType = UIReturnKeyType.default
+        t.keyboardAppearance = .dark
+        t.textAlignment = .center
+        t.autocorrectionType = .no
+        
+        return t
+    }()
     
     var dataProvider: PosterTextCreationDataProvider!
     weak var photoCaptureSessionDelegate: PhotoCaptureSessionDelegate?
@@ -13,7 +34,7 @@ class PosterTextCreationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         StoreReviewHelper.increaseTargetCount()
-        scrollView.keyboardDismissMode = .interactive
+        scrollView.keyboardDismissMode = .onDrag
         setupUI()
     }
     
@@ -22,7 +43,7 @@ class PosterTextCreationViewController: BaseViewController {
         
         observeKeyboardNotifications()
         
-        if dataProvider.posterDataProvider.isTextAppandable {
+        if dataProvider.posterDataProvider.posterTextViewPosition != .none {
             textView.becomeFirstResponder()
         }
     }
@@ -81,22 +102,27 @@ class PosterTextCreationViewController: BaseViewController {
         imageView.image = dataProvider.capturedImage
         appendingImageView.image = dataProvider.posterDataProvider.appendableImage
         
-        if !dataProvider.posterDataProvider.isTextAppandable {
+        if !dataProvider.posterDataProvider.hasOutsideComponent {
             appendingImageView.superview?.isHidden = true
         }
 
-        scrollView.isScrollEnabled = dataProvider.posterDataProvider.isTextAppandable
+        scrollView.isScrollEnabled = dataProvider.posterDataProvider.hasOutsideComponent
     }
     
     fileprivate func setupText() {
-        textView.delegate = self
-        textView.textColor = .white
-        textView.backgroundColor = .clear
-        textView.contentInset = .zero
-        textView.textContainer.lineFragmentPadding = 0
-        textView.textContainerInset = .zero
-        textView.isScrollEnabled = false
-        textView.returnKeyType = UIReturnKeyType.default
+        switch dataProvider.posterDataProvider.posterTextViewPosition {
+        case .none: break
+        case .bottom:
+            appendingImageViewWrapper.addSubview(textView)
+            textView.leadingAnchor.constraint(equalTo: appendingImageViewWrapper.leadingAnchor, constant: 20).isActive = true
+            textView.trailingAnchor.constraint(equalTo: appendingImageViewWrapper.trailingAnchor, constant: -20).isActive = true
+            textView.centerYAnchor.constraint(equalTo: appendingImageViewWrapper.centerYAnchor, constant: 0).isActive = true
+        case .insideTop:
+            imageViewWrapper.addSubview(textView)
+            textView.leadingAnchor.constraint(equalTo: imageViewWrapper.leadingAnchor, constant: 10).isActive = true
+            textView.trailingAnchor.constraint(equalTo: imageViewWrapper.trailingAnchor, constant: -10).isActive = true
+            textView.topAnchor.constraint(equalTo: imageViewWrapper.topAnchor, constant: 10).isActive = true
+        }
     }
 }
 
@@ -119,7 +145,7 @@ extension PosterTextCreationViewController: UITextViewDelegate {
         let boundingRect = sizeOfString(string: newText, constrainedToWidth: textView.frame.width, font: textView.font!)
         let numberOfLines = boundingRect.height / textView.font!.lineHeight
         
-        return numberOfLines <= 2
+        return numberOfLines <= CGFloat(dataProvider.posterDataProvider.maxTextViewLine)
     }
 }
 

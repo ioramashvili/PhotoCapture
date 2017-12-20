@@ -11,11 +11,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="VerdanaBold.ttf">
-            <string>Verdana-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Photo Capture View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -454,42 +449,42 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qse-YR-Onh">
-                                        <rect key="frame" x="0.0" y="57" width="414" height="558.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="56.666666666666686" width="414" height="558.66666666666652"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-Sa-b2h">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="511"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="511.33333333333331"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-j6-cTS">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-Ee-9dV">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.3" translatesAutoresizingMaskIntoConstraints="NO" id="f4d-j6-cTS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="f4d-j6-cTS" secondAttribute="height" multiplier="1:1" id="Cfn-6K-5gL"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="f4d-j6-cTS" secondAttribute="height" multiplier="1:1" id="Cfn-6K-5gL"/>
+                                                            <constraint firstItem="f4d-j6-cTS" firstAttribute="leading" secondItem="Zt7-Ee-9dV" secondAttribute="leading" id="3zA-df-Pzc"/>
+                                                            <constraint firstItem="f4d-j6-cTS" firstAttribute="top" secondItem="Zt7-Ee-9dV" secondAttribute="top" id="e4A-Ch-ivh"/>
+                                                            <constraint firstAttribute="trailing" secondItem="f4d-j6-cTS" secondAttribute="trailing" id="n1q-nE-Aqv"/>
+                                                            <constraint firstAttribute="width" secondItem="Zt7-Ee-9dV" secondAttribute="height" multiplier="1:1" id="ree-MS-0ES"/>
+                                                            <constraint firstAttribute="bottom" secondItem="f4d-j6-cTS" secondAttribute="bottom" id="zTC-uG-RER"/>
                                                         </constraints>
-                                                    </imageView>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6L5-mC-4Zi">
-                                                        <rect key="frame" x="0.0" y="414" width="414" height="97"/>
+                                                        <rect key="frame" x="0.0" y="413.99999999999994" width="414" height="97.333333333333314"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-9x-kqI">
-                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="97.333333333333329"/>
                                                             </imageView>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gmE-X9-FxV">
-                                                                <rect key="frame" x="20" y="25.666666666666632" width="374" height="45.333333333333343"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="24"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Text"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="lLR-9x-kqI" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" id="4aT-PZ-q3M"/>
-                                                            <constraint firstItem="gmE-X9-FxV" firstAttribute="leading" secondItem="6L5-mC-4Zi" secondAttribute="leading" constant="20" id="5CA-7B-9Vr"/>
                                                             <constraint firstAttribute="width" secondItem="6L5-mC-4Zi" secondAttribute="height" multiplier="1000:235" id="OuQ-TI-rhc"/>
-                                                            <constraint firstAttribute="trailing" secondItem="gmE-X9-FxV" secondAttribute="trailing" constant="20" id="Tqg-zE-hWH"/>
                                                             <constraint firstItem="lLR-9x-kqI" firstAttribute="top" secondItem="6L5-mC-4Zi" secondAttribute="top" id="bPu-sb-jKw"/>
-                                                            <constraint firstItem="gmE-X9-FxV" firstAttribute="centerY" secondItem="6L5-mC-4Zi" secondAttribute="centerY" id="sCv-Qm-9tx"/>
                                                             <constraint firstAttribute="trailing" secondItem="lLR-9x-kqI" secondAttribute="trailing" id="sqV-JD-ZdR"/>
                                                             <constraint firstAttribute="bottom" secondItem="lLR-9x-kqI" secondAttribute="bottom" id="yQY-8N-CMb"/>
                                                         </constraints>
@@ -497,7 +492,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="63I-z2-n5A">
-                                                <rect key="frame" x="0.0" y="541" width="414" height="17.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="541.33333333333337" width="414" height="17.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGZ-NE-BHG">
                                                         <rect key="frame" x="15" y="0.0" width="384" height="17.333333333333332"/>
@@ -660,9 +655,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="appendingImageView" destination="lLR-9x-kqI" id="7Hj-Lz-1sr"/>
+                        <outlet property="appendingImageViewWrapper" destination="6L5-mC-4Zi" id="miP-XG-h6b"/>
                         <outlet property="imageView" destination="f4d-j6-cTS" id="vyo-2d-OON"/>
+                        <outlet property="imageViewWrapper" destination="Zt7-Ee-9dV" id="JBb-mN-FN0"/>
                         <outlet property="scrollView" destination="KS1-lu-KFC" id="7zz-zv-K8C"/>
-                        <outlet property="textView" destination="gmE-X9-FxV" id="y34-cr-dvy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKL-fj-OUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
