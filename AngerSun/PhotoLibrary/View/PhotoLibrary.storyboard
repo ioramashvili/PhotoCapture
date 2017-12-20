@@ -122,7 +122,6 @@
                         <constraints>
                             <constraint firstItem="DI3-lK-uJ6" firstAttribute="leading" secondItem="XzC-ci-bth" secondAttribute="leading" id="B5H-gY-6cX"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="centerY" secondItem="5XC-2f-YEZ" secondAttribute="centerY" id="FuP-nL-ZBP"/>
-                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="top" secondItem="tEB-dl-LFA" secondAttribute="bottom" id="Hjr-bK-riO"/>
                             <constraint firstAttribute="trailing" secondItem="ARw-r3-Cfs" secondAttribute="trailing" id="IYY-hr-l5F"/>
                             <constraint firstAttribute="trailing" secondItem="uB2-PW-WnH" secondAttribute="trailing" id="KHN-lP-N9e"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="width" secondItem="5XC-2f-YEZ" secondAttribute="width" id="KVj-CM-pgD"/>
@@ -133,6 +132,7 @@
                             <constraint firstAttribute="bottom" secondItem="uB2-PW-WnH" secondAttribute="bottom" id="gfD-ud-57j"/>
                             <constraint firstItem="uB2-PW-WnH" firstAttribute="leading" secondItem="5XC-2f-YEZ" secondAttribute="leading" id="kkF-5c-YUJ"/>
                             <constraint firstItem="uRi-aS-QDY" firstAttribute="top" secondItem="ARw-r3-Cfs" secondAttribute="bottom" id="tUj-9A-xXF"/>
+                            <constraint firstItem="DI3-lK-uJ6" firstAttribute="top" secondItem="XzC-ci-bth" secondAttribute="top" id="uJc-rL-TTx"/>
                             <constraint firstItem="ARw-r3-Cfs" firstAttribute="leading" secondItem="5XC-2f-YEZ" secondAttribute="leading" id="ymC-MP-pxu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XzC-ci-bth"/>
@@ -191,6 +191,7 @@
                                         </connections>
                                     </containerView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Pp3-YE-BPN" firstAttribute="width" secondItem="C2L-vq-DsT" secondAttribute="width" id="4Ch-Mr-NvH"/>
                                     <constraint firstItem="Pp3-YE-BPN" firstAttribute="top" secondItem="t2S-Qg-SUH" secondAttribute="top" id="4oz-8e-HCX"/>
@@ -206,7 +207,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="t2S-Qg-SUH" firstAttribute="leading" secondItem="9tg-cD-52e" secondAttribute="leading" id="4al-Ik-WYQ"/>
                             <constraint firstAttribute="trailing" secondItem="t2S-Qg-SUH" secondAttribute="trailing" id="csJ-zD-kF9"/>

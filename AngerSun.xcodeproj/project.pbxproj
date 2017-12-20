@@ -47,6 +47,7 @@
 		43A516D51F7E248100DCECFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A516D31F7E248100DCECFF /* LaunchScreen.storyboard */; };
 		43A516DE1F7E24DB00DCECFF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */; };
 		43A516E01F7E342600DCECFF /* DemoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */; };
+		43AB3ADB1FEA62FE0082570B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AB3ADA1FEA62FE0082570B /* ViewController.swift */; };
 		43AFE2811F8901C50065B496 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AFE2801F8901C50065B496 /* UIImage+Extension.swift */; };
 		43C02E3D1F9D0644002F79B4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C02E3C1F9D0644002F79B4 /* UIColor+Extension.swift */; };
 		43C041951FA1E2D200B8E978 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C041941FA1E2D200B8E978 /* PhotoLibraryViewController.swift */; };
@@ -145,6 +146,7 @@
 		43A516D41F7E248100DCECFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43A516DD1F7E24DB00DCECFF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		43A516DF1F7E342600DCECFF /* DemoCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCaptureViewController.swift; sourceTree = "<group>"; };
+		43AB3ADA1FEA62FE0082570B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43AFE2801F8901C50065B496 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		43C02E3C1F9D0644002F79B4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		43C041941FA1E2D200B8E978 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				43A35A961F8A2142004037F1 /* App */,
 				43C0419C1FA2075900B8E978 /* PhotoLibrary */,
 				43A35A9A1F8A21AF004037F1 /* PhotoCapture */,
+				43AB3ADA1FEA62FE0082570B /* ViewController.swift */,
 			);
 			path = AngerSun;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				4383BC7D1F8CB99700A10E30 /* AppButton.swift in Sources */,
 				43F7DA141FCD676900D1BB8B /* PosterPageDelegate.swift in Sources */,
 				438ED74A1FA31A9D0042D243 /* ImageCropDelegate.swift in Sources */,
+				43AB3ADB1FEA62FE0082570B /* ViewController.swift in Sources */,
 				43C041951FA1E2D200B8E978 /* PhotoLibraryViewController.swift in Sources */,
 				4378D3BA1F8266100010E565 /* PosterPageViewController.swift in Sources */,
 				43C4D1301FE26D3A00EC6D22 /* LoadingAppButton.swift in Sources */,

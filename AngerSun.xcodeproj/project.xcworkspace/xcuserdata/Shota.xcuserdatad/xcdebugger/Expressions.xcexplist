@@ -9,13 +9,13 @@
          contextName = "PhotoCaptureViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "selectedImageFromImagePicker?.fixOrientation()">
-            </PersistentString>
-            <PersistentString
                value = "result.imageOrientation">
             </PersistentString>
             <PersistentString
                value = "selectedImageFromImagePicker?.imageOrientation">
+            </PersistentString>
+            <PersistentString
+               value = "selectedImageFromImagePicker?.fixOrientation()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -203,6 +203,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "PhotoCaptureViewController.updateBlurViewHole():PhotoCaptureViewController+Extension.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "squareRect">
+            </PersistentString>
+            <PersistentString
+               value = "maskView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "UIImage.normalizedCISourceOverCompositing(with:backgroundImage:):UIImage+Extension.swift">
          <PersistentStrings>
             <PersistentString
@@ -232,13 +243,13 @@
          contextName = "PhotoCaptureViewController.cropToPreviewLayer(originalImage:):PhotoCaptureViewController+Extension.swift">
          <PersistentStrings>
             <PersistentString
-               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
+               value = "originalImage.scale">
             </PersistentString>
             <PersistentString
                value = "UIScreen.main.bounds">
             </PersistentString>
             <PersistentString
-               value = "originalImage.scale">
+               value = "videoPreviewLayer.metadataOutputRectConverted(fromLayerRect: UIScreen.main.bounds)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -262,13 +273,13 @@
          contextName = "PosterTextCreationViewController.viewWillAppear(_:):PosterTextCreationViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "view.bounds">
+            </PersistentString>
+            <PersistentString
                value = "scrollView.contentInset.top">
             </PersistentString>
             <PersistentString
                value = "scrollView.frame">
-            </PersistentString>
-            <PersistentString
-               value = "view.bounds">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -287,7 +298,7 @@
          contextName = "ViewController.previewCapturedImage(data:position:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "image.imageOrientation">
+               value = "nomalizedImage.imageOrientation">
             </PersistentString>
             <PersistentString
                value = "i.imageOrientation">
@@ -296,10 +307,10 @@
                value = "aawda.size">
             </PersistentString>
             <PersistentString
-               value = "image.size">
+               value = "image.imageOrientation">
             </PersistentString>
             <PersistentString
-               value = "nomalizedImage.imageOrientation">
+               value = "image.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -307,10 +318,10 @@
          contextName = "PhotoCaptureViewController.swapCamera():PhotoCaptureViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "videoOutput.connections.first?.videoOrientation">
+               value = "videoOutput.connections">
             </PersistentString>
             <PersistentString
-               value = "videoOutput.connections">
+               value = "videoOutput.connections.first?.videoOrientation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

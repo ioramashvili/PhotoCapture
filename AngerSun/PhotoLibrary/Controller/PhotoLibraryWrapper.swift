@@ -12,8 +12,8 @@ class PhotoLibraryWrapper: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .clear
-        scrollView.backgroundColor = .black
+//        view.backgroundColor = .clear
+//        scrollView.backgroundColor = .black
         scrollView.isScrollEnabled = false
         scrollView.isPagingEnabled = true
     }

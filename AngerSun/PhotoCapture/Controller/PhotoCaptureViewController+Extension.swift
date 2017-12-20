@@ -18,37 +18,38 @@ extension PhotoCaptureViewController: UIImagePickerControllerDelegate {
     }
 }
 
-extension PhotoCaptureViewController {
-    func updateBlurViewHole() {
-        let rect = UIScreen.main.bounds
-        
-        let outerbezierPath = UIBezierPath(rect: rect)
-
-        let y = (rect.height - rect.width) / 2
-        let squareRect = CGRect(x: 0, y: y, width: rect.width, height: rect.width)
-        
-        let innerCirclepath = UIBezierPath(roundedRect: squareRect, cornerRadius: 0)
-        outerbezierPath.append(innerCirclepath)
-        outerbezierPath.usesEvenOddFillRule = true
-
-        let fillLayer = CAShapeLayer()
-        fillLayer.path = outerbezierPath.cgPath
-        fillLayer.fillRule = kCAFillRuleEvenOdd
-        fillLayer.fillColor = UIColor.green.cgColor
-        
-        let maskView = UIView(frame: rect)
-        
-        if #available(iOS 11, *) {
-            maskView.backgroundColor = .clear
-            maskView.layer.addSublayer(fillLayer)
-        } else {
-            maskView.backgroundColor = .black
-            maskView.layer.mask = fillLayer
-        }
-        
-        bluerView.mask = maskView
-    }    
-}
+//extension PhotoCaptureViewController {
+//    func updateBlurViewHole() {
+//        let rect = UIScreen.main.bounds
+//
+//        let outerbezierPath = UIBezierPath(rect: rect)
+//
+//        let y = (rect.height - rect.width) / 2
+//        let squareRect = CGRect(x: 0, y: y, width: rect.width, height: rect.width)
+//
+//        let innerCirclepath = UIBezierPath(roundedRect: squareRect, cornerRadius: 0)
+//        outerbezierPath.append(innerCirclepath)
+//        outerbezierPath.usesEvenOddFillRule = true
+//
+//        let fillLayer = CAShapeLayer()
+//        fillLayer.path = outerbezierPath.cgPath
+//        fillLayer.fillRule = kCAFillRuleEvenOdd
+//
+//        let maskView = UIView(frame: rect)
+//
+//        if #available(iOS 11, *) {
+//            fillLayer.fillColor = UIColor.black.cgColor
+//            maskView.backgroundColor = .clear
+//            maskView.layer.addSublayer(fillLayer)
+//        } else {
+//            maskView.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+//            maskView.layer.addSublayer(fillLayer)
+////            bluerView.layer.addSublayer(maskView.layer)
+//        }
+//
+//        bluerView.mask = maskView
+//    }
+//}
 
 extension PhotoCaptureViewController {
     func cropToPreviewLayer(originalImage: UIImage) -> UIImage? {

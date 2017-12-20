@@ -46,7 +46,7 @@ class PhotoCaptureViewController: PushViewControllerNotifiableViewController {
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: LoadingAppButton!
-    @IBOutlet var bluerView: UIVisualEffectView!
+//    @IBOutlet var bluerView: UIVisualEffectView!
     fileprivate let flashView = UIView()
     
     @IBOutlet weak var photoLibraryButton: UIButton!
@@ -74,7 +74,7 @@ class PhotoCaptureViewController: PushViewControllerNotifiableViewController {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
-        self.view.insertSubview(imageView, belowSubview: bluerView)
+        self.view.insertSubview(imageView, belowSubview: topBlurOverlay)
         
         imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
@@ -124,7 +124,7 @@ class PhotoCaptureViewController: PushViewControllerNotifiableViewController {
         setupPhotoOutput()
         setupCameraAndStartSession()
         
-        updateBlurViewHole()
+//        updateBlurViewHole()
         
         currentState = .liveCamera
         
