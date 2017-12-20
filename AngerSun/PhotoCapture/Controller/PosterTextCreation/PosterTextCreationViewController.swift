@@ -106,7 +106,7 @@ class PosterTextCreationViewController: BaseViewController {
             appendingImageView.superview?.isHidden = true
         }
 
-        scrollView.isScrollEnabled = dataProvider.posterDataProvider.hasOutsideComponent
+        scrollView.isScrollEnabled = dataProvider.posterDataProvider.posterTextViewPosition != .none
     }
     
     fileprivate func setupText() {
@@ -119,9 +119,9 @@ class PosterTextCreationViewController: BaseViewController {
             textView.centerYAnchor.constraint(equalTo: appendingImageViewWrapper.centerYAnchor, constant: 0).isActive = true
         case .insideTop:
             imageViewWrapper.addSubview(textView)
-            textView.leadingAnchor.constraint(equalTo: imageViewWrapper.leadingAnchor, constant: 10).isActive = true
-            textView.trailingAnchor.constraint(equalTo: imageViewWrapper.trailingAnchor, constant: -10).isActive = true
-            textView.topAnchor.constraint(equalTo: imageViewWrapper.topAnchor, constant: 10).isActive = true
+            textView.leadingAnchor.constraint(equalTo: imageViewWrapper.leadingAnchor, constant: 5).isActive = true
+            textView.trailingAnchor.constraint(equalTo: imageViewWrapper.trailingAnchor, constant: -5).isActive = true
+            textView.topAnchor.constraint(equalTo: imageViewWrapper.topAnchor, constant: 5).isActive = true
         }
     }
 }
