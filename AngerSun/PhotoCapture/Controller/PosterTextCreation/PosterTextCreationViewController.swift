@@ -3,6 +3,7 @@ import UIKit
 class PosterTextCreationViewController: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainWrapperSW: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageViewWrapper: UIView!
     
@@ -54,13 +55,14 @@ class PosterTextCreationViewController: BaseViewController {
         if textView.text.isEmpty {
             image = imageView.toImage()
         } else {
-            image = imageView.superview?.toImage()
+            image = imageView.superview?.superview?.toImage()
         }
         
         return image
     }
     
     @IBAction func saveButtonDidTap(_ sender: UIButton) {
+        resignFirstResponder(textView: textView)
         closeVC()
         
         guard let poster = createPoster() else {return}
@@ -71,7 +73,7 @@ class PosterTextCreationViewController: BaseViewController {
     }
     
     @IBAction func shareButtonDidTap(_ sender: UIButton) {
-        textView.resignFirstResponder()
+        resignFirstResponder(textView: textView)
         
         guard let poster = createPoster() else {return}
         
@@ -79,8 +81,13 @@ class PosterTextCreationViewController: BaseViewController {
     }
     
     @IBAction func cancelButtonDidTap(_ sender: UIButton) {
-        textView.resignFirstResponder()
+        resignFirstResponder(textView: textView)
         closeVC()
+    }
+    
+    fileprivate func resignFirstResponder(textView: UITextView) {
+        textView.tintColor = .clear
+        textView.resignFirstResponder()
     }
     
     fileprivate func closeVC() {

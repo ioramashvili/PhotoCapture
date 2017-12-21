@@ -62,9 +62,8 @@ class Poster: PosterDataProvider {
         let multiplier: CGFloat = UIScreen.main.bounds.width / 414
         
         let filterColor = UIColor(name: "ff1515FF")
-        let secondPosterFont = UIFont(name: "Verdana-Bold", size: 24 * multiplier)
-        let thirdPosterFont = UIFont(name: "Verdana-Bold", size: 50 * multiplier)
-        
+        let secondPosterFont = UIFont(name: "HelveticaNeue-CondensedBlack", size: 24 * multiplier)
+        let thirdPosterFont = UIFont(name: "HelveticaNeue-CondensedBlack", size: 55 * multiplier)
         
         let posters: [PosterDataProvider] = [
             MonochromePoster(
@@ -124,14 +123,24 @@ class Poster: PosterDataProvider {
                 maxTextViewLine: 2),
             
             MonochromePoster(
-                posterImage: #imageLiteral(resourceName: "flag"),
+                posterImage: #imageLiteral(resourceName: "3"),
                 intensity: 0,
                 color: filterColor,
                 appendableImage: nil,
                 posterTextViewPosition: .insideTop,
                 font: thirdPosterFont,
-                textColor: .red,
-                maxTextViewLine: 1)
+                textColor: filterColor,
+                maxTextViewLine: 1),
+            
+            MonochromePoster(
+                posterImage: #imageLiteral(resourceName: "4"),
+                intensity: 0,
+                color: filterColor,
+                appendableImage: nil,
+                posterTextViewPosition: .none,
+                font: nil,
+                textColor: .clear,
+                maxTextViewLine: 0),
         ]
         
         return posters

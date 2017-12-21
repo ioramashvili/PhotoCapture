@@ -684,6 +684,7 @@
                         <outlet property="appendingImageViewWrapper" destination="6L5-mC-4Zi" id="miP-XG-h6b"/>
                         <outlet property="imageView" destination="f4d-j6-cTS" id="vyo-2d-OON"/>
                         <outlet property="imageViewWrapper" destination="Zt7-Ee-9dV" id="JBb-mN-FN0"/>
+                        <outlet property="mainWrapperSW" destination="Qse-YR-Onh" id="lso-nZ-vPi"/>
                         <outlet property="scrollView" destination="KS1-lu-KFC" id="7zz-zv-K8C"/>
                     </connections>
                 </viewController>
