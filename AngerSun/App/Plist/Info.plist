@@ -19,17 +19,17 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>11</string>
+	<string>20</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) requests access to Camera</string>
+	<string>$(PRODUCT_NAME) requests access to Camera to see various poster previews</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>$(PRODUCT_NAME) requests access to Photos to use add photos</string>
+	<string>$(PRODUCT_NAME) requests access to Photos to save created poster</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>$(PRODUCT_NAME) requests access to Photos</string>
+	<string>$(PRODUCT_NAME) requests access to Photos to create various posters</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>xerox-sans.ttf</string>
